@@ -152,6 +152,9 @@ env.bak/
 venv.bak/
 .code-workspace
 shell.nix
+.direnv/
+bin/
+lib64
 
 # Spyder project settings
 .spyderproject
