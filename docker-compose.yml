@@ -1,0 +1,21 @@
+services:
+  minecraft-1:
+    build:
+      context: .
+      dockerfile: Dockerfile-minecraft
+    environment:
+        HOST: server
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./output/AP_64198968316369786319_P1_minecraft-1.apmc:/minecraft.apmc
+  minecraft-2:
+    build:
+      context: .
+      dockerfile: Dockerfile-minecraft
+    environment:
+        HOST: server
+    ports:
+      - "25566:25565"
+    volumes:
+      - ./output/AP_64198968316369786319_P2_minecraft-2.apmc:/minecraft.apmc

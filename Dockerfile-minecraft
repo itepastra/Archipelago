@@ -1,0 +1,47 @@
+FROM python:3.11-slim
+WORKDIR /archipelago
+
+RUN apt-get update
+RUN apt-get upgrade -y
+
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y pip default-jre-headless gcc git python3-tk
+
+RUN pip install --upgrade pip
+
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY ./intset.h .
+COPY ./_speedups.pyx .
+COPY ./_speedups.pyxbld .
+
+COPY ./ModuleUpdate.py .
+COPY ./Fill.py .
+COPY ./Utils.py .
+COPY ./NetUtils.py .
+COPY ./BaseClasses.py .
+COPY ./Patch.py .
+COPY ./MultiServer.py .
+
+COPY ./MinecraftClient.py .
+COPY <<EOF ./start.sh
+cat <<EOF | python MinecraftClient.py -- /minecraft.apmc
+y
+y
+y
+y
+\EOF
+EOF
+
+COPY ./data/ ./data/
+COPY ./worlds/ ./worlds/
+
+COPY ./Options.py .
+COPY ./settings.py .
+
+COPY . .
+
+EXPOSE 25565
+
+CMD [ "/usr/bin/bash", "./start.sh" ]
