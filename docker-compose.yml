@@ -1,4 +1,12 @@
 services:
+  multi-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "38291:38291"
+    volumes:
+      - ./output/AP_70916155868361649699.archipelago:/archipelago.archipelago
   minecraft-1:
     build:
       context: .
@@ -9,7 +17,7 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - ./output/AP_64198968316369786319_P1_minecraft-1.apmc:/minecraft.apmc
+      - ./output/AP_70916155868361649699_P1_minecraft-1.apmc:/minecraft.apmc
   minecraft-2:
     build:
       context: .
@@ -20,4 +28,12 @@ services:
     ports:
       - "25566:25565"
     volumes:
-      - ./output/AP_64198968316369786319_P2_minecraft-2.apmc:/minecraft.apmc
+      - ./output/AP_70916155868361649699_P2_minecraft-2.apmc:/minecraft.apmc
+  factorio-1:
+    build:
+      context: .
+      dockerfile: Dockerfile-factorio
+    ports:
+      - "34197:34197/udp"
+    volumes:
+      - ./output/AP-70916155868361649699-P3-noa-factorio_0.5.0.zip:/archipelago/factorio/mods/AP-70916155868361649699-P3-noa-factorio_0.5.0.zip
