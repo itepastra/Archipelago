@@ -4,7 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile-minecraft
     environment:
-        HOST: server
+      HOST: server
+      EULA: true
     ports:
       - "25565:25565"
     volumes:
@@ -14,7 +15,8 @@ services:
       context: .
       dockerfile: Dockerfile-minecraft
     environment:
-        HOST: server
+      HOST: server
+      EULA: true
     ports:
       - "25566:25565"
     volumes:

@@ -1,12 +1,51 @@
-FROM python:3.11-slim
+FROM python:3.11-slim as get_options
 WORKDIR /archipelago
 
-RUN apt-get update
-RUN apt-get upgrade -y
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y pip default-jre-headless gcc git python3-tk
+COPY ./Utils.py .
+COPY ./Options.py .
+COPY ./settings.py .
+COPY ./worlds/AutoWorld.py ./worlds/
+COPY ./BaseClasses.py .
+COPY ./NetUtils.py .
 
+COPY ./host.yaml .
+
+COPY <<EOF ./versions.py
+import settings
+options = settings.get_settings()
+forge_dir = options["minecraft_options"]["forge_directory"]
+print(forge_dir)
+EOF
+
+RUN python versions.py >> forge_dir
+
+FROM debian as install_forge
+WORKDIR /archipelago
+
+ADD https://raw.githubusercontent.com/KonoTyran/Minecraft_AP_Randomizer/master/versions/minecraft_versions.json versions.json
+RUN apt-get update && apt-get install -y default-jdk-headless jq wget
+
+COPY --from=get_options /archipelago/forge_dir /archipelago/forge_dir
+
+RUN <<EOF 
+export FORGE_VERSION=$(cat versions.json | jq -r .release[0].forge) 
+wget "https://maven.minecraftforge.net/net/minecraftforge/forge/$FORGE_VERSION/forge-$FORGE_VERSION-installer.jar"
+java -jar "forge-$FORGE_VERSION-installer.jar" --installServer "server"
+EOF
+
+RUN wget "$(cat versions.json | jq -r .release[0].url)" -P "server/mods/"
+
+FROM python:3.11-slim as run
+WORKDIR /archipelago
+
+COPY --from=get_options /archipelago/forge_dir /archipelago/forge_dir
+COPY --from=install_forge /archipelago/server /archipelago/server
+RUN mv server "$(cat forge_dir)"
+
+RUN apt-get update && apt-get install -y default-jre-headless gcc git
 RUN pip install --upgrade pip
 
 COPY ./requirements.txt .
@@ -25,23 +64,27 @@ COPY ./Patch.py .
 COPY ./MultiServer.py .
 
 COPY ./MinecraftClient.py .
-COPY <<EOF ./start.sh
-cat <<EOF | python MinecraftClient.py -- /minecraft.apmc
-y
-y
-y
-y
-\EOF
-EOF
 
-COPY ./data/ ./data/
-COPY ./worlds/ ./worlds/
+COPY ./worlds/__init__.py ./worlds/
+COPY ./worlds/AutoWorld.py ./worlds/
 
 COPY ./Options.py .
 COPY ./settings.py .
 
-COPY . .
+RUN <<EOF 
+DIR="$(cat forge_dir)"
+if ! echo "# Generated via Docker
+# $(date)
+eula=true
+" > $DIR/eula.txt; then
+log "ERROR: unable to write eula to $DIR. Please make sure attached directory is writeable"
+exit 2
+fi
+EOF
+RUN rm forge_dir
+
+COPY ./host.yaml .
 
 EXPOSE 25565
 
-CMD [ "/usr/bin/bash", "./start.sh" ]
+CMD python MinecraftClient.py /minecraft.apmc
