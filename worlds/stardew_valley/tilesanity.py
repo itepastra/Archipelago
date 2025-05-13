@@ -6,18 +6,28 @@ from typing import Tuple, List, Hashable, Callable, Optional, TYPE_CHECKING
 
 from BaseClasses import Entrance, Region, CollectionState
 from . import data
+<<<<<<< HEAD
 from .logic.monster_logic import MonsterLogic
 from .logic.quest_logic import QuestLogic
+=======
+>>>>>>> d04a0bddc (Tilesanity)
 from .regions.model import ConnectionData, RegionData
 from .regions.vanilla_data import ginger_island_connections, vanilla_connections
 from .stardew_rule import Received, StardewRule, True_, False_
 from .strings.region_names import Region as StardewRegion
 from .strings.entrance_names import Entrance as StardewEntrance
 from .strings.tool_names import ToolMaterial
+<<<<<<< HEAD
 from .options.options import FarmType, StardewValleyOptions, IncludeEndgameLocations, ExcludeGingerIsland
 
 if TYPE_CHECKING:
     from . import StardewValleyWorld
+=======
+
+if TYPE_CHECKING:
+    from . import StardewValleyWorld
+    from .options import FarmType, StardewValleyOptions
+>>>>>>> d04a0bddc (Tilesanity)
     from .regions import RegionFactory
 
 directions = ["Left", "Up", "Right", "Down"]
@@ -45,6 +55,7 @@ aliases = {
     StardewRegion.sam_house: "Home of Jodi, Kent & Sam",
     StardewRegion.purple_shorts_maze: "LewisBasement",
     StardewRegion.blacksmith: "Blacksmith",
+<<<<<<< HEAD
     StardewRegion.museum: "Stardew Valley Museum & Library",
     StardewRegion.carpenter: "Carpenter's Shop",
     StardewRegion.sebastian_room: "SebastianRoom",
@@ -67,6 +78,9 @@ aliases = {
     StardewRegion.bus_tunnel: "Tunnel",
     StardewRegion.wizard_tower: "Wizard's Tower",
     StardewRegion.wizard_basement: "WizardBasement"
+=======
+    StardewRegion.museum: "Stardew Valley Museum & Library"
+>>>>>>> d04a0bddc (Tilesanity)
 }
 
 for key in list(aliases.keys()):
@@ -82,6 +96,10 @@ all_tiles = None
 
 
 def alternate_name(region: str, option: "StardewValleyOptions"):
+<<<<<<< HEAD
+=======
+    from .options import FarmType
+>>>>>>> d04a0bddc (Tilesanity)
     if region in aliases:
         return aliases[region]
 
@@ -94,6 +112,7 @@ def alternate_name(region: str, option: "StardewValleyOptions"):
         farm_name = "Forest Farm"
     elif farm_type == FarmType.option_hill_top:
         farm_name = "Hilltop Farm"
+<<<<<<< HEAD
     # elif farm_type == FarmType.option_wilderness:
     #     farm_name = "Wilderness Farm"
     elif farm_type == FarmType.option_four_corners:
@@ -102,6 +121,8 @@ def alternate_name(region: str, option: "StardewValleyOptions"):
     #     farm_name = "Beach Farm"
     elif farm_type == FarmType.option_meadowlands:
         farm_name = "Meadowlands Farm"
+=======
+>>>>>>> d04a0bddc (Tilesanity)
     else:
         # farm_name = "Farm Farm"
         raise NotImplemented("Farm type is not implemented")
@@ -147,14 +168,22 @@ def list_all_ap_ids() -> dict[str, id]:
     return all_tiles
 
 
+<<<<<<< HEAD
 def list_all_tiles(options: "StardewValleyOptions", maps_to_exclude: set[str]):
+=======
+def list_all_tiles(options):
+>>>>>>> d04a0bddc (Tilesanity)
     all_tiles = set()
     with files(data).joinpath("tiles.json").open() as file:
         tiles = json.load(file)
         farm_name = alternate_name("Farm", options)
 
         for region in tiles:
+<<<<<<< HEAD
             if region in maps_to_exclude:
+=======
+            if region == "Home of Pam & Penny":
+>>>>>>> d04a0bddc (Tilesanity)
                 continue
 
             if region != "FarmHouse" and (not region.endswith("Farm") or region == farm_name):
@@ -178,23 +207,34 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
     connections = {connection.name: connection for connection in vanilla_connections} | {connection.name: connection for connection in
                                                                                          ginger_island_connections}
     entrances_coords_by_name: dict[str, tile_coords] = {}
+<<<<<<< HEAD
     location_origin: dict[str, str] = {}
+=======
+>>>>>>> d04a0bddc (Tilesanity)
     entrance_points: dict[str, tuple[Optional[tile_coords], Optional[tile_coords]]]
     orphan_maps: list[tuple[str, str]] = []  # Starts as the list of all regions with an exists to then become the ones with no central point
     door_connections: dict[str, tuple[str, str]] = {}  # This is to delay connecting doors to tile since we have to go through orphans first
     banned_entrances: set[str] = {
         StardewEntrance.enter_quarry,
         StardewEntrance.enter_tide_pools,
+<<<<<<< HEAD
         StardewEntrance.enter_lewis_bedroom,
         StardewEntrance.adventurer_guild_to_bedroom
+=======
+        StardewEntrance.enter_lewis_bedroom
+>>>>>>> d04a0bddc (Tilesanity)
     }
     banned_regions: set[str] = {
         StardewRegion.lewis_bedroom
     }
 
+<<<<<<< HEAD
     maps_to_exclude = get_maps_to_exclude(world.options)
 
     all_tiles = list_all_tiles(world.options, maps_to_exclude)
+=======
+    all_tiles = list_all_tiles(world.options)
+>>>>>>> d04a0bddc (Tilesanity)
     create_tiles_full(region_factory, regions_by_name, all_tiles, tiles_by_coords)
 
     # Get normal regions
@@ -207,6 +247,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
     # Add tiles connections between maps
     with files(data).joinpath("important_tiles.json").open() as file:
         important_tiles = json.load(file)
+<<<<<<< HEAD
         farm_type = alternate_name("Farm", world.options)
         if farm_type in important_tiles:
             important_tiles["Farm"] = important_tiles[farm_type]
@@ -217,6 +258,14 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
                 real_region = farm_type
             elif region.endswith("Farm") or region in maps_to_exclude:
                 continue
+=======
+        for region in important_tiles:
+            if region == "Home of Pam & Penny":
+                continue
+            region: str
+            if region == "Farm":
+                real_region = alternate_name("Farm", world.options)
+>>>>>>> d04a0bddc (Tilesanity)
             else:
                 real_region = region
             for tile in important_tiles[region]:
@@ -226,11 +275,14 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
                 if len(tile["RequiredItems"]) > 0:
                     required_items[(real_region, x, y)] = tile["RequiredItems"]
                 for entrance in tile["Entrances"]:
+<<<<<<< HEAD
                     splited = entrance.split("!loc")
                     if len(splited) > 1:
                         location_origin[splited[0]] = tilesanity_name_from_coord(real_region, x, y)
                         continue
 
+=======
+>>>>>>> d04a0bddc (Tilesanity)
                     entrances_coords_by_name[entrance] = (real_region, x, y)
 
     for region_name in region_data:
@@ -261,6 +313,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
             continue
         elif entrance_name in region_data:
             destination = entrance_name
+<<<<<<< HEAD
         else:
             region2, x2, y2 = entrances_coords_by_name[entrance_name]
             destination = tilesanity_name_from_coord(region2, x2, y2)
@@ -270,6 +323,14 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
                 print(f"{entrance_name} unknown thus ignored")
             continue
         connect(regions_by_name[origin], regions_by_name[destination], entrances_by_name)
+=======
+        elif alternate_name(entrance_name, world.options) in region_data:
+            destination = alternate_name(entrance_name, world.options)
+        else:
+            region2, x2, y2 = entrances_coords_by_name[entrance_name]
+            destination = tilesanity_name_from_coord(region2, x2, y2)
+        connect(regions_by_name[tilesanity_name_from_coord(region, x, y)], regions_by_name[destination], entrances_by_name)
+>>>>>>> d04a0bddc (Tilesanity)
         i = 0
         while i < len(orphan_maps):
             if orphan_maps[i][1] == destination:
@@ -321,11 +382,15 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
     world.tile_list = remaining_coords  # Just to be able to transmit how many tiles exist
     world.tilesanity_rulebuilder = lambda: define_tilesanity_rules(world, player, regions_by_name, tiles_by_coords, random, tile_to_coord, remaining_coords,
                                                                    required_items)
+<<<<<<< HEAD
     world.location_origin_override = location_origin
+=======
+>>>>>>> d04a0bddc (Tilesanity)
 
     return regions_by_name
 
 
+<<<<<<< HEAD
 def get_maps_to_exclude(options: StardewValleyOptions):
     maps_to_exclude: set[str] = set()
     if options.include_endgame_locations == IncludeEndgameLocations.option_false:
@@ -354,6 +419,8 @@ def get_maps_to_exclude(options: StardewValleyOptions):
     return maps_to_exclude
 
 
+=======
+>>>>>>> d04a0bddc (Tilesanity)
 def create_tiles_full(region_factory, regions_by_name, tiles, tiles_by_coords):
     for region, coords_name in tiles:
         coords = coords_name.split(", ")
@@ -366,6 +433,7 @@ def create_tiles_full(region_factory, regions_by_name, tiles, tiles_by_coords):
         tiles_by_coords[ref] = region
 
 
+<<<<<<< HEAD
 logic_predicate_table = {
     "Dark Talisman": QuestLogic.has_dark_talisman,
     "Kill": MonsterLogic.can_kill_max,
@@ -374,6 +442,8 @@ logic_predicate_table = {
 }
 
 
+=======
+>>>>>>> d04a0bddc (Tilesanity)
 def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int) -> StardewRule:
     # Or case
     splited = requirement.split(" OR ")
@@ -383,6 +453,7 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
             rule_accumulator |= requirement_rule(splited[i], world, player)
         return rule_accumulator
 
+<<<<<<< HEAD
     splited = requirement.split("!")
     # Special rules
     if splited[0] in logic_predicate_table:
@@ -398,6 +469,16 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
             return world.logic.region.can_reach_location(splited[0])
         if splited[1] == "reg":
             return world.logic.region.can_reach(splited[0])
+=======
+    # Count items
+    splited = requirement.split("!")
+    if len(splited) == 1:
+        amount = 1
+    else:
+        # Location rules are denoted this way
+        if splited[1] == "loc":
+            return world.logic.region.can_reach_location(splited[0])
+>>>>>>> d04a0bddc (Tilesanity)
         amount = int(splited[1])
 
     # Handle friendship
@@ -446,7 +527,10 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
         i = int(bias * len(queue))
         if i >= len(queue):
             i = len(queue) - 1
+<<<<<<< HEAD
             assert i != -1, f"No tile in {remaining_coords} is valid, {blocked_connections} are locked"
+=======
+>>>>>>> d04a0bddc (Tilesanity)
         current_region = queue.pop(i)
         if current_region in tile_to_coord:
             coord = tile_to_coord[current_region]

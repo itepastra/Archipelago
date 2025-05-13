@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "Adventurer's Guild": [
     {
       "Position": "1, 9",
@@ -29,6 +30,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Backwoods": [
     {
       "Position": "14, 39",
@@ -88,6 +91,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Bathhouse Entrance": [
     {
       "Position": "2, 4",
@@ -113,6 +117,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Blacksmith": [
     {
       "Position": "3, 15",
@@ -137,6 +143,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "BoatTunnel": [
     {
       "Position": "4, 10",
@@ -192,6 +199,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Bus Stop": [
     {
       "Position": "10, 23",
@@ -295,6 +304,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Carpenter's Shop": [
     {
       "Position": "3, 8",
@@ -379,6 +389,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Cindersap Forest": [
     {
       "Position": "0, 7",
@@ -495,6 +507,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Colored Crystals Cave": [
     {
       "Position": "6, 3",
@@ -518,6 +531,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Community Center": [
     {
       "Position": "2, 12",
@@ -577,19 +592,43 @@
     },
     {
       "Position": "14, 5",
+<<<<<<< HEAD
+=======
+      "RequiredItems": [
+        "Complete Pantry!loc"
+      ],
+      "Entrances": []
+    },
+    {
+      "Position": "14, 6",
+>>>>>>> d04a0bddc (Tilesanity)
       "RequiredItems": [],
       "Entrances": [
         "Access Pantry"
       ]
     },
     {
+<<<<<<< HEAD
       "Position": "14, 23",
+=======
+      "Position": "14, 22",
+>>>>>>> d04a0bddc (Tilesanity)
       "RequiredItems": [],
       "Entrances": [
         "Access Crafts Room"
       ]
     },
     {
+<<<<<<< HEAD
+=======
+      "Position": "14, 23",
+      "RequiredItems": [
+        "Complete Crafts Room!loc"
+      ],
+      "Entrances": []
+    },
+    {
+>>>>>>> d04a0bddc (Tilesanity)
       "Position": "23, 10",
       "RequiredItems": [
         "Complete Pantry!loc",
@@ -786,6 +825,16 @@
     },
     {
       "Position": "40, 10",
+<<<<<<< HEAD
+=======
+      "RequiredItems": [
+        "Complete Fish Tank!loc"
+      ],
+      "Entrances": []
+    },
+    {
+      "Position": "40, 11",
+>>>>>>> d04a0bddc (Tilesanity)
       "RequiredItems": [],
       "Entrances": [
         "Access Fish Tank"
@@ -863,6 +912,16 @@
     },
     {
       "Position": "55, 6",
+<<<<<<< HEAD
+=======
+      "RequiredItems": [
+        "Complete Vault!loc"
+      ],
+      "Entrances": []
+    },
+    {
+      "Position": "55, 7",
+>>>>>>> d04a0bddc (Tilesanity)
       "RequiredItems": [],
       "Entrances": [
         "Access Vault"
@@ -897,6 +956,16 @@
       "Entrances": []
     },
     {
+<<<<<<< HEAD
+=======
+      "Position": "63, 14",
+      "RequiredItems": [
+        "Complete Boiler Room!loc"
+      ],
+      "Entrances": []
+    },
+    {
+>>>>>>> d04a0bddc (Tilesanity)
       "Position": "63, 15",
       "RequiredItems": [],
       "Entrances": [
@@ -904,6 +973,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Elliott's Cabin": [
     {
       "Position": "3, 9",
@@ -921,6 +991,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Farm": [
     {
       "Position": "28, 16",
@@ -995,6 +1067,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "FarmCave": [
     {
       "Position": "8, 8",
@@ -1420,6 +1493,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Harvey's Clinic": [
     {
       "Position": "6, 17",
@@ -1552,7 +1627,12 @@
       "Position": "11, 21",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "??Foroguemon??!loc"
+=======
+        "Home of Jodi, Kent & Sam (??Foroguemon??)",
+        "Sam's House"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
@@ -1596,6 +1676,7 @@
       "Entrances": []
     }
   ],
+<<<<<<< HEAD
   "Island Field Office": [
     {
       "Position": "4, 4",
@@ -3307,6 +3388,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "LewisBasement": [
     {
       "Position": "4, 4",
@@ -3324,6 +3407,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Marnie's Ranch": [
     {
       "Position": "6, 12",
@@ -3379,6 +3463,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Mayor's Manor": [
     {
       "Position": "4, 11",
@@ -3411,6 +3497,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Meadowlands Farm": [
     {
       "Position": "13, 24",
@@ -4155,6 +4242,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Mountains": [
     {
       "Position": "0, 13",
@@ -4630,6 +4719,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Public Bath": [
     {
       "Position": "6, 0",
@@ -4692,6 +4782,8 @@
       ]
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Railroad": [
     {
       "Position": "10, 57",
@@ -4736,6 +4828,7 @@
       "Entrances": []
     }
   ],
+<<<<<<< HEAD
   "Riverland Farm": [
     {
       "Position": "8, 34",
@@ -5155,6 +5248,8 @@
       "Entrances": []
     }
   ],
+=======
+>>>>>>> d04a0bddc (Tilesanity)
   "Secret Woods": [
     {
       "Position": "9, 8",
@@ -5208,6 +5303,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "Shipwreck": [
     {
       "Position": "0, 5",
@@ -5221,6 +5317,51 @@
       "RequiredItems": [],
       "Entrances": [
         "Walnutsanity: Shipwreck Bush!loc"
+=======
+  "Stardrop Saloon": [
+    {
+      "Position": "14, 24",
+      "RequiredItems": [],
+      "Entrances": [
+        "Town to Saloon!exit",
+        "Saloon to Town"
+      ]
+    },
+    {
+      "Position": "18, 17",
+      "RequiredItems": [],
+      "Entrances": [
+        "Stardrop Saloon (fridge)"
+      ]
+    },
+    {
+      "Position": "20, 9",
+      "RequiredItems": [
+        "Gus <3!2"
+      ],
+      "Entrances": []
+    },
+    {
+      "Position": "29, 7",
+      "RequiredItems": [],
+      "Entrances": [
+        "Stardrop Saloon (Pinky Lemon)"
+      ]
+    },
+    {
+      "Position": "33, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Stardrop Saloon (JotPK)"
+      ]
+    },
+    {
+      "Position": "35, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Stardrop Saloon (JK)",
+        "Saloon"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     }
   ],
@@ -5229,6 +5370,10 @@
       "Position": "3, 10",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
+=======
+        "Museum (curator)",
+>>>>>>> d04a0bddc (Tilesanity)
         "Museum"
       ]
     },
@@ -5244,146 +5389,227 @@
       "Position": "8, 7",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Secret Statues Acrostics!loc"
+=======
+        "Lost Book 7"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "8, 8",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Goblins by M. Jasper!loc"
+=======
+        "Lost Book 6"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "8, 9",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Note From Gunther!loc"
+=======
+        "Lost Book 5"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "8, 10",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read The Fisherman, Act I!loc"
+=======
+        "Lost Book 4"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "8, 11",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read On Foraging!loc"
+=======
+        "Lost Book 3"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "8, 12",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read This is a book by Marnie!loc"
+=======
+        "Lost Book 2"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "8, 13",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Tips on Farming!loc"
+=======
+        "Lost Book 1"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "9, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read How Deep do the mines go?!loc"
+=======
+        "Lost Book 8"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "10, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read An Old Farmer's Journal!loc"
+=======
+        "Lost Book 9"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "11, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Scarecrows!loc"
+=======
+        "Lost Book 10"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "11, 9",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Technology Report!!loc"
+=======
+        "Lost Book 19"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "12, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read The Secret of the Stardrop!loc"
+=======
+        "Lost Book 11"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "12, 9",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Secrets of the Legendary Fish!loc"
+=======
+        "Lost Book 20"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "13, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Journey of the Prairie King -- The Smash Hit Video Game!!loc"
+=======
+        "Lost Book 12"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "13, 9",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Gunther Tunnel Notice!loc"
+=======
+        "Lost Book 21"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "15, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read A Study on Diamond Yields!loc"
+=======
+        "Lost Book 13"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "16, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Brewmaster's Guide!loc"
+=======
+        "Lost Book 14"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "17, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Mysteries of the Dwarves!loc"
+=======
+        "Lost Book 15"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "19, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Highlights From the Book of Yoba!loc"
+=======
+        "Lost Book 16"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "20, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read Marriage Guide for Farmers!loc"
+=======
+        "Lost Book 17"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     },
     {
       "Position": "21, 5",
       "RequiredItems": [],
       "Entrances": [
+<<<<<<< HEAD
         "Read The Fisherman, Act II!loc"
       ]
     }
@@ -5449,6 +5675,9 @@
         "Junimo Kart 3,Junimo Kart: Glowshroom Grotto!loc",
         "Junimo Kart 3,Junimo Kart: Red Hot Rollercoaster!loc",
         "Junimo Kart 4,Junimo Kart: Sunset Speedway (Victory)!loc"
+=======
+        "Lost Book 18"
+>>>>>>> d04a0bddc (Tilesanity)
       ]
     }
   ],
@@ -5468,6 +5697,7 @@
         "Sunroom"
       ]
     }
+<<<<<<< HEAD
   ],
   "Tent": [
     {
@@ -5660,3 +5890,7 @@
     }
   ]
 }
+=======
+  ]
+}
+>>>>>>> d04a0bddc (Tilesanity)
