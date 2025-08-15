@@ -237,7 +237,8 @@ class StardewValleyWorld(World):
         locations_count = len([location
                                for location in self.multiworld.get_locations(self.player)
                                if location.address is not None and not location.locked])
-        locations_count -= len(self.tile_list) - int(len(self.tile_list) * (100 - self.options.tilesanity_local) / 100)
+        if self.options.tilesanity > 1:
+            locations_count -= len(self.tile_list) - int(len(self.tile_list) * (100 - self.options.tilesanity_local) / 100)
 
         created_items = create_items(self.create_item, locations_count, items_to_exclude, self.options, self.content, self.random)
 
