@@ -360,6 +360,7 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
     if splited[0] in logic_predicate_table:
         return logic_predicate_table[splited[0]](world.logic, *[arg for arg in splited[1:]])
 
+    splited[0] = "!".join(splited[:-1])
     # Count items
     if len(splited) == 1:
         amount = 1
