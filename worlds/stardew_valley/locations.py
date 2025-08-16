@@ -22,7 +22,7 @@ from .strings.goal_names import Goal
 from .strings.quest_names import ModQuest, Quest
 from .strings.region_names import Region, LogicRegion
 from .strings.villager_names import NPC
-from .tilesanity import list_all_ap_ids, tilesanity_coord_from_name
+from .tilesanity import list_all_ap_ids, tilesanity_coord_from_name, get_maps_to_exclude
 
 LOCATION_CODE_OFFSET = 717000
 
@@ -669,15 +669,15 @@ def extend_tilesanity_locations(randomized_locations, options):
 
     tile_locations = []
     tile_names = set()
+    maps_to_exclude = get_maps_to_exclude(options)
     tile_size = options.tilesanity_size
     farm_name = alternate_name("Farm", options)
 
     with files(data).joinpath("tiles.json").open() as file:
         tiles = json.load(file)
         for area in tiles:
-            if area.endswith("Farm"):
-                if area != farm_name:
-                    continue
+            if area.endswith("Farm") and area != farm_name or area in maps_to_exclude:
+                continue
             for position in tiles[area]:
                 position = position.split(", ")
                 x, y = int(position[0]), int(position[1])

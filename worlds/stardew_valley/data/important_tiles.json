@@ -3,7 +3,7 @@
     {
       "Position": "1, 9",
       "RequiredItems": [
-        "1000 monster kills"
+        "Kill!Any"
       ],
       "Entrances": []
     },
@@ -11,7 +11,7 @@
       "Position": "5, 13",
       "RequiredItems": [],
       "Entrances": [
-        "Adventurer's Guild (Marlon)"
+        "Adventurer's Guild"
       ]
     },
     {
@@ -26,7 +26,8 @@
       "Position": "10, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Adventurer's Guild (Mapping Cave Systems)"
+        "Adventurer's Guild (Mapping Cave Systems)",
+        "Marlon's Bedroom"
       ]
     }
   ],
@@ -500,11 +501,11 @@
     {
       "Position": "6, 3",
       "RequiredItems": [
-        "Tilesanity: IslandWestCave1 (4-4)",
-        "Tilesanity: IslandWestCave1 (4-5)",
-        "Tilesanity: IslandWestCave1 (6-6)",
-        "Tilesanity: IslandWestCave1 (8-4)",
-        "Tilesanity: IslandWestCave1 (8-5)"
+        "Tilesanity: Colored Crystals Cave (4-4)!reg",
+        "Tilesanity: Colored Crystals Cave (4-5)!reg",
+        "Tilesanity: Colored Crystals Cave (6-6)!reg",
+        "Tilesanity: Colored Crystals Cave (8-4)!reg",
+        "Tilesanity: Colored Crystals Cave (8-5)!reg"
       ],
       "Entrances": [
         "Walnutsanity: Colored Crystals!loc"
@@ -514,8 +515,8 @@
       "Position": "6, 6",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to IslandWestCave1!exit",
-        "IslandWestCave1 to IslandWest"
+        "Island West to Colored Crystals Cave!exit",
+        "Colored Crystals Cave to Island West"
       ]
     }
   ],
@@ -945,14 +946,15 @@
       "Position": "3, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Beach to Elliott's Cabin!exit",
-        "Elliott's Cabin to Beach"
+        "Beach to Elliott's House!exit",
+        "Elliott's House to Beach"
       ]
     },
     {
       "Position": "10, 5",
       "RequiredItems": [],
       "Entrances": [
+        "Elliott's Cabin",
         "Elliott's Cabin (rightmost piano for secret)"
       ]
     }
@@ -1648,8 +1650,8 @@
       "Position": "4, 10",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth to IslandFieldOffice!exit",
-        "IslandFieldOffice to IslandNorth"
+        "Island North to Field Office!exit",
+        "Field Office to Island North"
       ]
     },
     {
@@ -1668,8 +1670,8 @@
       "Position": "6, 11",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth to IslandNorthCave1!exit",
-        "IslandNorthCave1 to IslandNorth"
+        "Island North to Island Mushroom Cave!exit",
+        "Island Mushroom Cave to Island North"
       ]
     }
   ],
@@ -1732,14 +1734,14 @@
       "Position": "4, 10",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to IslandFarmCave!exit"
+        "Island West to IslandFarmCave!exit"
       ]
     },
     {
       "Position": "4, 11",
       "RequiredItems": [],
       "Entrances": [
-        "IslandFarmCave to IslandWest"
+        "IslandFarmCave to Island West"
       ]
     }
   ],
@@ -1748,8 +1750,8 @@
       "Position": "14, 17",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to IslandFarmHouse!exit",
-        "IslandFarmHouse to IslandWest"
+        "Island West to IslandFarmHouse!exit",
+        "IslandFarmHouse to Island West"
       ]
     }
   ],
@@ -1789,7 +1791,7 @@
       "Position": "5, 47",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth (dig site parrot express)"
+        "Island North (dig site parrot express)"
       ]
     },
     {
@@ -1860,7 +1862,7 @@
       "Position": "21, 46",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth to IslandNorthCave1"
+        "Island North to Island Mushroom Cave"
       ]
     },
     {
@@ -1869,7 +1871,7 @@
         "Open Professor Snail Cave"
       ],
       "Entrances": [
-        "IslandNorthCave1 to IslandNorth!exit"
+        "Island Mushroom Cave to Island North!exit"
       ]
     },
     {
@@ -1932,7 +1934,7 @@
       "Position": "36, 72",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth (island trader shop)"
+        "Island North (island trader shop)"
       ]
     },
     {
@@ -1946,14 +1948,14 @@
       "Position": "40, 21",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth to VolcanoDungeon0_main"
+        "Island North to VolcanoDungeon0_main"
       ]
     },
     {
       "Position": "40, 24",
       "RequiredItems": [],
       "Entrances": [
-        "VolcanoDungeon0_main to IslandNorth!exit"
+        "VolcanoDungeon0_main to Island North!exit"
       ]
     },
     {
@@ -1974,10 +1976,10 @@
       "Position": "43, 39",
       "RequiredItems": [
         "Dig Site Bridge",
-        "Tilesanity: IslandNorth (41-39)",
-        "Tilesanity: IslandNorth (40-39)",
-        "Tilesanity: IslandNorth (39-39)",
-        "Tilesanity: IslandNorth (38-39)"
+        "Tilesanity: Island North (41-39)!reg",
+        "Tilesanity: Island North (40-39)!reg",
+        "Tilesanity: Island North (39-39)!reg",
+        "Tilesanity: Island North (38-39)!reg"
       ],
       "Entrances": []
     },
@@ -1985,8 +1987,8 @@
       "Position": "43, 89",
       "RequiredItems": [],
       "Entrances": [
-        "Island South_Cliff to IslandNorth!exit",
-        "IslandNorth to Island South_Cliff"
+        "Island South_Cliff to Island North!exit",
+        "Island North to Island South_Cliff"
       ]
     },
     {
@@ -2007,8 +2009,8 @@
       "Position": "46, 46",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth to IslandFieldOffice",
-        "IslandFieldOffice to IslandNorth"
+        "Island North to Field Office",
+        "Field Office to Island North"
       ]
     },
     {
@@ -2092,7 +2094,7 @@
       "Position": "60, 15",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth (volcano parrot express)"
+        "Island North (volcano parrot express)"
       ]
     },
     {
@@ -2139,8 +2141,8 @@
       "Position": "0, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to IslandWest",
-        "IslandWest to Island South!exit"
+        "Island South to Island West",
+        "Island West to Island South!exit"
       ]
     },
     {
@@ -2289,14 +2291,14 @@
       "Position": "27, 0",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthCliff to IslandNorth"
+        "Island SouthCliff to Island North"
       ]
     },
     {
       "Position": "27, 1",
       "RequiredItems": [],
       "Entrances": [
-        "IslandNorth to Island SouthCliff!exit"
+        "Island North to Island SouthCliff!exit"
       ]
     },
     {
@@ -2378,8 +2380,8 @@
       "Position": "30, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthEast to Island SouthEastCave",
-        "Island SouthEastCave to Island SouthEast!exit"
+        "Island SouthEast to Pirate Cove",
+        "Pirate Cove to Island SouthEast!exit"
       ]
     }
   ],
@@ -2388,8 +2390,8 @@
       "Position": "1, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthEast to Island SouthEastCave!exit",
-        "Island SouthEastCave to Island SouthEast"
+        "Island SouthEast to Pirate Cove!exit",
+        "Pirate Cove to Island SouthEast"
       ]
     },
     {
@@ -2442,8 +2444,8 @@
       "Position": "20, 23",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to Qi's Walnut Room",
-        "Qi's Walnut Room to IslandWest!exit"
+        "Island West to Qi's Walnut Room",
+        "Qi's Walnut Room to Island West!exit"
       ]
     },
     {
@@ -2702,22 +2704,22 @@
       "Position": "59, 92",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to Shipwreck",
-        "Shipwreck to IslandWest!exit"
+        "Island West to Shipwreck",
+        "Shipwreck to Island West!exit"
       ]
     },
     {
       "Position": "61, 4",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to Colored Crystals Cave"
+        "Island West to Colored Crystals Cave"
       ]
     },
     {
       "Position": "61, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Colored Crystals Cave to IslandWest!exit"
+        "Colored Crystals Cave to Island West!exit"
       ]
     },
     {
@@ -2871,7 +2873,7 @@
       "Position": "74, 8",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest (parrot express)"
+        "Island West (parrot express)"
       ]
     },
     {
@@ -2941,8 +2943,8 @@
       "Position": "77, 40",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to IslandFarmHouse",
-        "IslandFarmHouse to IslandWest!exit"
+        "Island West to IslandFarmHouse",
+        "IslandFarmHouse to Island West!exit"
       ]
     },
     {
@@ -3246,8 +3248,8 @@
         "Island Farmhouse"
       ],
       "Entrances": [
-        "IslandWest to GourmandFrogCave",
-        "GourmandFrogCave to IslandWest!exit"
+        "Island West to GourmandFrogCave",
+        "GourmandFrogCave to Island West!exit"
       ]
     },
     {
@@ -3296,8 +3298,8 @@
       "Position": "105, 41",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to IslandWest!exit",
-        "IslandWest to Island South"
+        "Island South to Island West!exit",
+        "Island West to Island South"
       ]
     }
   ],
@@ -4304,77 +4306,77 @@
     {
       "Position": "3, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "3, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "3, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "3, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "4, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "4, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "4, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "4, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "4, 14",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "6, 7",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "7, 7",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": [
         "Movie Theater (buy snacks)"
@@ -4383,154 +4385,154 @@
     {
       "Position": "7, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "7, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "7, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "7, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "7, 14",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "8, 7",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "8, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "8, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "8, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "8, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "10, 7",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "11, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "11, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "11, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "11, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "12, 4",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "12, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "12, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "12, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "12, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "12, 14",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "13, 4",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
@@ -4544,112 +4546,112 @@
     {
       "Position": "13, 5",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 4",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 5",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 4",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 14",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "16, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "16, 11",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "16, 12",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "16, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "17, 8",
       "RequiredItems": [
-        "Complete Missing Bundle!loc"
+        "The Missing Bundle!loc"
       ],
       "Entrances": []
     },
     {
       "Position": "19, 10",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     },
     {
       "Position": "19, 13",
       "RequiredItems": [
-        "2 Progressive Movie Theater"
+        "Progressive Movie Theater!2"
       ],
       "Entrances": []
     }
@@ -5008,6 +5010,13 @@
       ]
     },
     {
+      "Position": "14, 3",
+      "RequiredItems": [],
+      "Entrances": [
+        "Public Bath"
+      ]
+    },
+    {
       "Position": "21, 0",
       "RequiredItems": [],
       "Entrances": [
@@ -5037,8 +5046,8 @@
       "Position": "7, 8",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to Qi's Walnut Room!exit",
-        "Qi's Walnut Room to IslandWest"
+        "Island West to Qi's Walnut Room!exit",
+        "Qi's Walnut Room to Island West"
       ]
     },
     {
@@ -5575,8 +5584,8 @@
       "Position": "0, 5",
       "RequiredItems": [],
       "Entrances": [
-        "IslandWest to Shipwreck!exit",
-        "Shipwreck to IslandWest"
+        "Island West to Shipwreck!exit",
+        "Shipwreck to Island West"
       ]
     },
     {
@@ -5853,30 +5862,30 @@
       "Position": "3, 6",
       "RequiredItems": [],
       "Entrances": [
-        "WitchHut (dove statue)"
+        "Witch's Hut (dove statue)"
       ]
     },
     {
       "Position": "5, 12",
       "RequiredItems": [],
       "Entrances": [
-        "WitchHut (magic ink)"
+        "Witch's Hut (magic ink)"
       ]
     },
     {
       "Position": "7, 15",
       "RequiredItems": [],
       "Entrances": [
-        "WitchSwamp to WitchHut!exit",
-        "WitchHut to WitchSwamp"
+        "Witch's Swamp to Witch's Hut!exit",
+        "Witch's Hut to Witch's Swamp"
       ]
     },
     {
       "Position": "10, 11",
       "RequiredItems": [],
       "Entrances": [
-        "WitchHut to WizardBasement",
-        "WizardBasement to WitchHut!exit"
+        "Witch's Hut to Wizard Basement",
+        "Wizard Basement to Witch's Hut!exit"
       ]
     }
   ],
@@ -5885,25 +5894,32 @@
       "Position": "20, 21",
       "RequiredItems": [],
       "Entrances": [
-        "WitchSwamp to WitchHut",
-        "WitchHut to WitchSwamp!exit"
+        "Witch's Swamp to Witch's Hut",
+        "Witch's Hut to Witch's Swamp!exit"
       ]
     },
     {
       "Position": "20, 29",
       "RequiredItems": [
-        "Quest: Goblin Problem!loc"
+        "Quest!Goblin Problem"
       ],
       "Entrances": [
-        "WitchSwamp"
+      ]
+    },
+    {
+      "Position": "20, 30",
+      "RequiredItems": [
+      ],
+      "Entrances": [
+        "Witch's Swamp"
       ]
     },
     {
       "Position": "20, 41",
       "RequiredItems": [],
       "Entrances": [
-        "WitchWarpCave to WitchSwamp!exit",
-        "WitchSwamp to WitchWarpCave"
+        "Witch Warp Cave to Witch's Swamp!exit",
+        "Witch's Swamp to Witch Warp Cave"
       ]
     }
   ],
@@ -5912,16 +5928,16 @@
       "Position": "4, 6",
       "RequiredItems": [],
       "Entrances": [
-        "WitchWarpCave to WitchSwamp",
-        "WitchSwamp to WitchWarpCave!exit"
+        "Witch Warp Cave to Witch's Swamp",
+        "Witch's Swamp to Witch Warp Cave!exit"
       ]
     },
     {
       "Position": "4, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Railroad to WitchWarpCave!exit",
-        "WitchWarpCave to Railroad"
+        "Railroad to Witch Warp Cave!exit",
+        "Witch Warp Cave to Railroad"
       ]
     }
   ],
@@ -5944,8 +5960,8 @@
       "Position": "4, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower to WizardBasement",
-        "WizardBasement to Wizard's Tower!exit"
+        "Wizard's Tower to Wizard Basement",
+        "Wizard Basement to Wizard's Tower!exit"
       ]
     },
     {
@@ -5962,16 +5978,16 @@
       "Position": "3, 5",
       "RequiredItems": [],
       "Entrances": [
-        "WizardBasement to Witch's Hut",
-        "Witch's Hut to WizardBasement!exit"
+        "Wizard Basement to Witch's Hut",
+        "Witch's Hut to Wizard Basement!exit"
       ]
     },
     {
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower to WizardBasement!exit",
-        "WizardBasement to Wizard's Tower"
+        "Wizard's Tower to Wizard Basement!exit",
+        "Wizard Basement to Wizard's Tower"
       ]
     },
     {
