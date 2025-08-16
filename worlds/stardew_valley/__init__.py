@@ -213,7 +213,7 @@ class StardewValleyWorld(World):
                     else:
                         region = world_regions[alternate_name(region, self.options)]
             elif self.options.tilesanity > 1 and name in self.location_origin_override:
-                region: Region = world_regions[self.location_origin_override]
+                region: Region = world_regions[self.location_origin_override[name]]
             else:
                 assert region in world_regions, f"Location {name} cannot be created in region {region}, because the region does not exist in this slot"
                 region: Region = world_regions[region]
