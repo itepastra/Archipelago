@@ -40,7 +40,7 @@ from .stardew_rule import True_, StardewRule, HasProgressionPercent, Reach
 from .strings.ap_names.ap_weapon_names import APWeapon
 from .strings.ap_names.event_names import Event
 from .strings.goal_names import Goal as GoalName
-from .tilesanity import alternate_name
+from .tilesanity import alternate_name, tilesanity_name_from_coord
 
 logger = logging.getLogger(__name__)
 
@@ -212,6 +212,8 @@ class StardewValleyWorld(World):
                         region = world_regions[region]
                     else:
                         region = world_regions[alternate_name(region, self.options)]
+            elif self.options.tilesanity > 1 and name in self.location_origin_override:
+                region: Region = world_regions[self.location_origin_override]
             else:
                 assert region in world_regions, f"Location {name} cannot be created in region {region}, because the region does not exist in this slot"
                 region: Region = world_regions[region]

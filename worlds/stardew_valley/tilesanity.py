@@ -6,6 +6,7 @@ from typing import Tuple, List, Hashable, Callable, Optional, TYPE_CHECKING
 
 from BaseClasses import Entrance, Region, CollectionState
 from . import data
+from .logic.quest_logic import QuestLogic
 from .regions.model import ConnectionData, RegionData
 from .regions.vanilla_data import ginger_island_connections, vanilla_connections
 from .stardew_rule import Received, StardewRule, True_, False_
@@ -43,7 +44,15 @@ aliases = {
     StardewRegion.sam_house: "Home of Jodi, Kent & Sam",
     StardewRegion.purple_shorts_maze: "LewisBasement",
     StardewRegion.blacksmith: "Blacksmith",
-    StardewRegion.museum: "Stardew Valley Museum & Library"
+    StardewRegion.museum: "Stardew Valley Museum & Library",
+    StardewRegion.carpenter: "Carpenter's Shop",
+    StardewRegion.sebastian_room: "SebastianRoom",
+    StardewRegion.leo_treehouse: "LeoTreeHouse",
+    StardewRegion.island_south: "IslandSouth",
+    StardewRegion.island_east: "IslandEast",
+    StardewRegion.island_south_east: "IslandSouthEast",
+    StardewRegion.island_north: "IslandNorth",
+    StardewRegion.field_office: "IslandFieldOffice"
 }
 
 for key in list(aliases.keys()):
@@ -72,6 +81,14 @@ def alternate_name(region: str, option: "StardewValleyOptions"):
         farm_name = "Forest Farm"
     elif farm_type == FarmType.option_hill_top:
         farm_name = "Hilltop Farm"
+    # elif farm_type == FarmType.option_wilderness:
+    #     farm_name = "Wilderness Farm"
+    elif farm_type == FarmType.option_four_corners:
+        farm_name = "Four Corners Farm"
+    # elif farm_type == FarmType.option_beach:
+    #     farm_name = "Beach Farm"
+    elif farm_type == FarmType.option_meadowlands:
+        farm_name = "Meadowlands Farm"
     else:
         # farm_name = "Farm Farm"
         raise NotImplemented("Farm type is not implemented")
@@ -148,6 +165,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
     connections = {connection.name: connection for connection in vanilla_connections} | {connection.name: connection for connection in
                                                                                          ginger_island_connections}
     entrances_coords_by_name: dict[str, tile_coords] = {}
+    location_origin: dict[str, str] = {}
     entrance_points: dict[str, tuple[Optional[tile_coords], Optional[tile_coords]]]
     orphan_maps: list[tuple[str, str]] = []  # Starts as the list of all regions with an exists to then become the ones with no central point
     door_connections: dict[str, tuple[str, str]] = {}  # This is to delay connecting doors to tile since we have to go through orphans first
@@ -173,12 +191,18 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
     # Add tiles connections between maps
     with files(data).joinpath("important_tiles.json").open() as file:
         important_tiles = json.load(file)
+        farm_type = alternate_name("Farm", world.options)
+        if farm_type in important_tiles:
+            important_tiles["Farm"] = important_tiles[farm_type]
+
         for region in important_tiles:
+            region: str
             if region == "Home of Pam & Penny":
                 continue
-            region: str
             if region == "Farm":
-                real_region = alternate_name("Farm", world.options)
+                real_region = farm_type
+            elif region.endswith("Farm"):
+                continue
             else:
                 real_region = region
             for tile in important_tiles[region]:
@@ -188,7 +212,12 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
                 if len(tile["RequiredItems"]) > 0:
                     required_items[(real_region, x, y)] = tile["RequiredItems"]
                 for entrance in tile["Entrances"]:
-                    entrances_coords_by_name[entrance] = (real_region, x, y)
+                    splited = entrance.split("!loc")
+                    if len(splited) == 1:
+                        entrances_coords_by_name[entrance] = (real_region, x, y)
+                    else:
+                        location_origin[splited[0]] = tilesanity_name_from_coord(real_region, x, y)
+
 
     for region_name in region_data:
         region: RegionData = region_data[region_name]
@@ -275,6 +304,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
     world.tile_list = remaining_coords  # Just to be able to transmit how many tiles exist
     world.tilesanity_rulebuilder = lambda: define_tilesanity_rules(world, player, regions_by_name, tiles_by_coords, random, tile_to_coord, remaining_coords,
                                                                    required_items)
+    world.location_origin_override = location_origin
 
     return regions_by_name
 
@@ -291,6 +321,11 @@ def create_tiles_full(region_factory, regions_by_name, tiles, tiles_by_coords):
         tiles_by_coords[ref] = region
 
 
+logic_predicate_table = {
+    "Dark Talisman": QuestLogic.has_dark_talisman
+}
+
+
 def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int) -> StardewRule:
     # Or case
     splited = requirement.split(" OR ")
@@ -300,8 +335,12 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
             rule_accumulator |= requirement_rule(splited[i], world, player)
         return rule_accumulator
 
-    # Count items
     splited = requirement.split("!")
+    # Special rules
+    if splited[0] in logic_predicate_table:
+        return logic_predicate_table[splited[0]](world.logic, *[int(arg) for arg in splited[1:]])
+
+    # Count items
     if len(splited) == 1:
         amount = 1
     else:
@@ -356,6 +395,7 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
         i = int(bias * len(queue))
         if i >= len(queue):
             i = len(queue) - 1
+            assert i != -1, f"No tile in {remaining_coords} is valid, {blocked_connections} are locked"
         current_region = queue.pop(i)
         if current_region in tile_to_coord:
             coord = tile_to_coord[current_region]
