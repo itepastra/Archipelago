@@ -57,7 +57,8 @@ aliases = {
     StardewRegion.witch_swamp: "WitchSwamp",
     StardewRegion.witch_warp_cave: "WitchWarpCave",
     StardewRegion.witch_hut: "WitchHut",
-    StardewRegion.mutant_bug_lair: "BugLand"
+    StardewRegion.mutant_bug_lair: "BugLand",
+    StardewRegion.boat_tunnel: "BoatTunnel"
 }
 
 for key in list(aliases.keys()):
@@ -400,8 +401,6 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
             access_rule &= requirement_rule(requirement, world, player)
         region = tiles_by_coords[tile]
         for entrance in region.entrances:
-            if len(requirements) > 0:
-                print(f"entrance {entrance.name} needs {access_rule}")
             rule_collector.set_entrance_rule(entrance.name, access_rule)
 
     menu = regions_by_name["Menu"]

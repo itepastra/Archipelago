@@ -1876,10 +1876,10 @@
     },
     {
       "Position": "33, 53",
-      "RequiredItems": [],
-      "Entrances": [
+      "RequiredItems": [
         "Dig Site Bridge"
-      ]
+      ],
+      "Entrances": []
     },
     {
       "Position": "35, 53",
