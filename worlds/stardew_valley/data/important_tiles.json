@@ -2167,10 +2167,10 @@
     },
     {
       "Position": "14, 23",
-      "RequiredItems": [
+      "RequiredItems": [],
+      "Entrances": [
         "Island South (resort bar)"
-      ],
-      "Entrances": []
+      ]
     },
     {
       "Position": "15, 19",
