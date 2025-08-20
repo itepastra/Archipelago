@@ -18,8 +18,7 @@
       "Position": "6, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Mountain to Adventurer's Guild!exit",
-        "Adventurer's Guild to Mountain"
+        "Mountain to Adventurer's Guild!exit"
       ]
     },
     {
@@ -145,29 +144,30 @@
       "Position": "4, 10",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel (batteries)"
+        "Repair Boat Ticket Machine!loc"
       ]
     },
     {
       "Position": "6, 9",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel (hardwood)"
+        "Repair Boat Hull",
+        "Take the Boat to Ginger Island"
       ]
     },
     {
       "Position": "6, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop to BoatTunnel!exit",
-        "BoatTunnel to Fish Shop"
+        "Fish Shop to Boat Tunnel!exit",
+        "Boat Tunnel to Fish Shop"
       ]
     },
     {
       "Position": "8, 10",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel (iridium bars)"
+        "Repair Boat Anchor"
       ]
     }
   ],
@@ -176,21 +176,21 @@
       "Position": "15, 53",
       "RequiredItems": [],
       "Entrances": [
-        "Sewer to Bugland!exit"
+        "Sewer to Mutant Bug Lair!exit"
       ]
     },
     {
       "Position": "15, 54",
       "RequiredItems": [],
       "Entrances": [
-        "BugLand to Sewer"
+        "Mutant Bug Lair to Sewer"
       ]
     },
     {
       "Position": "31, 6",
       "RequiredItems": [],
       "Entrances": [
-        "BugLand"
+        "Mutant Bug Lair"
       ]
     }
   ],
@@ -355,8 +355,8 @@
       "Position": "8, 13",
       "RequiredItems": [],
       "Entrances": [
-        "SandyHouse to Casino!exit",
-        "Casino to SandyHouse"
+        "Oasis to Casino!exit",
+        "Casino to Oasis"
       ]
     },
     {
@@ -954,8 +954,7 @@
       "Position": "10, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Elliott's Cabin",
-        "Elliott's Cabin (rightmost piano for secret)"
+        "Elliott's House"
       ]
     }
   ],
@@ -1038,15 +1037,14 @@
       "Position": "8, 8",
       "RequiredItems": [],
       "Entrances": [
-        "FarmCave (closest mushroom bin)"
+        "FarmCave"
       ]
     },
     {
       "Position": "8, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Farm to FarmCave!exit",
-        "FarmCave to Farm"
+        "Farm to FarmCave!exit"
       ]
     }
   ],
@@ -1055,8 +1053,8 @@
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop to BoatTunnel",
-        "BoatTunnel to Fish Shop!exit"
+        "Fish Shop to Boat Tunnel",
+        "Boat Tunnel to Fish Shop!exit"
       ]
     },
     {
@@ -1592,8 +1590,7 @@
       "Position": "11, 21",
       "RequiredItems": [],
       "Entrances": [
-        "Home of Jodi, Kent & Sam (??Foroguemon??)",
-        "Sam's House"
+        "??Foroguemon??!loc"
       ]
     },
     {
@@ -1688,14 +1685,14 @@
       "Position": "16, 27",
       "RequiredItems": [],
       "Entrances": [
-        "Walnutsanity: Banana Altar"
+        "Walnutsanity: Banana Altar!loc"
       ]
     },
     {
       "Position": "18, 38",
       "RequiredItems": [],
       "Entrances": [
-        "Walnutsanity: Jungle Bush"
+        "Walnutsanity: Jungle Bush!loc"
       ]
     },
     {
@@ -2269,8 +2266,7 @@
       "Position": "19, 43",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel to Island South!exit",
-        "Island South to BoatTunnel"
+        "Take the Boat to Ginger Island!exit"
       ]
     },
     {
@@ -2704,8 +2700,7 @@
       "Position": "59, 92",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Shipwreck",
-        "Shipwreck to Island West!exit"
+        "Island West to Shipwreck"
       ]
     },
     {
@@ -3308,8 +3303,8 @@
       "Position": "7, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Leah's Cottage!exit",
-        "Leah's Cottage to Cindersap Forest"
+        "Forest to Leah's Cottage!exit",
+        "Leah's Cottage to Forest"
       ]
     }
   ],
@@ -3318,8 +3313,8 @@
       "Position": "3, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Mountain to Leo's TreeHouse!exit",
-        "Leo's TreeHouse to Mountain"
+        "Mountain to Leo TreeHouse!exit",
+        "Leo TreeHouse to Mountain"
       ]
     }
   ],
@@ -3359,8 +3354,8 @@
       "Position": "13, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Marnie's Ranch!exit",
-        "Marnie's Ranch to Cindersap Forest"
+        "Forest to Marnie's Ranch!exit",
+        "Marnie's Ranch to Forest"
       ]
     },
     {
@@ -3383,15 +3378,15 @@
       "Position": "7, 9",
       "RequiredItems": [],
       "Entrances": [
-        "MasteryCave"
+        "Mastery Cave"
       ]
     },
     {
       "Position": "7, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to MasteryCave!exit",
-        "MasteryCave to Cindersap Forest"
+        "Forest to Mastery Cave!exit",
+        "Mastery Cave to Forest"
       ]
     }
   ],
@@ -4379,7 +4374,7 @@
         "Progressive Movie Theater!2"
       ],
       "Entrances": [
-        "Movie Theater (buy snacks)"
+        "NOTE: Movie Theater (buy snacks)"
       ]
     },
     {
@@ -4540,7 +4535,7 @@
       "Position": "13, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Movie Theater (watch movie)"
+        "NOTE: Movie Theater (watch movie)"
       ]
     },
     {
@@ -5482,23 +5477,23 @@
       "Position": "3, 5",
       "RequiredItems": [],
       "Entrances": [
-        "SandyHouse"
+        "Oasis"
       ]
     },
     {
       "Position": "4, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Desert to SandyHouse!exit",
-        "SandyHouse to Desert"
+        "Desert to Oasis!exit",
+        "Oasis to Desert"
       ]
     },
     {
       "Position": "17, 2",
       "RequiredItems": [],
       "Entrances": [
-        "SandyHouse to Casino",
-        "Casino to SandyHouse!exit"
+        "Oasis to Casino",
+        "Casino to Oasis!exit"
       ]
     },
     {
@@ -5584,8 +5579,7 @@
       "Position": "0, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Shipwreck!exit",
-        "Shipwreck to Island West"
+        "Island West to Shipwreck!exit"
       ]
     },
     {
@@ -5601,7 +5595,6 @@
       "Position": "3, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Museum (curator)",
         "Museum"
       ]
     },
@@ -5715,7 +5708,7 @@
       "Position": "13, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Read Gunther Tunnel Notice"
+        "Read Gunther Tunnel Notice!loc"
       ]
     },
     {
@@ -5774,7 +5767,7 @@
       "Position": "18, 17",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (fridge)"
+        "Gus' Famous Omelet!loc"
       ]
     },
     {
@@ -5788,22 +5781,40 @@
       "Position": "29, 7",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (Pinky Lemon)"
+        "??Pinky Lemon??!loc"
       ]
     },
     {
       "Position": "33, 18",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (JotPK)"
+        "JotPK: Boots 1!loc",
+        "JotPK: Boots 2!loc",
+        "JotPK: Gun 1!loc",
+        "JotPK: Gun 2!loc",
+        "JotPK: Gun 3!loc",
+        "JotPK: Super Gun!loc",
+        "JotPK: Ammo 1!loc",
+        "JotPK: Ammo 2!loc",
+        "JotPK: Ammo 3!loc",
+        "JotPK: Cowboy 1!loc",
+        "JotPK: Cowboy 2!loc",
+        "Journey of the Prairie King Victory!loc"
       ]
     },
     {
       "Position": "35, 18",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (JK)",
-        "Saloon"
+        "Junimo Kart 1,Junimo Kart: Crumble Cavern!loc",
+        "Junimo Kart 1,Junimo Kart: Slippery Slopes!loc",
+        "Junimo Kart 4,Junimo Kart: Secret Level!loc",
+        "Junimo Kart 2,Junimo Kart: The Gem Sea Giant!loc",
+        "Junimo Kart 2,Junimo Kart: Slomp's Stomp!loc",
+        "Junimo Kart 2,Junimo Kart: Ghastly Galleon!loc",
+        "Junimo Kart 3,Junimo Kart: Glowshroom Grotto!loc",
+        "Junimo Kart 3,Junimo Kart: Red Hot Rollercoaster!loc",
+        "Junimo Kart 4,Junimo Kart: Sunset Speedway (Victory)!loc"
       ]
     }
   ],
@@ -5903,13 +5914,11 @@
       "RequiredItems": [
         "Quest!Goblin Problem"
       ],
-      "Entrances": [
-      ]
+      "Entrances": []
     },
     {
       "Position": "20, 30",
-      "RequiredItems": [
-      ],
+      "RequiredItems": [],
       "Entrances": [
         "Witch's Swamp"
       ]
@@ -5946,6 +5955,7 @@
       "Position": "2, 14",
       "RequiredItems": [],
       "Entrances": [
+        "Wizard's Tower",
         "Wizard's Tower (pedestal)"
       ]
     },
@@ -5994,7 +6004,7 @@
       "Position": "12, 5",
       "RequiredItems": [],
       "Entrances": [
-        "WizardBasement"
+        "Wizard Basement"
       ]
     }
   ],
