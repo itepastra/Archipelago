@@ -56,7 +56,8 @@ aliases = {
     StardewRegion.field_office: "IslandFieldOffice",
     StardewRegion.witch_swamp: "WitchSwamp",
     StardewRegion.witch_warp_cave: "WitchWarpCave",
-    StardewRegion.witch_hut: "WitchHut"
+    StardewRegion.witch_hut: "WitchHut",
+    StardewRegion.mutant_bug_lair: "BugLand"
 }
 
 for key in list(aliases.keys()):
@@ -322,7 +323,7 @@ def get_maps_to_exclude(options: StardewValleyOptions):
         maps_to_exclude.add("Home of Pam & Penny")
     if options.exclude_ginger_island == ExcludeGingerIsland.option_true:
         maps_to_exclude |= {
-            "IslandShrine", "IslandWest", "IslandHut", "IslandFarmHouse", "Island Field Office", "IslandNorth", "IslandSouth"
+            "IslandShrine", "IslandWest", "IslandHut", "IslandFarmHouse", "Island Field Office", "IslandNorth", "IslandSouth", "Colored Crystals Cave"
         }
     return maps_to_exclude
 
@@ -360,11 +361,11 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
     if splited[0] in logic_predicate_table:
         return logic_predicate_table[splited[0]](world.logic, *[arg for arg in splited[1:]])
 
-    splited[0] = "!".join(splited[:-1])
     # Count items
     if len(splited) == 1:
         amount = 1
     else:
+        splited[0] = "!".join(splited[:-1])
         # Reachability rules are denoted this way
         if splited[1] == "loc":
             return world.logic.region.can_reach_location(splited[0])
@@ -399,6 +400,8 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
             access_rule &= requirement_rule(requirement, world, player)
         region = tiles_by_coords[tile]
         for entrance in region.entrances:
+            if len(requirements) > 0:
+                print(f"entrance {entrance.name} needs {access_rule}")
             rule_collector.set_entrance_rule(entrance.name, access_rule)
 
     menu = regions_by_name["Menu"]

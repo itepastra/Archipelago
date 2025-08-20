@@ -25,8 +25,7 @@
       "Position": "10, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Adventurer's Guild (Mapping Cave Systems)",
-        "Marlon's Bedroom"
+        "Marlon's bedroom"
       ]
     }
   ],
@@ -102,8 +101,7 @@
       "Position": "5, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Railroad to Bathhouse Entrance!exit",
-        "Bathhouse Entrance to Railroad"
+        "Railroad to Bathhouse Entrance!exit"
       ]
     },
     {
@@ -151,7 +149,7 @@
       "Position": "6, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Repair Boat Hull",
+        "Repair Boat Hull!loc",
         "Take the Boat to Ginger Island"
       ]
     },
@@ -159,15 +157,15 @@
       "Position": "6, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop to Boat Tunnel!exit",
-        "Boat Tunnel to Fish Shop"
+        "Willy's Fish Shop to Boat Tunnel!exit",
+        "Boat Tunnel to Willy's Fish Shop"
       ]
     },
     {
       "Position": "8, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Repair Boat Anchor"
+        "Repair Boat Anchor!loc"
       ]
     }
   ],
@@ -1037,14 +1035,14 @@
       "Position": "8, 8",
       "RequiredItems": [],
       "Entrances": [
-        "FarmCave"
+        "Farmcave"
       ]
     },
     {
       "Position": "8, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Farm to FarmCave!exit"
+        "Farm to Farmcave!exit"
       ]
     }
   ],
@@ -1053,23 +1051,22 @@
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop to Boat Tunnel",
-        "Boat Tunnel to Fish Shop!exit"
+        "Willy's Fish Shop to Boat Tunnel",
+        "Boat Tunnel to Willy's Fish Shop!exit"
       ]
     },
     {
       "Position": "5, 6",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop"
+        "Willy's Fish Shop"
       ]
     },
     {
       "Position": "5, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Beach to Fish Shop!exit",
-        "Fish Shop to Beach"
+        "Beach to Willy's Fish Shop!exit"
       ]
     }
   ],
@@ -1699,16 +1696,15 @@
       "Position": "22, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandHut",
-        "IslandHut to Island East!exit"
+        "Island East to Leo",
+        "Leo to Island East!exit"
       ]
     },
     {
       "Position": "33, 30",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandShrine",
-        "IslandShrine to Island East!exit"
+        "Island East to Island Shrine"
       ]
     }
   ],
@@ -1931,7 +1927,7 @@
       "Position": "36, 72",
       "RequiredItems": [],
       "Entrances": [
-        "Island North (island trader shop)"
+        "NOTE: Island North (island trader shop)"
       ]
     },
     {
@@ -1945,14 +1941,14 @@
       "Position": "40, 21",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to VolcanoDungeon0_main"
+        "Island North to Volcano Entrance"
       ]
     },
     {
       "Position": "40, 24",
       "RequiredItems": [],
       "Entrances": [
-        "VolcanoDungeon0_main to Island North!exit"
+        "Volcano Entrance to Island North!exit"
       ]
     },
     {
@@ -2026,10 +2022,10 @@
     },
     {
       "Position": "51, 32",
-      "RequiredItems": [],
-      "Entrances": [
+      "RequiredItems": [
         "Axe$1"
-      ]
+      ],
+      "Entrances": []
     },
     {
       "Position": "54, 21",
@@ -2114,8 +2110,7 @@
       "Position": "13, 28",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandShrine!exit",
-        "IslandShrine to Island East"
+        "Island East to Island Shrine!exit"
       ]
     },
     {
@@ -2868,7 +2863,7 @@
       "Position": "74, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island West (parrot express)"
+        "Island West"
       ]
     },
     {
@@ -5955,31 +5950,30 @@
       "Position": "2, 14",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower",
-        "Wizard's Tower (pedestal)"
+        "Purchase Wizard Blueprints"
       ]
     },
     {
       "Position": "3, 17",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower (wizard)"
+        "Wizard Tower"
       ]
     },
     {
       "Position": "4, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower to Wizard Basement",
-        "Wizard Basement to Wizard's Tower!exit"
+        "Wizard Tower to Wizard Basement",
+        "Wizard Basement to Wizard Tower!exit"
       ]
     },
     {
       "Position": "8, 24",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Wizard's Tower!exit",
-        "Wizard's Tower to Cindersap Forest"
+        "Cindersap Forest to Wizard Tower!exit",
+        "Wizard Tower to Cindersap Forest"
       ]
     }
   ],
@@ -5996,8 +5990,8 @@
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower to Wizard Basement!exit",
-        "Wizard Basement to Wizard's Tower"
+        "Wizard Tower to Wizard Basement!exit",
+        "Wizard Basement to Wizard Tower"
       ]
     },
     {
