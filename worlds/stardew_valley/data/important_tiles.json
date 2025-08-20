@@ -577,31 +577,17 @@
     },
     {
       "Position": "14, 5",
-      "RequiredItems": [
-        "Complete Pantry!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "14, 6",
       "RequiredItems": [],
       "Entrances": [
         "Access Pantry"
       ]
     },
     {
-      "Position": "14, 22",
+      "Position": "14, 23",
       "RequiredItems": [],
       "Entrances": [
         "Access Crafts Room"
       ]
-    },
-    {
-      "Position": "14, 23",
-      "RequiredItems": [
-        "Complete Crafts Room!loc"
-      ],
-      "Entrances": []
     },
     {
       "Position": "23, 10",
@@ -800,13 +786,6 @@
     },
     {
       "Position": "40, 10",
-      "RequiredItems": [
-        "Complete Fish Tank!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "40, 11",
       "RequiredItems": [],
       "Entrances": [
         "Access Fish Tank"
@@ -884,13 +863,6 @@
     },
     {
       "Position": "55, 6",
-      "RequiredItems": [
-        "Complete Vault!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "55, 7",
       "RequiredItems": [],
       "Entrances": [
         "Access Vault"
@@ -921,13 +893,6 @@
       "Position": "59, 7",
       "RequiredItems": [
         "Complete Vault!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "63, 14",
-      "RequiredItems": [
-        "Complete Boiler Room!loc"
       ],
       "Entrances": []
     },
