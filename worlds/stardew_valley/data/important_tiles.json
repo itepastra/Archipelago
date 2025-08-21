@@ -157,8 +157,8 @@
       "Position": "6, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Willy's Fish Shop to Boat Tunnel!exit",
-        "Boat Tunnel to Willy's Fish Shop"
+        "Fish Shop to Boat Tunnel!exit",
+        "Boat Tunnel to Fish Shop"
       ]
     },
     {
@@ -1016,8 +1016,8 @@
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Willy's Fish Shop to Boat Tunnel",
-        "Boat Tunnel to Willy's Fish Shop!exit"
+        "Fish Shop to Boat Tunnel",
+        "Boat Tunnel to Fish Shop!exit"
       ]
     },
     {
