@@ -5965,8 +5965,8 @@
       "Position": "8, 24",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Wizard Tower!exit",
-        "Wizard Tower to Cindersap Forest"
+        "Forest to Wizard Tower!exit",
+        "Wizard Tower to Cindersap"
       ]
     }
   ],
