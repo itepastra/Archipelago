@@ -1749,7 +1749,12 @@
       "Position": "5, 47",
       "RequiredItems": [],
       "Entrances": [
-        "Island North (dig site parrot express)"
+        "Parrot Express Docks to Dig Site!exit",
+        "Parrot Express Volcano to Dig Site!exit",
+        "Parrot Express Jungle to Dig Site!exit",
+        "Parrot Express Dig Site to Jungle",
+        "Parrot Express Dig Site to Volcano",
+        "Parrot Express Dig Site to Docks"
       ]
     },
     {
@@ -2055,7 +2060,12 @@
       "Position": "60, 15",
       "RequiredItems": [],
       "Entrances": [
-        "Island North (volcano parrot express)"
+        "Parrot Express Docks to Volcano!exit",
+        "Parrot Express Jungle to Volcano!exit",
+        "Parrot Express Dig Site to Volcano!exit",
+        "Parrot Express Volcano to Docks",
+        "Parrot Express Volcano to Jungle",
+        "Parrot Express Volcano to Dig Site"
       ]
     },
     {
@@ -2144,7 +2154,12 @@
       "Position": "6, 30",
       "RequiredItems": [],
       "Entrances": [
-        "Island South (parrot express)"
+        "Parrot Express Jungle to Docks!exit",
+        "Parrot Express Dig Site to Docks!exit",
+        "Parrot Express Vulcano to Docks!exit",
+        "Parrot Express Docks to Volcano",
+        "Parrot Express Docks to Dig Site",
+        "Parrot Express Docks to Jungle"
       ]
     },
     {
