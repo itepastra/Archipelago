@@ -163,6 +163,7 @@ class Entrance:
     island_southeast_to_pirate_cove = "Island Southeast to Pirate Cove"
     island_north_to_field_office = "Island North to Field Office"
     island_north_to_dig_site = "Island North to Dig Site"
+    island_north_to_island_south_cliff = "Island North to Cliff Over Island South"
     dig_site_to_professor_snail_cave = "Dig Site to Professor Snail Cave"
     island_north_to_volcano = "Island North to Volcano Entrance"
     volcano_to_secret_beach = "Volcano River to Secret Beach"
