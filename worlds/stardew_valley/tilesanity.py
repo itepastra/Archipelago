@@ -324,7 +324,24 @@ def get_maps_to_exclude(options: StardewValleyOptions):
         maps_to_exclude.add("Home of Pam & Penny")
     if options.exclude_ginger_island == ExcludeGingerIsland.option_true:
         maps_to_exclude |= {
-            "IslandShrine", "IslandWest", "IslandHut", "IslandFarmHouse", "Island Field Office", "IslandNorth", "IslandSouth", "Colored Crystals Cave"
+            "IslandShrine", 
+            "IslandEast",
+            "IslandWest", 
+            "IslandHut", 
+            "IslandFarmHouse", 
+            "Island Field Office", 
+            "IslandNorth", 
+            "IslandShrine",
+            "IslandSouth", 
+            "IslandSouthEast",
+            "IslandSouthEastCave",
+            "LeoTreeHouse",
+            "Colored Crystals Cave", 
+            "Qi's Walnut Room", 
+            "IslandFarmCave", 
+            "Shipwreck", 
+            "BoatTunnel", 
+            "Island Mushroom Cave"
         }
     return maps_to_exclude
 
