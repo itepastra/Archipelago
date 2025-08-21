@@ -1982,6 +1982,13 @@
       "Entrances": []
     },
     {
+      "Position": "50, 52",
+      "RequiredItems": [],
+      "Entrances": [
+        "Island North"
+      ]
+    },
+    {
       "Position": "51, 32",
       "RequiredItems": [
         "Axe$1"
