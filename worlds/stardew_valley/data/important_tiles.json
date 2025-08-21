@@ -5810,21 +5810,21 @@
       "Position": "17, 7",
       "RequiredItems": [],
       "Entrances": [
-        "Tunnel"
+        "Bus Tunnel"
       ]
     },
     {
       "Position": "38, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Backwoods to Tunnel!exit"
+        "Tunnel Entrance to Bus Tunnel!exit"
       ]
     },
     {
       "Position": "39, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Tunnel to Backwoods"
+        "Bus Tunnel to Tunnel Entrance"
       ]
     }
   ],
