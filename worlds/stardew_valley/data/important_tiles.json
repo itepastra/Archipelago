@@ -5833,14 +5833,14 @@
       "Position": "3, 6",
       "RequiredItems": [],
       "Entrances": [
-        "Witch's Hut (dove statue)"
+        "Witch's Hut"
       ]
     },
     {
       "Position": "5, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Witch's Hut (magic ink)"
+        "Quest: Magic Ink!loc"
       ]
     },
     {
