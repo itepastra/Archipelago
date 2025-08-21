@@ -513,8 +513,8 @@
       "Position": "6, 6",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Colored Crystals Cave!exit",
-        "Colored Crystals Cave to Island West"
+        "Island West to Crystal Cave!exit",
+        "Crystal Cave to Island West"
       ]
     }
   ],
@@ -1629,8 +1629,8 @@
       "Position": "6, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to Island Mushroom Cave!exit",
-        "Island Mushroom Cave to Island North"
+        "Dig Site to Professor Snail Cave!exit",
+        "Professor Snail Cave to Dig Site"
       ]
     }
   ],
@@ -1639,8 +1639,8 @@
       "Position": "0, 47",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island East!exit",
-        "Island East to Island South"
+        "Island South to East!exit",
+        "East to Island South"
       ]
     },
     {
@@ -1661,8 +1661,7 @@
       "Position": "22, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to Leo",
-        "Leo to Island East!exit"
+        "Island East to Leo Hut"
       ]
     },
     {
@@ -1692,14 +1691,14 @@
       "Position": "4, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to IslandFarmCave!exit"
+        "Island West to Gourmand Cave!exit"
       ]
     },
     {
       "Position": "4, 11",
       "RequiredItems": [],
       "Entrances": [
-        "IslandFarmCave to Island West"
+        "Gourmand Cave to Island West"
       ]
     }
   ],
@@ -1708,8 +1707,8 @@
       "Position": "14, 17",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to IslandFarmHouse!exit",
-        "IslandFarmHouse to Island West"
+        "Island West to Island Farmhouse!exit",
+        "Island Farmhouse to Island West"
       ]
     }
   ],
@@ -1725,8 +1724,7 @@
       "Position": "7, 13",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandHut!exit",
-        "IslandHut to Island East"
+        "Island East to Leo Hut!exit"
       ]
     },
     {
@@ -2118,8 +2116,8 @@
       "Position": "0, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island West",
-        "Island West to Island South!exit"
+        "Island South to West",
+        "West to Island South!exit"
       ]
     },
     {
@@ -2222,8 +2220,8 @@
       "Position": "18, 0",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island North",
-        "Island North to Island South!exit"
+        "Island South to North",
+        "North to Island South!exit"
       ]
     },
     {
@@ -2300,8 +2298,8 @@
       "Position": "35, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island East",
-        "Island East to Island South!exit"
+        "Island South to East",
+        "East to Island South!exit"
       ]
     },
     {
@@ -2322,8 +2320,8 @@
       "Position": "42, 29",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island SouthEast",
-        "Island SouthEast to Island South"
+        "Island South to Southeast",
+        "Southeast to Island South"
       ]
     },
     {
@@ -2339,8 +2337,8 @@
       "Position": "0, 29",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island SouthEast!exit",
-        "Island SouthEast to Island South"
+        "Island South to Southeast!exit",
+        "Southeast to Island South"
       ]
     },
     {
@@ -2368,8 +2366,8 @@
       "Position": "30, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthEast to Pirate Cove",
-        "Pirate Cove to Island SouthEast!exit"
+        "Island Southeast to Pirate Cove",
+        "Pirate Cove to Island Southeast!exit"
       ]
     }
   ],
@@ -2378,8 +2376,8 @@
       "Position": "1, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthEast to Pirate Cove!exit",
-        "Pirate Cove to Island SouthEast"
+        "Island Southeast to Pirate Cove!exit",
+        "Pirate Cove to Island Southeast"
       ]
     },
     {
@@ -2432,8 +2430,7 @@
       "Position": "20, 23",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Qi's Walnut Room",
-        "Qi's Walnut Room to Island West!exit"
+        "Island West to Qi Walnut Room"
       ]
     },
     {
@@ -2699,14 +2696,14 @@
       "Position": "61, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Colored Crystals Cave"
+        "Island West to Crystal Cave"
       ]
     },
     {
       "Position": "61, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Colored Crystals Cave to Island West!exit"
+        "Crystal Cave to Island West!exit"
       ]
     },
     {
@@ -2930,8 +2927,8 @@
       "Position": "77, 40",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to IslandFarmHouse",
-        "IslandFarmHouse to Island West!exit"
+        "Island West to Island Farmhouse",
+        "Island Farmhouse to Island West!exit"
       ]
     },
     {
@@ -3235,8 +3232,8 @@
         "Island Farmhouse"
       ],
       "Entrances": [
-        "Island West to GourmandFrogCave",
-        "GourmandFrogCave to Island West!exit"
+        "Island West to Gourmand Cave",
+        "Gourmand Cave to Island West!exit"
       ]
     },
     {
@@ -3285,8 +3282,8 @@
       "Position": "105, 41",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island West!exit",
-        "Island West to Island South"
+        "Island South to West!exit",
+        "West to Island South"
       ]
     }
   ],
@@ -5033,8 +5030,7 @@
       "Position": "7, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Qi's Walnut Room!exit",
-        "Qi's Walnut Room to Island West"
+        "Island West to Qi Walnut Room!exit"
       ]
     },
     {
