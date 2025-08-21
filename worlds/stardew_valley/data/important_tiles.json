@@ -1801,6 +1801,13 @@
       ]
     },
     {
+      "Position": "15, 59",
+      "RequiredItems": [],
+      "Entrances": [
+        "Dig Site"
+      ]
+    },
+    {
       "Position": "19, 13",
       "RequiredItems": [],
       "Entrances": [
