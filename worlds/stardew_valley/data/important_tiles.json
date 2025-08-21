@@ -1787,8 +1787,8 @@
       "Position": "12, 31",
       "RequiredItems": [],
       "Entrances": [
-        "VolcanoDungeon0_side to VolcanoSecretBeach!exit",
-        "VolcanoSecretBeach to VolcanoDungeon0_side"
+        "Volcano River to Secret Beach!exit",
+        "Secret Beach to Volcano River"
       ]
     },
     {
