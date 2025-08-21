@@ -1877,7 +1877,7 @@
     {
       "Position": "33, 53",
       "RequiredItems": [
-        "Dig Site Bridge"
+        "Dig Site!reg"
       ],
       "Entrances": []
     },
@@ -1898,7 +1898,7 @@
     {
       "Position": "38, 39",
       "RequiredItems": [
-        "Dig Site Bridge"
+        "Dig Site!reg"
       ],
       "Entrances": []
     },
@@ -1933,11 +1933,7 @@
     {
       "Position": "43, 39",
       "RequiredItems": [
-        "Dig Site Bridge",
-        "Tilesanity: Island North (41-39)!reg",
-        "Tilesanity: Island North (40-39)!reg",
-        "Tilesanity: Island North (39-39)!reg",
-        "Tilesanity: Island North (38-39)!reg"
+        "Dig Site!reg"
       ],
       "Entrances": []
     },
