@@ -1951,8 +1951,8 @@
       "Position": "43, 89",
       "RequiredItems": [],
       "Entrances": [
-        "Island South_Cliff to Island North!exit",
-        "Island North to Island South_Cliff"
+        "Cliff Over Island South to Island North!exit",
+        "Island North to Cliff Over Island South"
       ]
     },
     {
@@ -2277,14 +2277,14 @@
       "Position": "27, 0",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthCliff to Island North"
+        "Cliff Over Island South to Island North"
       ]
     },
     {
       "Position": "27, 1",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to Island SouthCliff!exit"
+        "Island North to Cliff Over Island South!exit"
       ]
     },
     {
