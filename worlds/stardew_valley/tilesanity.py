@@ -361,7 +361,8 @@ def create_tiles_full(region_factory, regions_by_name, tiles, tiles_by_coords):
 logic_predicate_table = {
     "Dark Talisman": QuestLogic.has_dark_talisman,
     "Kill": MonsterLogic.can_kill_max,
-    "Quest": QuestLogic.can_complete_quest
+    "Quest": QuestLogic.can_complete_quest,
+    "Club Card": QuestLogic.has_club_card,
 }
 
 
