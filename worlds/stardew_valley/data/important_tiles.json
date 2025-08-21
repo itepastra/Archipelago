@@ -1825,7 +1825,7 @@
       "Position": "21, 46",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to Island Mushroom Cave"
+        "Dig Site to Professor Snail Cave"
       ]
     },
     {
@@ -1834,7 +1834,7 @@
         "Open Professor Snail Cave"
       ],
       "Entrances": [
-        "Island Mushroom Cave to Island North!exit"
+        "Professor Snail Cave to Dig Site!exit"
       ]
     },
     {
