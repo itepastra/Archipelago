@@ -2148,7 +2148,7 @@
       "Position": "11, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Warp to Island South!exit"
+        "Use Island Obelisk!exit"
       ]
     },
     {
@@ -2235,6 +2235,13 @@
         "Island Resort"
       ],
       "Entrances": []
+    },
+    {
+      "Position": "22, 43",
+      "RequiredItems": [],
+      "Entrances": [
+        "Island South"
+      ]
     },
     {
       "Position": "24, 21",
