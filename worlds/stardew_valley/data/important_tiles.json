@@ -18,16 +18,14 @@
       "Position": "6, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Mountain to Adventurer's Guild!exit",
-        "Adventurer's Guild to Mountain"
+        "Mountain to Adventurer's Guild!exit"
       ]
     },
     {
       "Position": "10, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Adventurer's Guild (Mapping Cave Systems)",
-        "Marlon's Bedroom"
+        "Marlon's bedroom"
       ]
     }
   ],
@@ -103,8 +101,7 @@
       "Position": "5, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Railroad to Bathhouse Entrance!exit",
-        "Bathhouse Entrance to Railroad"
+        "Railroad to Bathhouse Entrance!exit"
       ]
     },
     {
@@ -145,29 +142,30 @@
       "Position": "4, 10",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel (batteries)"
+        "Repair Boat Ticket Machine!loc"
       ]
     },
     {
       "Position": "6, 9",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel (hardwood)"
+        "Repair Boat Hull!loc",
+        "Take the Boat to Ginger Island"
       ]
     },
     {
       "Position": "6, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop to BoatTunnel!exit",
-        "BoatTunnel to Fish Shop"
+        "Fish Shop to Boat Tunnel!exit",
+        "Boat Tunnel to Fish Shop"
       ]
     },
     {
       "Position": "8, 10",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel (iridium bars)"
+        "Repair Boat Anchor!loc"
       ]
     }
   ],
@@ -176,21 +174,21 @@
       "Position": "15, 53",
       "RequiredItems": [],
       "Entrances": [
-        "Sewer to Bugland!exit"
+        "Sewer to Mutant Bug Lair!exit"
       ]
     },
     {
       "Position": "15, 54",
       "RequiredItems": [],
       "Entrances": [
-        "BugLand to Sewer"
+        "Mutant Bug Lair to Sewer"
       ]
     },
     {
       "Position": "31, 6",
       "RequiredItems": [],
       "Entrances": [
-        "BugLand"
+        "Mutant Bug Lair"
       ]
     }
   ],
@@ -355,8 +353,8 @@
       "Position": "8, 13",
       "RequiredItems": [],
       "Entrances": [
-        "SandyHouse to Casino!exit",
-        "Casino to SandyHouse"
+        "Oasis to Casino!exit",
+        "Casino to Oasis"
       ]
     },
     {
@@ -515,8 +513,8 @@
       "Position": "6, 6",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Colored Crystals Cave!exit",
-        "Colored Crystals Cave to Island West"
+        "Island West to Crystal Cave!exit",
+        "Crystal Cave to Island West"
       ]
     }
   ],
@@ -579,31 +577,17 @@
     },
     {
       "Position": "14, 5",
-      "RequiredItems": [
-        "Complete Pantry!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "14, 6",
       "RequiredItems": [],
       "Entrances": [
         "Access Pantry"
       ]
     },
     {
-      "Position": "14, 22",
+      "Position": "14, 23",
       "RequiredItems": [],
       "Entrances": [
         "Access Crafts Room"
       ]
-    },
-    {
-      "Position": "14, 23",
-      "RequiredItems": [
-        "Complete Crafts Room!loc"
-      ],
-      "Entrances": []
     },
     {
       "Position": "23, 10",
@@ -802,13 +786,6 @@
     },
     {
       "Position": "40, 10",
-      "RequiredItems": [
-        "Complete Fish Tank!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "40, 11",
       "RequiredItems": [],
       "Entrances": [
         "Access Fish Tank"
@@ -886,13 +863,6 @@
     },
     {
       "Position": "55, 6",
-      "RequiredItems": [
-        "Complete Vault!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "55, 7",
       "RequiredItems": [],
       "Entrances": [
         "Access Vault"
@@ -927,13 +897,6 @@
       "Entrances": []
     },
     {
-      "Position": "63, 14",
-      "RequiredItems": [
-        "Complete Boiler Room!loc"
-      ],
-      "Entrances": []
-    },
-    {
       "Position": "63, 15",
       "RequiredItems": [],
       "Entrances": [
@@ -954,8 +917,7 @@
       "Position": "10, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Elliott's Cabin",
-        "Elliott's Cabin (rightmost piano for secret)"
+        "Elliott's House"
       ]
     }
   ],
@@ -1038,15 +1000,14 @@
       "Position": "8, 8",
       "RequiredItems": [],
       "Entrances": [
-        "FarmCave (closest mushroom bin)"
+        "Farmcave"
       ]
     },
     {
       "Position": "8, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Farm to FarmCave!exit",
-        "FarmCave to Farm"
+        "Farm to Farmcave!exit"
       ]
     }
   ],
@@ -1055,23 +1016,22 @@
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop to BoatTunnel",
-        "BoatTunnel to Fish Shop!exit"
+        "Fish Shop to Boat Tunnel",
+        "Boat Tunnel to Fish Shop!exit"
       ]
     },
     {
       "Position": "5, 6",
       "RequiredItems": [],
       "Entrances": [
-        "Fish Shop"
+        "Willy's Fish Shop"
       ]
     },
     {
       "Position": "5, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Beach to Fish Shop!exit",
-        "Fish Shop to Beach"
+        "Beach to Willy's Fish Shop!exit"
       ]
     }
   ],
@@ -1592,8 +1552,7 @@
       "Position": "11, 21",
       "RequiredItems": [],
       "Entrances": [
-        "Home of Jodi, Kent & Sam (??Foroguemon??)",
-        "Sam's House"
+        "??Foroguemon??!loc"
       ]
     },
     {
@@ -1670,8 +1629,8 @@
       "Position": "6, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to Island Mushroom Cave!exit",
-        "Island Mushroom Cave to Island North"
+        "Dig Site to Professor Snail Cave!exit",
+        "Professor Snail Cave to Dig Site"
       ]
     }
   ],
@@ -1680,38 +1639,36 @@
       "Position": "0, 47",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island East!exit",
-        "Island East to Island South"
+        "Island South to East!exit",
+        "East to Island South"
       ]
     },
     {
       "Position": "16, 27",
       "RequiredItems": [],
       "Entrances": [
-        "Walnutsanity: Banana Altar"
+        "Walnutsanity: Banana Altar!loc"
       ]
     },
     {
       "Position": "18, 38",
       "RequiredItems": [],
       "Entrances": [
-        "Walnutsanity: Jungle Bush"
+        "Walnutsanity: Jungle Bush!loc"
       ]
     },
     {
       "Position": "22, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandHut",
-        "IslandHut to Island East!exit"
+        "Island East to Leo Hut"
       ]
     },
     {
       "Position": "33, 30",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandShrine",
-        "IslandShrine to Island East!exit"
+        "Island East to Island Shrine"
       ]
     }
   ],
@@ -1734,14 +1691,14 @@
       "Position": "4, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to IslandFarmCave!exit"
+        "Island West to Gourmand Cave!exit"
       ]
     },
     {
       "Position": "4, 11",
       "RequiredItems": [],
       "Entrances": [
-        "IslandFarmCave to Island West"
+        "Gourmand Cave to Island West"
       ]
     }
   ],
@@ -1750,8 +1707,8 @@
       "Position": "14, 17",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to IslandFarmHouse!exit",
-        "IslandFarmHouse to Island West"
+        "Island West to Island Farmhouse!exit",
+        "Island Farmhouse to Island West"
       ]
     }
   ],
@@ -1767,8 +1724,7 @@
       "Position": "7, 13",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandHut!exit",
-        "IslandHut to Island East"
+        "Island East to Leo Hut!exit"
       ]
     },
     {
@@ -1791,7 +1747,12 @@
       "Position": "5, 47",
       "RequiredItems": [],
       "Entrances": [
-        "Island North (dig site parrot express)"
+        "Parrot Express Docks to Dig Site!exit",
+        "Parrot Express Volcano to Dig Site!exit",
+        "Parrot Express Jungle to Dig Site!exit",
+        "Parrot Express Dig Site to Jungle",
+        "Parrot Express Dig Site to Volcano",
+        "Parrot Express Dig Site to Docks"
       ]
     },
     {
@@ -1826,8 +1787,8 @@
       "Position": "12, 31",
       "RequiredItems": [],
       "Entrances": [
-        "VolcanoDungeon0_side to VolcanoSecretBeach!exit",
-        "VolcanoSecretBeach to VolcanoDungeon0_side"
+        "Volcano River to Secret Beach!exit",
+        "Secret Beach to Volcano River"
       ]
     },
     {
@@ -1835,6 +1796,13 @@
       "RequiredItems": [],
       "Entrances": [
         "Walnutsanity: Secret Beach Bush 1!loc"
+      ]
+    },
+    {
+      "Position": "15, 59",
+      "RequiredItems": [],
+      "Entrances": [
+        "Dig Site"
       ]
     },
     {
@@ -1862,7 +1830,7 @@
       "Position": "21, 46",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to Island Mushroom Cave"
+        "Dig Site to Professor Snail Cave"
       ]
     },
     {
@@ -1871,7 +1839,7 @@
         "Open Professor Snail Cave"
       ],
       "Entrances": [
-        "Island Mushroom Cave to Island North!exit"
+        "Professor Snail Cave to Dig Site!exit"
       ]
     },
     {
@@ -1918,10 +1886,10 @@
     },
     {
       "Position": "33, 53",
-      "RequiredItems": [],
-      "Entrances": [
-        "Dig Site Bridge"
-      ]
+      "RequiredItems": [
+        "Dig Site!reg"
+      ],
+      "Entrances": []
     },
     {
       "Position": "35, 53",
@@ -1934,13 +1902,13 @@
       "Position": "36, 72",
       "RequiredItems": [],
       "Entrances": [
-        "Island North (island trader shop)"
+        "NOTE: Island North (island trader shop)"
       ]
     },
     {
       "Position": "38, 39",
       "RequiredItems": [
-        "Dig Site Bridge"
+        "Dig Site!reg"
       ],
       "Entrances": []
     },
@@ -1948,14 +1916,14 @@
       "Position": "40, 21",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to VolcanoDungeon0_main"
+        "Island North to Volcano Entrance"
       ]
     },
     {
       "Position": "40, 24",
       "RequiredItems": [],
       "Entrances": [
-        "VolcanoDungeon0_main to Island North!exit"
+        "Volcano Entrance to Island North!exit"
       ]
     },
     {
@@ -1975,11 +1943,7 @@
     {
       "Position": "43, 39",
       "RequiredItems": [
-        "Dig Site Bridge",
-        "Tilesanity: Island North (41-39)!reg",
-        "Tilesanity: Island North (40-39)!reg",
-        "Tilesanity: Island North (39-39)!reg",
-        "Tilesanity: Island North (38-39)!reg"
+        "Dig Site!reg"
       ],
       "Entrances": []
     },
@@ -1987,8 +1951,8 @@
       "Position": "43, 89",
       "RequiredItems": [],
       "Entrances": [
-        "Island South_Cliff to Island North!exit",
-        "Island North to Island South_Cliff"
+        "Cliff Over Island South to Island North!exit",
+        "Island North to Cliff Over Island South"
       ]
     },
     {
@@ -2028,11 +1992,18 @@
       "Entrances": []
     },
     {
-      "Position": "51, 32",
+      "Position": "50, 52",
       "RequiredItems": [],
       "Entrances": [
-        "Axe$1"
+        "Island North"
       ]
+    },
+    {
+      "Position": "51, 32",
+      "RequiredItems": [
+        "Axe$1"
+      ],
+      "Entrances": []
     },
     {
       "Position": "54, 21",
@@ -2094,7 +2065,12 @@
       "Position": "60, 15",
       "RequiredItems": [],
       "Entrances": [
-        "Island North (volcano parrot express)"
+        "Parrot Express Docks to Volcano!exit",
+        "Parrot Express Jungle to Volcano!exit",
+        "Parrot Express Dig Site to Volcano!exit",
+        "Parrot Express Volcano to Docks",
+        "Parrot Express Volcano to Jungle",
+        "Parrot Express Volcano to Dig Site"
       ]
     },
     {
@@ -2117,8 +2093,7 @@
       "Position": "13, 28",
       "RequiredItems": [],
       "Entrances": [
-        "Island East to IslandShrine!exit",
-        "IslandShrine to Island East"
+        "Island East to Island Shrine!exit"
       ]
     },
     {
@@ -2141,8 +2116,8 @@
       "Position": "0, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island West",
-        "Island West to Island South!exit"
+        "Island South to West",
+        "West to Island South!exit"
       ]
     },
     {
@@ -2184,14 +2159,19 @@
       "Position": "6, 30",
       "RequiredItems": [],
       "Entrances": [
-        "Island South (parrot express)"
+        "Parrot Express Jungle to Docks!exit",
+        "Parrot Express Dig Site to Docks!exit",
+        "Parrot Express Vulcano to Docks!exit",
+        "Parrot Express Docks to Volcano",
+        "Parrot Express Docks to Dig Site",
+        "Parrot Express Docks to Jungle"
       ]
     },
     {
       "Position": "11, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Warp to Island South!exit"
+        "Use Island Obelisk!exit"
       ]
     },
     {
@@ -2210,10 +2190,10 @@
     },
     {
       "Position": "14, 23",
-      "RequiredItems": [
-        "Island South (resort bar)"
-      ],
-      "Entrances": []
+      "RequiredItems": [],
+      "Entrances": [
+        "Use Island Resort"
+      ]
     },
     {
       "Position": "15, 19",
@@ -2240,8 +2220,8 @@
       "Position": "18, 0",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island North",
-        "Island North to Island South!exit"
+        "Island South to North",
+        "North to Island South!exit"
       ]
     },
     {
@@ -2269,8 +2249,7 @@
       "Position": "19, 43",
       "RequiredItems": [],
       "Entrances": [
-        "BoatTunnel to Island South!exit",
-        "Island South to BoatTunnel"
+        "Take the Boat to Ginger Island!exit"
       ]
     },
     {
@@ -2279,6 +2258,13 @@
         "Island Resort"
       ],
       "Entrances": []
+    },
+    {
+      "Position": "22, 43",
+      "RequiredItems": [],
+      "Entrances": [
+        "Island South"
+      ]
     },
     {
       "Position": "24, 21",
@@ -2291,14 +2277,14 @@
       "Position": "27, 0",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthCliff to Island North"
+        "Cliff Over Island South to Island North"
       ]
     },
     {
       "Position": "27, 1",
       "RequiredItems": [],
       "Entrances": [
-        "Island North to Island SouthCliff!exit"
+        "Island North to Cliff Over Island South!exit"
       ]
     },
     {
@@ -2312,8 +2298,8 @@
       "Position": "35, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island East",
-        "Island East to Island South!exit"
+        "Island South to East",
+        "East to Island South!exit"
       ]
     },
     {
@@ -2334,8 +2320,8 @@
       "Position": "42, 29",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island SouthEast",
-        "Island SouthEast to Island South"
+        "Island South to Southeast",
+        "Southeast to Island South"
       ]
     },
     {
@@ -2351,8 +2337,8 @@
       "Position": "0, 29",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island SouthEast!exit",
-        "Island SouthEast to Island South"
+        "Island South to Southeast!exit",
+        "Southeast to Island South"
       ]
     },
     {
@@ -2380,8 +2366,8 @@
       "Position": "30, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthEast to Pirate Cove",
-        "Pirate Cove to Island SouthEast!exit"
+        "Island Southeast to Pirate Cove",
+        "Pirate Cove to Island Southeast!exit"
       ]
     }
   ],
@@ -2390,8 +2376,8 @@
       "Position": "1, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island SouthEast to Pirate Cove!exit",
-        "Pirate Cove to Island SouthEast"
+        "Island Southeast to Pirate Cove!exit",
+        "Pirate Cove to Island Southeast"
       ]
     },
     {
@@ -2444,8 +2430,7 @@
       "Position": "20, 23",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Qi's Walnut Room",
-        "Qi's Walnut Room to Island West!exit"
+        "Island West to Qi Walnut Room"
       ]
     },
     {
@@ -2704,22 +2689,21 @@
       "Position": "59, 92",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Shipwreck",
-        "Shipwreck to Island West!exit"
+        "Island West to Shipwreck"
       ]
     },
     {
       "Position": "61, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Colored Crystals Cave"
+        "Island West to Crystal Cave"
       ]
     },
     {
       "Position": "61, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Colored Crystals Cave to Island West!exit"
+        "Crystal Cave to Island West!exit"
       ]
     },
     {
@@ -2873,7 +2857,7 @@
       "Position": "74, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island West (parrot express)"
+        "Island West"
       ]
     },
     {
@@ -2943,8 +2927,8 @@
       "Position": "77, 40",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to IslandFarmHouse",
-        "IslandFarmHouse to Island West!exit"
+        "Island West to Island Farmhouse",
+        "Island Farmhouse to Island West!exit"
       ]
     },
     {
@@ -3248,8 +3232,8 @@
         "Island Farmhouse"
       ],
       "Entrances": [
-        "Island West to GourmandFrogCave",
-        "GourmandFrogCave to Island West!exit"
+        "Island West to Gourmand Cave",
+        "Gourmand Cave to Island West!exit"
       ]
     },
     {
@@ -3298,8 +3282,8 @@
       "Position": "105, 41",
       "RequiredItems": [],
       "Entrances": [
-        "Island South to Island West!exit",
-        "Island West to Island South"
+        "Island South to West!exit",
+        "West to Island South"
       ]
     }
   ],
@@ -3308,8 +3292,8 @@
       "Position": "7, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Leah's Cottage!exit",
-        "Leah's Cottage to Cindersap Forest"
+        "Forest to Leah's Cottage!exit",
+        "Leah's Cottage to Forest"
       ]
     }
   ],
@@ -3318,8 +3302,8 @@
       "Position": "3, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Mountain to Leo's TreeHouse!exit",
-        "Leo's TreeHouse to Mountain"
+        "Mountain to Leo TreeHouse!exit",
+        "Leo TreeHouse to Mountain"
       ]
     }
   ],
@@ -3344,7 +3328,7 @@
     {
       "Position": "6, 12",
       "RequiredItems": [
-        "Jas 2 <3"
+        "Jas <3!2"
       ],
       "Entrances": []
     },
@@ -3359,21 +3343,21 @@
       "Position": "13, 19",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Marnie's Ranch!exit",
-        "Marnie's Ranch to Cindersap Forest"
+        "Forest to Marnie's Ranch!exit",
+        "Marnie's Ranch to Forest"
       ]
     },
     {
       "Position": "15, 12",
       "RequiredItems": [
-        "Marnie 2 <3"
+        "Marnie <3!2"
       ],
       "Entrances": []
     },
     {
       "Position": "21, 13",
       "RequiredItems": [
-        "Shane 2 <3"
+        "Shane <3!2"
       ],
       "Entrances": []
     }
@@ -3383,15 +3367,15 @@
       "Position": "7, 9",
       "RequiredItems": [],
       "Entrances": [
-        "MasteryCave"
+        "Mastery Cave"
       ]
     },
     {
       "Position": "7, 11",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to MasteryCave!exit",
-        "MasteryCave to Cindersap Forest"
+        "Forest to Mastery Cave!exit",
+        "Mastery Cave to Forest"
       ]
     }
   ],
@@ -4302,360 +4286,6 @@
       ]
     }
   ],
-  "Movie Theater": [
-    {
-      "Position": "3, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "3, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "3, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "3, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "4, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "4, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "4, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "4, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "4, 14",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "6, 7",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "7, 7",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": [
-        "Movie Theater (buy snacks)"
-      ]
-    },
-    {
-      "Position": "7, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "7, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "7, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "7, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "7, 14",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "8, 7",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "8, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "8, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "8, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "8, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "10, 7",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "11, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "11, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "11, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "11, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "12, 4",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "12, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "12, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "12, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "12, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "12, 14",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "13, 4",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "13, 4",
-      "RequiredItems": [],
-      "Entrances": [
-        "Movie Theater (watch movie)"
-      ]
-    },
-    {
-      "Position": "13, 5",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "14, 4",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "14, 5",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "15, 4",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "15, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "15, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "15, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "15, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "15, 14",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "16, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "16, 11",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "16, 12",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "16, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "17, 8",
-      "RequiredItems": [
-        "The Missing Bundle!loc"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "19, 10",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    },
-    {
-      "Position": "19, 13",
-      "RequiredItems": [
-        "Progressive Movie Theater!2"
-      ],
-      "Entrances": []
-    }
-  ],
   "Pelican Beach": [
     {
       "Position": "30, 34",
@@ -5046,8 +4676,7 @@
       "Position": "7, 8",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Qi's Walnut Room!exit",
-        "Qi's Walnut Room to Island West"
+        "Island West to Qi Walnut Room!exit"
       ]
     },
     {
@@ -5482,23 +5111,23 @@
       "Position": "3, 5",
       "RequiredItems": [],
       "Entrances": [
-        "SandyHouse"
+        "Oasis"
       ]
     },
     {
       "Position": "4, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Desert to SandyHouse!exit",
-        "SandyHouse to Desert"
+        "Desert to Oasis!exit",
+        "Oasis to Desert"
       ]
     },
     {
       "Position": "17, 2",
       "RequiredItems": [],
       "Entrances": [
-        "SandyHouse to Casino",
-        "Casino to SandyHouse!exit"
+        "Oasis to Casino",
+        "Casino to Oasis!exit"
       ]
     },
     {
@@ -5584,8 +5213,7 @@
       "Position": "0, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Island West to Shipwreck!exit",
-        "Shipwreck to Island West"
+        "Island West to Shipwreck!exit"
       ]
     },
     {
@@ -5601,7 +5229,6 @@
       "Position": "3, 10",
       "RequiredItems": [],
       "Entrances": [
-        "Museum (curator)",
         "Museum"
       ]
     },
@@ -5715,7 +5342,7 @@
       "Position": "13, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Read Gunther Tunnel Notice"
+        "Read Gunther Tunnel Notice!loc"
       ]
     },
     {
@@ -5774,7 +5401,7 @@
       "Position": "18, 17",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (fridge)"
+        "Gus' Famous Omelet!loc"
       ]
     },
     {
@@ -5788,22 +5415,40 @@
       "Position": "29, 7",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (Pinky Lemon)"
+        "??Pinky Lemon??!loc"
       ]
     },
     {
       "Position": "33, 18",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (JotPK)"
+        "JotPK: Boots 1!loc",
+        "JotPK: Boots 2!loc",
+        "JotPK: Gun 1!loc",
+        "JotPK: Gun 2!loc",
+        "JotPK: Gun 3!loc",
+        "JotPK: Super Gun!loc",
+        "JotPK: Ammo 1!loc",
+        "JotPK: Ammo 2!loc",
+        "JotPK: Ammo 3!loc",
+        "JotPK: Cowboy 1!loc",
+        "JotPK: Cowboy 2!loc",
+        "Journey of the Prairie King Victory!loc"
       ]
     },
     {
       "Position": "35, 18",
       "RequiredItems": [],
       "Entrances": [
-        "Stardrop Saloon (JK)",
-        "Saloon"
+        "Junimo Kart 1,Junimo Kart: Crumble Cavern!loc",
+        "Junimo Kart 1,Junimo Kart: Slippery Slopes!loc",
+        "Junimo Kart 4,Junimo Kart: Secret Level!loc",
+        "Junimo Kart 2,Junimo Kart: The Gem Sea Giant!loc",
+        "Junimo Kart 2,Junimo Kart: Slomp's Stomp!loc",
+        "Junimo Kart 2,Junimo Kart: Ghastly Galleon!loc",
+        "Junimo Kart 3,Junimo Kart: Glowshroom Grotto!loc",
+        "Junimo Kart 3,Junimo Kart: Red Hot Rollercoaster!loc",
+        "Junimo Kart 4,Junimo Kart: Sunset Speedway (Victory)!loc"
       ]
     }
   ],
@@ -5839,21 +5484,21 @@
       "Position": "17, 7",
       "RequiredItems": [],
       "Entrances": [
-        "Tunnel"
+        "Bus Tunnel"
       ]
     },
     {
       "Position": "38, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Backwoods to Tunnel!exit"
+        "Tunnel Entrance to Bus Tunnel!exit"
       ]
     },
     {
       "Position": "39, 9",
       "RequiredItems": [],
       "Entrances": [
-        "Tunnel to Backwoods"
+        "Bus Tunnel to Tunnel Entrance"
       ]
     }
   ],
@@ -5862,14 +5507,14 @@
       "Position": "3, 6",
       "RequiredItems": [],
       "Entrances": [
-        "Witch's Hut (dove statue)"
+        "Witch's Hut"
       ]
     },
     {
       "Position": "5, 12",
       "RequiredItems": [],
       "Entrances": [
-        "Witch's Hut (magic ink)"
+        "Quest: Magic Ink!loc"
       ]
     },
     {
@@ -5903,13 +5548,11 @@
       "RequiredItems": [
         "Quest!Goblin Problem"
       ],
-      "Entrances": [
-      ]
+      "Entrances": []
     },
     {
       "Position": "20, 30",
-      "RequiredItems": [
-      ],
+      "RequiredItems": [],
       "Entrances": [
         "Witch's Swamp"
       ]
@@ -5946,30 +5589,30 @@
       "Position": "2, 14",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower (pedestal)"
+        "Purchase Wizard Blueprints"
       ]
     },
     {
       "Position": "3, 17",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower (wizard)"
+        "Wizard Tower"
       ]
     },
     {
       "Position": "4, 5",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower to Wizard Basement",
-        "Wizard Basement to Wizard's Tower!exit"
+        "Wizard Tower to Wizard Basement",
+        "Wizard Basement to Wizard Tower!exit"
       ]
     },
     {
       "Position": "8, 24",
       "RequiredItems": [],
       "Entrances": [
-        "Cindersap Forest to Wizard's Tower!exit",
-        "Wizard's Tower to Cindersap Forest"
+        "Forest to Wizard Tower!exit",
+        "Wizard Tower to Cindersap"
       ]
     }
   ],
@@ -5986,15 +5629,15 @@
       "Position": "4, 4",
       "RequiredItems": [],
       "Entrances": [
-        "Wizard's Tower to Wizard Basement!exit",
-        "Wizard Basement to Wizard's Tower"
+        "Wizard Tower to Wizard Basement!exit",
+        "Wizard Basement to Wizard Tower"
       ]
     },
     {
       "Position": "12, 5",
       "RequiredItems": [],
       "Entrances": [
-        "WizardBasement"
+        "Wizard Basement"
       ]
     }
   ],

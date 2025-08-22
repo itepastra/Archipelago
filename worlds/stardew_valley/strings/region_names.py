@@ -39,6 +39,7 @@ class Region:
     mutant_bug_lair = "Mutant Bug Lair"
     witch_swamp = "Witch's Swamp"
     witch_hut = "Witch's Hut"
+    island_south_cliff = "Cliff Over Island South"
     island_south = "Island South"
     island_resort = "Island Resort"
     island_south_east = "Island Southeast"
