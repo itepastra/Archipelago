@@ -58,7 +58,15 @@ aliases = {
     StardewRegion.witch_warp_cave: "WitchWarpCave",
     StardewRegion.witch_hut: "WitchHut",
     StardewRegion.mutant_bug_lair: "BugLand",
-    StardewRegion.boat_tunnel: "BoatTunnel"
+    StardewRegion.boat_tunnel: "BoatTunnel",
+    StardewRegion.elliott_house: "Elliott's Cabin",
+    StardewRegion.farm_cave: "FarmCave",
+    StardewRegion.fish_shop: "Fish Shop",
+    StardewRegion.mastery_cave: "MasteryCave",
+    StardewRegion.oasis: "SandyHouse",
+    StardewRegion.bus_tunnel: "Tunnel",
+    StardewRegion.wizard_tower: "Wizard's Tower",
+    StardewRegion.wizard_basement: "WizardBasement"
 }
 
 for key in list(aliases.keys()):
