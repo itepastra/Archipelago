@@ -56,7 +56,9 @@ aliases = {
     StardewRegion.field_office: "IslandFieldOffice",
     StardewRegion.witch_swamp: "WitchSwamp",
     StardewRegion.witch_warp_cave: "WitchWarpCave",
-    StardewRegion.witch_hut: "WitchHut"
+    StardewRegion.witch_hut: "WitchHut",
+    StardewRegion.mutant_bug_lair: "BugLand",
+    StardewRegion.boat_tunnel: "BoatTunnel"
 }
 
 for key in list(aliases.keys()):
@@ -322,7 +324,24 @@ def get_maps_to_exclude(options: StardewValleyOptions):
         maps_to_exclude.add("Home of Pam & Penny")
     if options.exclude_ginger_island == ExcludeGingerIsland.option_true:
         maps_to_exclude |= {
-            "IslandShrine", "IslandWest", "IslandHut", "IslandFarmHouse", "Island Field Office", "IslandNorth", "IslandSouth"
+            "IslandShrine", 
+            "IslandEast",
+            "IslandWest", 
+            "IslandHut", 
+            "IslandFarmHouse", 
+            "Island Field Office", 
+            "IslandNorth", 
+            "IslandShrine",
+            "IslandSouth", 
+            "IslandSouthEast",
+            "IslandSouthEastCave",
+            "LeoTreeHouse",
+            "Colored Crystals Cave", 
+            "Qi's Walnut Room", 
+            "IslandFarmCave", 
+            "Shipwreck", 
+            "BoatTunnel", 
+            "Island Mushroom Cave"
         }
     return maps_to_exclude
 
@@ -342,7 +361,8 @@ def create_tiles_full(region_factory, regions_by_name, tiles, tiles_by_coords):
 logic_predicate_table = {
     "Dark Talisman": QuestLogic.has_dark_talisman,
     "Kill": MonsterLogic.can_kill_max,
-    "Quest": QuestLogic.can_complete_quest
+    "Quest": QuestLogic.can_complete_quest,
+    "Club Card": QuestLogic.has_club_card,
 }
 
 
@@ -360,11 +380,11 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
     if splited[0] in logic_predicate_table:
         return logic_predicate_table[splited[0]](world.logic, *[arg for arg in splited[1:]])
 
-    splited[0] = "!".join(splited[:-1])
     # Count items
     if len(splited) == 1:
         amount = 1
     else:
+        splited[0] = "!".join(splited[:-1])
         # Reachability rules are denoted this way
         if splited[1] == "loc":
             return world.logic.region.can_reach_location(splited[0])
