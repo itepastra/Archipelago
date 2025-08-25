@@ -5,6 +5,7 @@ from random import Random
 from typing import Tuple, List, Hashable, Callable, Optional, TYPE_CHECKING
 
 from BaseClasses import Entrance, Region, CollectionState
+from Options import OptionError
 from . import data
 from .logic.monster_logic import MonsterLogic
 from .logic.quest_logic import QuestLogic
@@ -15,10 +16,6 @@ from .strings.region_names import Region as StardewRegion
 from .strings.entrance_names import Entrance as StardewEntrance
 from .strings.tool_names import ToolMaterial
 from .options.options import FarmType, StardewValleyOptions, IncludeEndgameLocations, ExcludeGingerIsland
-
-if TYPE_CHECKING:
-    from . import StardewValleyWorld
-    from .regions import RegionFactory
 
 directions = ["Left", "Up", "Right", "Down"]
 direction_to_coord = {
@@ -53,7 +50,7 @@ aliases = {
     StardewRegion.island_east: "IslandEast",
     StardewRegion.island_south_east: "IslandSouthEast",
     StardewRegion.island_north: "IslandNorth",
-    StardewRegion.field_office: "IslandFieldOffice",
+    StardewRegion.field_office: "Island Field Office",
     StardewRegion.witch_swamp: "WitchSwamp",
     StardewRegion.witch_warp_cave: "WitchWarpCave",
     StardewRegion.witch_hut: "WitchHut",
@@ -66,7 +63,14 @@ aliases = {
     StardewRegion.oasis: "SandyHouse",
     StardewRegion.bus_tunnel: "Tunnel",
     StardewRegion.wizard_tower: "Wizard's Tower",
-    StardewRegion.wizard_basement: "WizardBasement"
+    StardewRegion.wizard_basement: "WizardBasement",
+    StardewRegion.professor_snail_cave: "Island Mushroom Cave",
+    StardewRegion.gourmand_frog_cave: "IslandFarmCave",
+    StardewRegion.island_farmhouse: "IslandFarmHouse",
+    StardewRegion.leo_hut: "IslandHut",
+    StardewRegion.island_shrine: "IslandShrine",
+    StardewRegion.pirate_cove: "IslandSouthEastCave",
+    StardewRegion.island_west: "IslandWest"
 }
 
 for key in list(aliases.keys()):
@@ -93,6 +97,7 @@ def alternate_name(region: str, option: "StardewValleyOptions"):
     elif farm_type == FarmType.option_forest:
         farm_name = "Forest Farm"
     elif farm_type == FarmType.option_hill_top:
+        raise OptionError("Hilltop Farm is erroring")
         farm_name = "Hilltop Farm"
     # elif farm_type == FarmType.option_wilderness:
     #     farm_name = "Wilderness Farm"
@@ -104,7 +109,7 @@ def alternate_name(region: str, option: "StardewValleyOptions"):
         farm_name = "Meadowlands Farm"
     else:
         # farm_name = "Farm Farm"
-        raise NotImplemented("Farm type is not implemented")
+        raise OptionError("Farm type is not implemented")
     if region == "Farm":
         return farm_name
     elif region == farm_name:
