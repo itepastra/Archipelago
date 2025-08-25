@@ -37,9 +37,9 @@ logger = logging.getLogger(__name__)
 
 
 def create_items(item_factory: StardewItemFactory, locations_count: int, items_to_exclude: List[Item],
-                 options: StardewValleyOptions, content: StardewContent, random: Random) -> List[Item]:
+                 options: StardewValleyOptions, content: StardewContent, random: Random, world) -> List[Item]:
     items = []
-    unique_items = create_unique_items(item_factory, options, content, random)
+    unique_items = create_unique_items(item_factory, options, content, random, world)
 
     remove_items(items_to_exclude, unique_items)
 
@@ -83,7 +83,7 @@ def remove_items_if_no_room_for_them(unique_items: List[Item], locations_count: 
     remove_items(items_to_remove, unique_items)
 
 
-def create_unique_items(item_factory: StardewItemFactory, options: StardewValleyOptions, content: StardewContent, random: Random) -> List[Item]:
+def create_unique_items(item_factory: StardewItemFactory, options: StardewValleyOptions, content: StardewContent, random: Random, world) -> List[Item]:
     items = []
 
     items.extend(item_factory(item) for item in items_by_group[Group.COMMUNITY_REWARD])
@@ -131,7 +131,7 @@ def create_unique_items(item_factory: StardewItemFactory, options: StardewValley
     create_goal_items(item_factory, options, items)
     items.append(item_factory("Golden Egg"))
     items.append(item_factory(CommunityUpgrade.mr_qi_plane_ride))
-    create_tilesanity_items(item_factory, options, items)
+    create_tilesanity_items(world, item_factory, options, items)
 
     items.append(item_factory(Wallet.mens_locker_key))
     items.append(item_factory(Wallet.womens_locker_key))
@@ -647,43 +647,12 @@ def create_quest_rewards_sve(item_factory: StardewItemFactory, options: StardewV
     items.extend([item_factory(item) for item in SVEQuestItem.sve_quest_items_ginger_island])
 
 
-def create_tilesanity_items(item_factory: StardewItemFactory, options: StardewValleyOptions, items: List[Item]):
+def create_tilesanity_items(world, item_factory: StardewItemFactory, options: StardewValleyOptions, items: List[Item]):
     if options.tilesanity < Tilesanity.option_full:
         return
 
-    from importlib.resources import files
-    import json
-
-    all_tiles = set()
-    tile_size = options.tilesanity_size
-    farm_name = alternate_name("Farm", options)
-
-    with files(data).joinpath("tiles.json").open() as file:
-        tiles = json.load(file)
-        for area in tiles:
-            if area == "FarmHouse":
-                continue
-            if area.endswith("Farm"):
-                if area != farm_name:
-                    continue
-            for position in tiles[area]:
-                position = position.split(", ")
-                x, y = int(position[0]), int(position[1])
-                all_tiles.add((area, int(x / tile_size), int(y / tile_size)))
-
-    for _ in range(int(len(all_tiles) * (100 - options.tilesanity_local) / 100)):
+    for _ in range(int(len(world.tile_list) * (100 - options.tilesanity_local) / 100)):
         items.append(item_factory("Progressive Tile"))
-
-
-def create_unique_filler_items(item_factory: StardewItemFactory, options: StardewValleyOptions, random: Random,
-                               available_item_slots: int) -> List[Item]:
-    items = []
-
-    items.extend(create_filler_festival_rewards(item_factory, options))
-
-    if len(items) > available_item_slots:
-        items = random.sample(items, available_item_slots)
-    return items
 
 
 def weapons_count(content: StardewContent):

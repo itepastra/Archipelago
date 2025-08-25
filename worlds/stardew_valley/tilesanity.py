@@ -438,10 +438,11 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
     tile_order = []  # This list is sorted
     tile_size = world.options.tilesanity_size
 
+    free_locations = 0
     queue = [menu]
     explored_regions = set(queue)
     state = CollectionState(world.multiworld)
-    itempool = [item for item in world.multiworld.get_items() if item.player == world.player and item.name != "Progressive Tile"]
+    itempool = [item for item in world.multiworld.get_items() if item.player == world.player and item.name != "Progressive Tile" and item.advancement]
     random.shuffle(itempool)
     blocked_connections = []
     item_score_per_tile = len(itempool) / len(remaining_coords) * 2
@@ -453,14 +454,18 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
             i = len(queue) - 1
             assert i != -1, f"No tile in {remaining_coords} is valid, {blocked_connections} are locked"
         current_region = queue.pop(i)
+
         if current_region in tile_to_coord:
             coord = tile_to_coord[current_region]
             if coord in remaining_coords:
+                free_locations -= 1
+                assert free_locations >= 0
                 remaining_coords.remove(coord)
                 tile_order.append(coord)
                 item_score += item_score_per_tile
 
-        while item_score >= 1 and len(itempool) > 0:
+        while item_score >= 1 and len(itempool) > 0 and free_locations >= 2:
+            free_locations -= 1
             state.collect(itempool.pop())
 
         new_blocked_connections = []
@@ -470,6 +475,7 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
                 if entrance.access_rule(state):
                     explored_regions.add(exit_region)
                     queue.append(exit_region)
+                    free_locations += len(exit_region.get_locations())
                 else:
                     new_blocked_connections.append(entrance)
         blocked_connections = new_blocked_connections
