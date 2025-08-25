@@ -2,20 +2,20 @@ import json
 import re
 from importlib.resources import files
 from random import Random
-from typing import Tuple, List, Hashable, Callable, Optional, TYPE_CHECKING
+from typing import Tuple, List, Hashable, Callable, Optional
 
 from BaseClasses import Entrance, Region, CollectionState
 from Options import OptionError
 from . import data
 from .logic.monster_logic import MonsterLogic
 from .logic.quest_logic import QuestLogic
-from .regions.model import ConnectionData, RegionData
+from .options.options import FarmType, StardewValleyOptions, IncludeEndgameLocations, ExcludeGingerIsland
+from .regions.model import ConnectionData, RegionData, reverse_connection_name, RandomizationFlag
 from .regions.vanilla_data import ginger_island_connections, vanilla_connections
 from .stardew_rule import Received, StardewRule, True_, False_
-from .strings.region_names import Region as StardewRegion
 from .strings.entrance_names import Entrance as StardewEntrance
+from .strings.region_names import Region as StardewRegion
 from .strings.tool_names import ToolMaterial
-from .options.options import FarmType, StardewValleyOptions, IncludeEndgameLocations, ExcludeGingerIsland
 
 directions = ["Left", "Up", "Right", "Down"]
 direction_to_coord = {
@@ -167,17 +167,27 @@ def list_all_tiles(options: "StardewValleyOptions", maps_to_exclude: set[str]):
 
     return all_tiles
 
+vanilla = 0
+ered = 0
 
-def connect(region1: Region, region2: Region, entrances_by_name: dict[str, Entrance], exit_name: str | None = None):
-    entrance = region1.connect(region2, exit_name)
-    entrances_by_name[entrance.name] = entrance
+def connect(region1: Region, region2: Region, exit_name: str | None = None):
+    region1.connect(region2, exit_name)
+    global vanilla
+    vanilla += 1
+
+
+def er_connect(region1: Region, region2: Region, exit_name: str):
+    region1.create_exit(exit_name)
+    region2.create_er_target(reverse_connection_name(exit_name))
+
+    global ered
+    ered += 1
 
 
 def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "RegionFactory",
-                              region_data: dict[str, RegionData], player: int, random: Random):
+                              region_data: dict[str, RegionData], player: int, random: Random, randomization_flag: RandomizationFlag):
     tile_coords = tuple[str, int, int]
     regions_by_name: dict[str, Region] = {}
-    entrances_by_name: dict[str, Entrance] = {}
     tiles_by_coords: dict[tile_coords, Region] = {}
     required_items: dict[tile_coords, List[str]] = {}
     connections = {connection.name: connection for connection in vanilla_connections} | {connection.name: connection for connection in
@@ -274,7 +284,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
             if __debug__:
                 print(f"{entrance_name} unknown thus ignored")
             continue
-        connect(regions_by_name[origin], regions_by_name[destination], entrances_by_name)
+        connect(regions_by_name[origin], regions_by_name[destination])
         i = 0
         while i < len(orphan_maps):
             if orphan_maps[i][1] == destination:
@@ -284,11 +294,19 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
 
     for entrance_name, region_name in orphan_maps:
         origin, tile_destination = door_connections.pop(entrance_name)
-        connect(regions_by_name[origin], regions_by_name[region_name], entrances_by_name, entrance_name)
-        connect(regions_by_name[region_name], regions_by_name[tile_destination], entrances_by_name, f"{region_name} to tile")
+        connection_data = connections[entrance_name]
+        if connection_data.is_eligible_for_randomization(randomization_flag):
+            er_connect(regions_by_name[origin], regions_by_name[region_name], entrance_name)
+        else:
+            connect(regions_by_name[origin], regions_by_name[region_name], entrance_name)
+        connect(regions_by_name[region_name], regions_by_name[tile_destination], f"{region_name} to tile")
 
     for entrance_name, (origin, destination) in door_connections.items():
-        connect(regions_by_name[origin], regions_by_name[destination], entrances_by_name, entrance_name)
+        connection_data = connections[entrance_name]
+        if connection_data.is_eligible_for_randomization(randomization_flag):
+            er_connect(regions_by_name[origin], regions_by_name[destination], entrance_name)
+        else:
+            connect(regions_by_name[origin], regions_by_name[destination], entrance_name)
 
     tile_size = world.options.tilesanity_size
     if tile_size > 1:
@@ -301,7 +319,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
             if big_region_name not in regions_by_name:
                 big_region = region_factory(big_region_name)
                 regions_by_name[big_region_name] = big_region
-            connect(region, regions_by_name[big_region_name], entrances_by_name)
+            connect(region, regions_by_name[big_region_name])
 
     # Then link tiles to one another
     for tile in tiles_by_coords:
@@ -314,8 +332,7 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
             ref = (parent, x + move[0], y + move[1])
             if ref in tiles_by_coords:
                 linked_tile = tiles_by_coords[ref]
-                entrance = region.connect(linked_tile)
-                entrances_by_name[entrance.name] = entrance
+                connect(region, linked_tile)
 
     tile_to_coord = {}
     remaining_coords = set()
@@ -324,8 +341,10 @@ def create_regions_tilesanity(world: "StardewValleyWorld", region_factory: "Regi
         tile_to_coord[tiles_by_coords[coord]] = true_coord
         remaining_coords.add(true_coord)
     world.tile_list = remaining_coords  # Just to be able to transmit how many tiles exist
-    world.tilesanity_rulebuilder = lambda: define_tilesanity_rules(world, player, regions_by_name, tiles_by_coords, random, tile_to_coord, remaining_coords,
-                                                                   required_items)
+
+    world.tilesanity_rulebuilder = lambda: define_tilesanity_item_rules(world, player, regions_by_name, tiles_by_coords, random, tile_to_coord,
+                                                                        remaining_coords,
+                                                                        required_items)
     world.location_origin_override = location_origin
 
     return regions_by_name
@@ -337,23 +356,23 @@ def get_maps_to_exclude(options: StardewValleyOptions):
         maps_to_exclude.add("Home of Pam & Penny")
     if options.exclude_ginger_island == ExcludeGingerIsland.option_true:
         maps_to_exclude |= {
-            "IslandShrine", 
-            "IslandEast",
-            "IslandWest", 
-            "IslandHut", 
-            "IslandFarmHouse", 
-            "Island Field Office", 
-            "IslandNorth", 
             "IslandShrine",
-            "IslandSouth", 
+            "IslandEast",
+            "IslandWest",
+            "IslandHut",
+            "IslandFarmHouse",
+            "Island Field Office",
+            "IslandNorth",
+            "IslandShrine",
+            "IslandSouth",
             "IslandSouthEast",
             "IslandSouthEastCave",
             "LeoTreeHouse",
-            "Colored Crystals Cave", 
-            "Qi's Walnut Room", 
-            "IslandFarmCave", 
-            "Shipwreck", 
-            "BoatTunnel", 
+            "Colored Crystals Cave",
+            "Qi's Walnut Room",
+            "IslandFarmCave",
+            "Shipwreck",
+            "BoatTunnel",
             "Island Mushroom Cave"
         }
     return maps_to_exclude
@@ -418,13 +437,11 @@ def requirement_rule(requirement: str, world: "StardewValleyWorld", player: int)
     return Received(splited[0], player, amount)
 
 
-def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by_name: dict[str, Region],
-                            tiles_by_coords: dict[tuple[str, int, int], Region],
-                            random: Random, tile_to_coord, remaining_coords, required_items):
-    from .rules import StardewRuleCollector
+def define_tilesanity_item_rules(world: "StardewValleyWorld", player: int, regions_by_name: dict[str, Region],
+                                 tiles_by_coords: dict[tuple[str, int, int], Region],
+                                 random: Random, tile_to_coord, remaining_coords, required_items):
+    from worlds.stardew_valley.rules import StardewRuleCollector
     rule_collector = StardewRuleCollector(world.multiworld, world.player, world.content)
-
-    # Add item rules
     for tile in required_items:
         requirements = required_items[tile]
         access_rule = True_()
@@ -433,6 +450,15 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
         region = tiles_by_coords[tile]
         for entrance in region.entrances:
             rule_collector.set_entrance_rule(entrance.name, access_rule)
+    world.tilesanity_rulebuilder = lambda: define_tilesanity_tile_rules(world, player, regions_by_name, tiles_by_coords, random, tile_to_coord,
+                                                                        remaining_coords)
+
+
+def define_tilesanity_tile_rules(world: "StardewValleyWorld", player: int, regions_by_name: dict[str, Region],
+                                 tiles_by_coords: dict[tuple[str, int, int], Region],
+                                 random: Random, tile_to_coord, remaining_coords):
+    from .rules import StardewRuleCollector
+    rule_collector = StardewRuleCollector(world.multiworld, world.player, world.content)
 
     menu = regions_by_name["Menu"]
     tile_order = []  # This list is sorted
@@ -547,6 +573,7 @@ def define_tilesanity_rules(world: "StardewValleyWorld", player: int, regions_by
                 rule_collector.set_entrance_rule(entrance.name, access_rule)
 
     world.tile_list = tile_names
+    del world.tilesanity_rulebuilder
 
 
 def get_neighbors(remaining_tiles, tile_region):

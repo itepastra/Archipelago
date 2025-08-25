@@ -241,9 +241,10 @@ class StardewValleyWorld(World):
                                for location in self.multiworld.get_locations(self.player)
                                if location.address is not None and not location.locked])
         if self.options.tilesanity > 1:
-            locations_count -= len(self.tile_list) - int(len(self.tile_list) * (100 - self.options.tilesanity_local) / 100)
+            local_tiles = len(self.tile_list) - int(len(self.tile_list) * (100 - self.options.tilesanity_local) / 100)
+            locations_count -= local_tiles
 
-        created_items = create_items(self.create_item, locations_count, items_to_exclude, self.options, self.content, self.random)
+        created_items = create_items(self.create_item, locations_count, items_to_exclude, self.options, self.content, self.random, self)
 
         self.multiworld.itempool += created_items
 
@@ -447,6 +448,14 @@ class StardewValleyWorld(World):
     def set_rules(self):
         set_rules(self)
 
+    def connect_entrances(self) -> None:
+        no_target_groups = {0: [0]}
+        placement = entrance_rando.randomize_entrances(self, coupled=True, target_group_lookup=no_target_groups)
+        self.randomized_entrances = prepare_mod_data(placement)
+
+        if self.options.tilesanity == 2:
+            self.tilesanity_rulebuilder()
+
         # Place local tiles
         if self.options.tilesanity == Tilesanity.option_full and self.options.tilesanity_local.value > 0:
             local_tiles = len(self.tile_list) - int(len(self.tile_list) * (100 - self.options.tilesanity_local) / 100)
@@ -455,30 +464,7 @@ class StardewValleyWorld(World):
                 location = self.get_location(location_name)
                 location.place_locked_item(self.create_item("Progressive Tile"))
 
-    def connect_entrances(self) -> None:
-        no_target_groups = {0: [0]}
-        placement = entrance_rando.randomize_entrances(self, coupled=True, target_group_lookup=no_target_groups)
-        self.randomized_entrances = prepare_mod_data(placement)
-
     def generate_basic(self):
-        from worlds.stardew_valley.stardew_rule.rule_explain import explain
-        s = self.multiworld.get_all_state()
-        unreachable_regions = []
-
-        for region in self.multiworld.get_regions(self.player):
-            if not region.can_reach(s):
-                unreachable_regions.append(region)
-                explanation = explain(Reach(region.name, "Region", self.player), s)
-                print(f"{region.name} is unrachable: {explanation}")
-        assert len(unreachable_regions) == 0
-
-        unreachable_locations = []
-        for location in self.multiworld.get_locations(self.player):
-            if not location.can_reach(s):
-                unreachable_locations.append(location)
-                explanation = explain(Reach(location.name, "Location", self.player), s)
-                print(f"{location.name} is unrachable: {explanation}")
-        assert len(unreachable_locations) == 0
         pass
 
     def post_fill(self) -> None:

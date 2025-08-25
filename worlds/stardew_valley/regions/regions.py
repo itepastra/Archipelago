@@ -17,20 +17,19 @@ class RegionFactory(Protocol):
 def create_regions(region_factory: RegionFactory, world_options: StardewValleyOptions, content: StardewContent, world) -> dict[str, Region]:
     connection_data_by_name, region_data_by_name = create_connections_and_regions(content.registered_packs)
 
+    randomization_flag = create_player_randomization_flag(world_options.entrance_randomization, content)
     if world_options.tilesanity < Tilesanity.option_full:
         regions_by_name: dict[str: Region] = {
             region_name: region_factory(region_name)
             for region_name in region_data_by_name
         }
-
-        randomization_flag = create_player_randomization_flag(world_options.entrance_randomization, content)
         connect_regions(region_data_by_name, connection_data_by_name, regions_by_name, randomization_flag)
 
         return regions_by_name
     else:
         from ..tilesanity import create_regions_tilesanity
         regions_by_name = create_regions_tilesanity(world, region_factory, region_data_by_name,
-                                                                       world.player, world.random)
+                                                                       world.player, world.random, randomization_flag)
         return regions_by_name
 
 
