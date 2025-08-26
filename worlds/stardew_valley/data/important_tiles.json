@@ -117,84 +117,96 @@
     {
       "Position": "14, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 16",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 17",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 18",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "14, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "15, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "16, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "16, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "17, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "17, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -208,70 +220,80 @@
     {
       "Position": "18, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "18, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "19, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "19, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "20, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "20, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "20, 16",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "20, 17",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "20, 18",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "20, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -3267,42 +3289,48 @@
     {
       "Position": "25, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -3337,28 +3365,32 @@
     {
       "Position": "26, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -3379,14 +3411,16 @@
     {
       "Position": "28, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -3414,14 +3448,16 @@
     {
       "Position": "29, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "29, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -3442,14 +3478,16 @@
     {
       "Position": "30, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "30, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -3484,42 +3522,48 @@
     {
       "Position": "31, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -4879,70 +4923,80 @@
     {
       "Position": "25, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -4977,14 +5031,16 @@
     {
       "Position": "28, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -5026,14 +5082,16 @@
     {
       "Position": "29, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "29, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -5054,14 +5112,16 @@
     {
       "Position": "30, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "30, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -5124,42 +5184,48 @@
     {
       "Position": "31, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -6269,42 +6335,48 @@
     {
       "Position": "36, 29",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "36, 30",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "36, 31",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "36, 32",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "36, 33",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "36, 34",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -6325,7 +6397,8 @@
     {
       "Position": "37, 34",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -6346,7 +6419,8 @@
     {
       "Position": "39, 34",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -6382,7 +6456,8 @@
     {
       "Position": "40, 34",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -6397,49 +6472,56 @@
     {
       "Position": "41, 34",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 29",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 30",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 31",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 32",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 33",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 34",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -7072,42 +7154,48 @@
     {
       "Position": "25, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -7142,28 +7230,32 @@
     {
       "Position": "26, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -7184,14 +7276,16 @@
     {
       "Position": "28, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -7219,14 +7313,16 @@
     {
       "Position": "29, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "29, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -7247,14 +7343,16 @@
     {
       "Position": "30, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "30, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -7275,42 +7373,48 @@
     {
       "Position": "31, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -10620,42 +10724,48 @@
     {
       "Position": "37, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "37, 20",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "37, 21",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "37, 22",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "37, 23",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "37, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -10676,28 +10786,32 @@
     {
       "Position": "38, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "38, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "39, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "39, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -10718,14 +10832,16 @@
     {
       "Position": "40, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "40, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -10753,70 +10869,80 @@
     {
       "Position": "41, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "41, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "42, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "43, 19",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "43, 20",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "43, 21",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "43, 22",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "43, 23",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "43, 24",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -12534,84 +12660,96 @@
     {
       "Position": "25, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -12625,14 +12763,16 @@
     {
       "Position": "29, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "29, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -12653,14 +12793,16 @@
     {
       "Position": "30, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "30, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -12681,42 +12823,48 @@
     {
       "Position": "31, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -13690,84 +13838,96 @@
     {
       "Position": "25, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "25, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "26, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "27, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "28, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -13781,28 +13941,32 @@
     {
       "Position": "29, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "29, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "30, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "30, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
@@ -13823,42 +13987,48 @@
     {
       "Position": "31, 10",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 11",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 12",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 13",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 14",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
     {
       "Position": "31, 15",
       "RequiredItems": [
-        "Carpenter Shop!reg OR Wizard Blueprints!reg"
+        "Carpenter Shop!reg OR Wizard Blueprints!reg",
+        "Greenhouse"
       ],
       "Entrances": []
     },
