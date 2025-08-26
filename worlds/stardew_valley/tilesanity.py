@@ -99,12 +99,12 @@ def alternate_name(region: str, option: "StardewValleyOptions"):
     elif farm_type == FarmType.option_hill_top:
         raise OptionError("Hilltop Farm is erroring")
         farm_name = "Hilltop Farm"
-    # elif farm_type == FarmType.option_wilderness:
-    #     farm_name = "Wilderness Farm"
+    elif farm_type == FarmType.option_wilderness:
+        farm_name = "Wilderness Farm"
     elif farm_type == FarmType.option_four_corners:
         farm_name = "Four Corners Farm"
-    # elif farm_type == FarmType.option_beach:
-    #     farm_name = "Beach Farm"
+    elif farm_type == FarmType.option_beach:
+        farm_name = "Beach Farm"
     elif farm_type == FarmType.option_meadowlands:
         farm_name = "Meadowlands Farm"
     else:
