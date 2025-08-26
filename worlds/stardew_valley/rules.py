@@ -161,7 +161,6 @@ def set_rules(world):
     set_sve_rules(logic, rule_collector, world_content)
     if world.options.tilesanity == 2:
         world.tilesanity_rulebuilder()
-        del world.tilesanity_rulebuilder
 
 
 def set_isolated_locations_rules(logic: StardewLogic, rule_collector: StardewRuleCollector, trash_bear_requests: Dict[str, List[str]]):
