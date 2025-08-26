@@ -1446,6 +1446,13 @@
       "Entrances": []
     },
     {
+      "Position": "63, 17",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
+      ]
+    },
+    {
       "Position": "63, 56",
       "RequiredItems": [
         "Axe$2"
@@ -4170,6 +4177,13 @@
       ]
     },
     {
+      "Position": "64, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
+      ]
+    },
+    {
       "Position": "65, 12",
       "RequiredItems": [
         "Carpenter Shop!reg OR Wizard Blueprints!reg"
@@ -5733,6 +5747,13 @@
       ]
     },
     {
+      "Position": "64, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
+      ]
+    },
+    {
       "Position": "64, 39",
       "RequiredItems": [
         "Axe$2"
@@ -6707,6 +6728,13 @@
       "RequiredItems": [],
       "Entrances": [
         "Farmhouse to Farm!exit"
+      ]
+    },
+    {
+      "Position": "64, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
       ]
     },
     {
@@ -8036,6 +8064,13 @@
         "Axe$2"
       ],
       "Entrances": []
+    },
+    {
+      "Position": "70, 17",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
+      ]
     },
     {
       "Position": "71, 14",
@@ -11432,6 +11467,13 @@
       ]
     },
     {
+      "Position": "81, 22",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
+      ]
+    },
+    {
       "Position": "81, 54",
       "RequiredItems": [
         "Pickaxe$3"
@@ -13073,6 +13115,13 @@
       ]
     },
     {
+      "Position": "64, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
+      ]
+    },
+    {
       "Position": "65, 12",
       "RequiredItems": [
         "Carpenter Shop!reg OR Wizard Blueprints!reg"
@@ -14527,6 +14576,13 @@
       "RequiredItems": [],
       "Entrances": [
         "Farmhouse to Farm!exit"
+      ]
+    },
+    {
+      "Position": "64, 18",
+      "RequiredItems": [],
+      "Entrances": [
+        "Farm"
       ]
     },
     {
