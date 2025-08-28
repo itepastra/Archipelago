@@ -13716,15 +13716,15 @@
       "Position": "35, 18",
       "RequiredItems": [],
       "Entrances": [
-        "Junimo Kart 1,Junimo Kart: Crumble Cavern!loc",
-        "Junimo Kart 1,Junimo Kart: Slippery Slopes!loc",
-        "Junimo Kart 4,Junimo Kart: Secret Level!loc",
-        "Junimo Kart 2,Junimo Kart: The Gem Sea Giant!loc",
-        "Junimo Kart 2,Junimo Kart: Slomp's Stomp!loc",
-        "Junimo Kart 2,Junimo Kart: Ghastly Galleon!loc",
-        "Junimo Kart 3,Junimo Kart: Glowshroom Grotto!loc",
-        "Junimo Kart 3,Junimo Kart: Red Hot Rollercoaster!loc",
-        "Junimo Kart 4,Junimo Kart: Sunset Speedway (Victory)!loc"
+        "Junimo Kart: Crumble Cavern!loc",
+        "Junimo Kart: Slippery Slopes!loc",
+        "Junimo Kart: Secret Level!loc",
+        "Junimo Kart: The Gem Sea Giant!loc",
+        "Junimo Kart: Slomp's Stomp!loc",
+        "Junimo Kart: Ghastly Galleon!loc",
+        "Junimo Kart: Glowshroom Grotto!loc",
+        "Junimo Kart: Red Hot Rollercoaster!loc",
+        "Junimo Kart: Sunset Speedway (Victory)!loc"
       ]
     }
   ],
