@@ -13666,6 +13666,13 @@
   ],
   "Stardrop Saloon": [
     {
+      "Position": "10, 20",
+      "RequiredItems": [],
+      "Entrances": [
+        "Saloon"
+      ]
+    },
+    {
       "Position": "14, 24",
       "RequiredItems": [],
       "Entrances": [
