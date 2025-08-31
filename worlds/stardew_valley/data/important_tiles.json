@@ -12147,6 +12147,20 @@
       ]
     },
     {
+      "Position": "21, 9",
+      "RequiredItems": [],
+      "Entrances": [
+        "Secret Note #13: Junimo Plush!loc"
+      ]
+    },
+    {
+      "Position": "29, 15",
+      "RequiredItems": [],
+      "Entrances": [
+        "Quest: A Winter Mystery!loc"
+      ]
+    },
+    {
       "Position": "35, 97",
       "RequiredItems": [],
       "Entrances": [
@@ -12182,6 +12196,13 @@
       ]
     },
     {
+      "Position": "48, 99",
+      "RequiredItems": [],
+      "Entrances": [
+        "Secret Note #21: A Date In Nature!loc"
+      ]
+    },
+    {
       "Position": "52, 20",
       "RequiredItems": [],
       "Entrances": [
@@ -12200,6 +12221,13 @@
       "RequiredItems": [],
       "Entrances": [
         "Town to Alex's House"
+      ]
+    },
+    {
+      "Position": "57, 80",
+      "RequiredItems": [],
+      "Entrances": [
+        "Secret Note #19: Solid Gold Lewis!loc"
       ]
     },
     {
@@ -12245,6 +12273,13 @@
         "Town to JojaMart",
         "Enter Abandoned Joja Mart",
         "Enter Movie Theater"
+      ]
+    },
+    {
+      "Position": "98, 5",
+      "RequiredItems": [],
+      "Entrances": [
+        "Secret Note #17: Green Strange Doll!loc"
       ]
     },
     {
@@ -12294,42 +12329,42 @@
     {
       "Position": "110, 20",
       "RequiredItems": [
-        "Axe$3"
+        "Axe$2"
       ],
       "Entrances": []
     },
     {
       "Position": "110, 21",
       "RequiredItems": [
-        "Axe$3"
+        "Axe$2"
       ],
       "Entrances": []
     },
     {
       "Position": "111, 20",
       "RequiredItems": [
-        "Axe$3"
+        "Axe$2"
       ],
       "Entrances": []
     },
     {
       "Position": "111, 21",
       "RequiredItems": [
-        "Axe$3"
+        "Axe$2"
       ],
       "Entrances": []
     },
     {
       "Position": "116, 20",
       "RequiredItems": [
-        "Axe$3"
+        "Axe$2"
       ],
       "Entrances": []
     },
     {
       "Position": "117, 20",
       "RequiredItems": [
-        "Axe$3"
+        "Axe$2"
       ],
       "Entrances": []
     },
