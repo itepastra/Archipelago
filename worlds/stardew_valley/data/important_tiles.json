@@ -4432,6 +4432,13 @@
       ]
     },
     {
+      "Position": "57, 16",
+      "RequiredItems": [],
+      "Entrances": [
+        "Secret Note #14: Stone Junimo!loc"
+      ]
+    },
+    {
       "Position": "57, 64",
       "RequiredItems": [],
       "Entrances": [
