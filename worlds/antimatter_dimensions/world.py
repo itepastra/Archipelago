@@ -3,7 +3,7 @@ from typing import Any
 
 from worlds.AutoWorld import World
 
-from . import items, locations, options, regions, rules
+from . import items, locations, options, regions, rules, web_world
 
 
 class AntimatterDimensionsWorld(World):
@@ -12,6 +12,8 @@ class AntimatterDimensionsWorld(World):
     """
 
     game = "Antimatter Dimensions"
+
+    web = web_world.AntimatterDimensionsWebWorld()
 
     location_name_to_id = locations.location_name_to_id()
     item_name_to_id = items.item_name_to_id()
