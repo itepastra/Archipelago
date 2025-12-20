@@ -1,5 +1,5 @@
 from BaseClasses import Tutorial
-from world.AutoWorld import WebWorld
+from worlds.AutoWorld import WebWorld
 
 from .options import option_groups, option_presets
 

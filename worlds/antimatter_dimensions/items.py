@@ -73,10 +73,10 @@ def create_all_items(world: AntimatterDimensionsWorld) -> None:
 
     for row_idx, row in enumerate(ACHIEVEMENTS, 1):
         # we want to start with all the achievements up to the chosen minimum row
-        if row_idx < world.options.minimum_achievement_row:
+        if row_idx < world.options.minimum_achievements_row:
             for item in row:
                 precollected.append(world.create_item(item))
-        elif row_idx <= world.options.maximum_achievement_row:
+        elif row_idx <= world.options.maximum_achievements_row:
             for item in row:
                 itempool.append(world.create_item(item))
         # the achievements after the last row shouldn't be added, since that'd be very over powered

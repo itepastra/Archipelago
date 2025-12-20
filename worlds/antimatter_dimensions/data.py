@@ -1,3 +1,4 @@
+ACHIEVEMENT_ROW_COUNT: int = 18
 ACHIEVEMENTS: list[list[str]] = [
     [
         "You gotta start somewhere",
@@ -180,3 +181,10 @@ ACHIEVEMENTS: list[list[str]] = [
         "The End",
     ],
 ]
+
+CHALLENGES = [
+    [f"Complete Challenge {i + 1}" for i in range(12)],
+    [f"Complete Infinity Challenge {i + 1}" for i in range(8)],
+    [f"Complete Eternity Challenge {j + 1}x{i + 1}" for i in range(5) for j in range(12)],
+]
+print(CHALLENGES)

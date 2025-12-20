@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
 from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, OptionSet
+from worlds.antimatter_dimensions.data import ACHIEVEMENT_ROW_COUNT
 
 
 class Goal(Choice):
@@ -23,6 +24,7 @@ class Goal(Choice):
     """
 
     display_name = "Goal"
+    default = 12
 
     option_Infinity = 0
     option_Eternity = 1
@@ -47,9 +49,10 @@ class MinimumAchievementsRow(Range):
     """
 
     display_name = "Minimum Achievements Row"
+    default = 1
 
     range_start = 1
-    range_end = 18
+    range_end = ACHIEVEMENT_ROW_COUNT
 
 
 class MaximumAchievementsRow(Range):
@@ -61,9 +64,10 @@ class MaximumAchievementsRow(Range):
     """
 
     display_name = "Maximum Achievements Row"
+    default = ACHIEVEMENT_ROW_COUNT - 1
 
     range_start = 1
-    range_end = 18
+    range_end = ACHIEVEMENT_ROW_COUNT
 
 
 class ChallengeSanity(OptionSet):
@@ -77,6 +81,7 @@ class ChallengeSanity(OptionSet):
     """
 
     display_name = "Challengesanity"
+    default = {"Normal", "Infinity", "Eternity"}
 
     valid_keys = {"Normal", "Infinity", "Eternity"}
 
@@ -87,5 +92,33 @@ class DimensionSanity(OptionSet):
     """
 
     display_name = "Dimensionsanity"
+    default = {"Antimatter", "Infinity", "Time"}
 
     valid_keys = {"Antimatter", "Infinity", "Time"}
+
+
+@dataclass
+class AntimatterDimensionsOptions(PerGameCommonOptions):
+    goal: Goal
+    minimum_achievements_row: MinimumAchievementsRow
+    maximum_achievements_row: MaximumAchievementsRow
+    challengesanity: ChallengeSanity
+    dimensionsanity: DimensionSanity
+
+
+option_groups = [
+    OptionGroup(
+        "Gameplay Options",
+        [Goal, MinimumAchievementsRow, MaximumAchievementsRow, ChallengeSanity, DimensionSanity],
+    )
+]
+
+option_presets = {
+    "full game": {
+        "goal": "achievements",
+        "minimum_achievements_row": 1,
+        "maximum_achievements_row": ACHIEVEMENT_ROW_COUNT,
+        "challengesanity": ["Normal", "Infinity", "Eternity"],
+        "dimensionsanity": ["Antimatter", "Infinity", "Time"],
+    },
+}
