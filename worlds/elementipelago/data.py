@@ -1,0 +1,8 @@
+# for items
+
+UPGRADE_OFFSET = 100
+ELEMENT_AMOUNT = 1000
+START_ELEMENTS = 4
+
+# for locations
+LOCATION_AMOUNT = 2000
