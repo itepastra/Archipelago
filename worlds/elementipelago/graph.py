@@ -1,5 +1,10 @@
-from .data import START_ELEMENTS
+from typing import Set
+
+# from .data import START_ELEMENTS
 import random
+
+
+MASK = 0xFFFFFFFFFFFFFFFF
 
 
 class RNG:
@@ -7,25 +12,25 @@ class RNG:
     seed_y: int
 
     def __init__(self, seed: int) -> None:
-        self.seed_x = (seed) % 0xFFFFFFFFFFFFFFFF
-        self.seed_y = (seed << 1) % 0xFFFFFFFFFFFFFFFF
+        self.seed_x = (seed) & 0xFFFFFFFFFFFFFFFF
+        self.seed_y = (seed << 1) & 0xFFFFFFFFFFFFFFFF
 
     def get_random(self) -> int:
         x = self.seed_x
         y = self.seed_y
         self.seed_x = self.seed_y
-        x ^= (x << 23) % 0xFFFFFFFFFFFFFFFF
-        x ^= (x >> 17) % 0xFFFFFFFFFFFFFFFF
+        x ^= (x << 23) & 0xFFFFFFFFFFFFFFFF
+        x ^= x >> 17
         x ^= y
-        self.seed_y = x + y
-        return x % 0xFFFFFFFFFFFFFFFF
+        self.seed_y = (x + y) & 0xFFFFFFFFFFFFFFFF
+        return x & 0xFFFFFFFFFFFFFFFF
 
 
 def create_graph(
-    inputs: int, outputs: int, seed: int, intermediates: int = 10, start_items: int = START_ELEMENTS
+    inputs: int, outputs: int, seed: int, intermediates: int = 10, start_items: int = 4
 ) -> tuple[list[tuple[int, int, int]], list[int]]:  # (input1, input2, output)
-    dag_edges = []
-    already_used = set([])
+    dag_edges: list[tuple[int, int, int]] = []
+    already_used: Set[tuple[int, int]] = set()
     statuses = []  # 0 = intermediate, 1 = input, 2 = output
     items_len = inputs + intermediates + outputs
     rng = RNG(seed)
@@ -37,7 +42,7 @@ def create_graph(
         while True:
             item1 = rng.get_random() % i
             item2 = rng.get_random() % i
-            if (item1, item2) not in already_used:
+            if (item1, item2) not in already_used and (item2, item1) not in already_used:
                 already_used.add((item1, item2))
                 break
         output = i

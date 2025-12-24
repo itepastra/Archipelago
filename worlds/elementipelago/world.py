@@ -13,7 +13,9 @@ class ElementipelagoWorld(World):
     """
     Elementipelago is yet another alchemy game, but custom made to work with Archipelago.
     """
-    intermediate_count: int = 0
+
+    intermediate_count: int
+    graph_seed: int
 
     game = "Elementipelago"
 
@@ -32,7 +34,9 @@ class ElementipelagoWorld(World):
         locations.create_all_locations(self)
 
     def set_rules(self) -> None:
-        self.multiworld.completion_condition[self.player] = lambda state: state.has_all([f"Intermediate {n+1}" for n in range(self.intermediate_count)], self.player)
+        self.multiworld.completion_condition[self.player] = lambda state: state.has_all(
+            [f"Intermediate {n + 1}" for n in range(self.intermediate_count)], self.player
+        )
 
     def create_items(self) -> None:
         items.create_all_items(self)
@@ -44,4 +48,7 @@ class ElementipelagoWorld(World):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        return self.options.as_dict("element_amount", "filler_amount")
+        return self.options.as_dict("element_amount", "filler_amount") | {
+            "graph_seed": self.graph_seed,
+            "intermediate_count": self.intermediate_count,
+        }
