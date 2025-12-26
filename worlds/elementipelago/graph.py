@@ -12,18 +12,18 @@ class RNG:
     seed_y: int
 
     def __init__(self, seed: int) -> None:
-        self.seed_x = (seed) & 0xFFFFFFFFFFFFFFFF
-        self.seed_y = (seed << 1) & 0xFFFFFFFFFFFFFFFF
+        self.seed_x = (seed) & MASK
+        self.seed_y = (seed << 1) & MASK
 
     def get_random(self) -> int:
         x = self.seed_x
         y = self.seed_y
         self.seed_x = self.seed_y
-        x ^= (x << 23) & 0xFFFFFFFFFFFFFFFF
+        x ^= (x << 23) & MASK
         x ^= x >> 17
         x ^= y
-        self.seed_y = (x + y) & 0xFFFFFFFFFFFFFFFF
-        return x & 0xFFFFFFFFFFFFFFFF
+        self.seed_y = (x + y) & MASK
+        return x & MASK
 
 
 def create_graph(
