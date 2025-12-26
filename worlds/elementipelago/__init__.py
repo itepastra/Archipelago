@@ -1,1 +1,1 @@
-from .world import APQuestWorld as APQuestWorld
+from .world import ElementipelagoWorld as ElementipelagoWorld

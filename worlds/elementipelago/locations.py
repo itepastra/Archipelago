@@ -79,13 +79,10 @@ def make_rule(in1, in2, nmap, status, player):
 
 
 def create_graph_locations(world: ElementipelagoWorld) -> None:
-    seed = world.random.randint(0, 1000000)
-    world.graph_seed = seed
-
     (graph, statuses) = create_graph(
         world.options.element_amount.value,
         world.options.element_amount.value + world.options.filler_amount.value,
-        seed,
+        world.graph_seed,
         intermediates=world.options.intermediate_amount.value,
     )
     print(graph)

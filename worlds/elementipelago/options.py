@@ -17,11 +17,10 @@ class ElementAmount(Range):
 
 class FillerAmount(Range):
     """
-    How many items are to be produced for Archipelago?
-    Note: Needs to be greater then ElementAmount
+    How many items are to be produced extra for filler in Archipelago?
     """
 
-    display_name = "Product Amount"
+    display_name = "Filler Amount"
 
     range_start = 1
     range_end = LOCATION_AMOUNT - ELEMENT_AMOUNT

@@ -29,6 +29,21 @@ class ElementipelagoWorld(World):
 
     origin_region_name = "Menu"
 
+    @staticmethod
+    def interpret_slot_data(slot_data: dict[str, Any]) -> dict[str, Any]:
+        return slot_data
+
+    ut_can_gen_without_yaml = True
+
+    def generate_early(self) -> None:
+        self.graph_seed = self.random.randint(5000000, 100000000)
+
+        if hasattr(self.multiworld, "generation_is_fake"):
+            if hasattr(self.multiworld, "re_gen_passthrough"):
+                if "Elementipelago" in self.multiworld.re_gen_passthrough:
+                    slot_data = self.multiworld.re_gen_passthrough["Elementipelago"]
+                    self.graph_seed = slot_data["graph_seed"]
+
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_all_locations(self)
