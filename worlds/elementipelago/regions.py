@@ -93,6 +93,11 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             in1name = get_node_name(option[0], number_map, statuses)
             in2name = get_node_name(option[1], number_map, statuses)
 
+            if option[0] == option[1]:
+                re1 = world.get_region(in1name)
+                entr = re1.connect(cp, f"Craft {compname} using {in1name} twice")
+                print(f"created entrance {entr}")
+                continue
             re1 = world.get_region(in1name)
             re2 = world.get_region(in2name)
 
