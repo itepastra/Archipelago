@@ -93,13 +93,11 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             in1name = get_node_name(option[0], number_map, statuses)
             in2name = get_node_name(option[1], number_map, statuses)
 
+            re1 = world.get_region(in1name)
             if option[0] == option[1]:
-                re1 = world.get_region(in1name)
                 entr = re1.connect(cp, f"Craft {compname} using {in1name} twice")
                 print(f"created entrance {entr}")
                 continue
-            re1 = world.get_region(in1name)
-            re2 = world.get_region(in2name)
 
             entr = re1.connect(
                 cp,
@@ -107,4 +105,6 @@ def graph_regions(world: ElementipelagoWorld) -> None:
                 lambda state: state.can_reach_region(in2name, world.player),
             )
             print(f"created entrance {entr}")
+
+            re2 = world.get_region(in2name)
             world.multiworld.register_indirect_condition(re2, entr)
