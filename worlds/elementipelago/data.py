@@ -1,4 +1,4 @@
-# for items
+import random
 
 UPGRADE_OFFSET = 100
 ELEMENT_AMOUNT = 1000

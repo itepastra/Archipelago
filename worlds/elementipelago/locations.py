@@ -53,24 +53,15 @@ def make_rule(in1, in2, nmap, status, player):
     lname = get_name_thing(in1, nmap, status)
     rname = get_name_thing(in2, nmap, status)
     print(f"making rule between {lname} and {rname}")
-    if status[in1] == 0 and status[in2] == 0:
+
+    if status[in1] < 2 and status[in2] < 2:
         return lambda status: status.has(lname, player) and status.has(rname, player)
-    elif status[in1] == 0 and status[in2] == 1:
-        return lambda status: status.has(lname, player) and status.has(rname, player)
-    elif status[in1] == 0 and status[in2] == 2:
+    elif status[in1] < 2 and status[in2] == 2:
         return lambda status: status.has(lname, player) and status.can_reach_location(f"Make {rname}", player)
-    elif status[in1] == 1 and status[in2] == 0:
-        return lambda status: status.has(lname, player) and status.has(rname, player)
-    elif status[in1] == 1 and status[in2] == 1:
-        return lambda status: status.has(lname, player) and status.has(rname, player)
-    elif status[in1] == 1 and status[in2] == 2:
-        return lambda status: status.has(lname, player) and status.can_reach_location(f"Make {rname}", player)
-    elif status[in1] == 2 and status[in2] == 0:
-        return lambda status: status.can_reach_location(f"Make {lname}", player) and status.has(rname, player)
-    elif status[in1] == 2 and status[in2] == 1:
+    elif status[in1] == 2 and status[in2] < 2:
         return lambda status: status.can_reach_location(f"Make {lname}", player) and status.has(rname, player)
     elif status[in1] == 2 and status[in2] == 2:
-        return lambda status: status.can_reach_location(f"Make {lname}", player) and status.can_reach_location(
+        return lambda state: state.can_reach_location(f"Make {lname}", player) and state.can_reach_location(
             f"Make {rname}", player
         )
     else:
@@ -79,14 +70,14 @@ def make_rule(in1, in2, nmap, status, player):
 
 
 def create_graph_locations(world: ElementipelagoWorld) -> None:
+    starting_items = 4
     (graph, statuses) = create_graph(
-        world.options.element_amount.value,
-        world.options.element_amount.value + world.options.filler_amount.value,
+        world.element_amount,
+        world.element_amount + world.filler_amount,
         world.graph_seed,
-        intermediates=world.options.intermediate_amount.value,
+        world.intermediate_amount,
+        starting_items,
     )
-    print(graph)
-    print(statuses)
 
     combining = world.get_region("Combining area")
 
@@ -106,21 +97,31 @@ def create_graph_locations(world: ElementipelagoWorld) -> None:
             number_map.append(intermediate_n)
             intermediate_n += 1
 
-    world.intermediate_count = intermediate_n
+    if hasattr(world.multiworld, "generation_is_fake"):
+        for n in range(starting_items):
+            name = get_name_thing(n, number_map, statuses)
+            world.explanations[name] = (1, name, "", "")
 
     for input1, input2, output in graph:
         name = get_name_thing(output, number_map, statuses)
+        in1name = get_name_thing(input1, number_map, statuses)
+        in2name = get_name_thing(input2, number_map, statuses)
         if statuses[output] == 2:  # is a location recipe
             lname = f"Make {name}"
             loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], combining)
             combining.locations.append(loc)
             set_rule(loc, make_rule(input1, input2, number_map, statuses, world.player))
+            if hasattr(world.multiworld, "generation_is_fake"):
+                world.explanations[name] = (2, name, in1name, in2name)
         elif statuses[output] == 1:  # is an element
             print(f"{output} is an Element, so no rule")
-            pass
+            if hasattr(world.multiworld, "generation_is_fake"):
+                world.explanations[name] = (1, name, "", "")
         elif statuses[output] == 0:  # is an intermediate, needs event
             loc = ElementipelagoLocation(world.player, f"Make {name}", None, combining)
             combining.locations.append(loc)
             inter_item = items.ElementipelagoItem(name, ItemClassification.progression, None, world.player)
             loc.place_locked_item(inter_item)
             set_rule(loc, make_rule(input1, input2, number_map, statuses, world.player))
+            if hasattr(world.multiworld, "generation_is_fake"):
+                world.explanations[name] = (0, name, in1name, in2name)

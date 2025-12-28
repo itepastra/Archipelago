@@ -27,7 +27,7 @@ class RNG:
 
 
 def create_graph(
-    inputs: int, outputs: int, seed: int, intermediates: int = 10, start_items: int = 4
+    inputs: int, outputs: int, seed: int, intermediates: int, start_items: int
 ) -> tuple[list[tuple[int, int, int]], list[int]]:  # (input1, input2, output)
     dag_edges: list[tuple[int, int, int]] = []
     already_used: Set[tuple[int, int]] = set()
