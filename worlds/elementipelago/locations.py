@@ -8,6 +8,7 @@ from BaseClasses import ItemClassification, Location
 from . import items
 from .graph import create_graph
 from .data import UPGRADE_OFFSET, ELEMENT_AMOUNT, LOCATION_AMOUNT
+from .utils import get_compound_name, get_element_name, get_intermediate_name
 
 if TYPE_CHECKING:
     from .world import ElementipelagoWorld
@@ -38,90 +39,19 @@ def create_all_locations(world: ElementipelagoWorld) -> None:
     create_graph_locations(world)
 
 
-def get_name_thing(idx, nmap, statuses):
-    if statuses[idx] == 2:
-        return f"Compound {nmap[idx] + 1}"
-    elif statuses[idx] == 1:
-        return f"Element {nmap[idx] + 1}"
-    elif statuses[idx] == 0:
-        return f"Intermediate {nmap[idx] + 1}"
-    else:
-        return f"ERROR: {statuses[idx]} is not a valid status"
-
-
-def make_rule(in1, in2, nmap, status, player):
-    lname = get_name_thing(in1, nmap, status)
-    rname = get_name_thing(in2, nmap, status)
-    print(f"making rule between {lname} and {rname}")
-
-    if status[in1] < 2 and status[in2] < 2:
-        return lambda status: status.has(lname, player) and status.has(rname, player)
-    elif status[in1] < 2 and status[in2] == 2:
-        return lambda status: status.has(lname, player) and status.can_reach_location(f"Make {rname}", player)
-    elif status[in1] == 2 and status[in2] < 2:
-        return lambda status: status.can_reach_location(f"Make {lname}", player) and status.has(rname, player)
-    elif status[in1] == 2 and status[in2] == 2:
-        return lambda state: state.can_reach_location(f"Make {lname}", player) and state.can_reach_location(
-            f"Make {rname}", player
-        )
-    else:
-        print(f"Couldn't make rule for {in1}, {in2}, {nmap}, {status}")
-        return lambda status: False
-
-
 def create_graph_locations(world: ElementipelagoWorld) -> None:
-    starting_items = 4
-    (graph, statuses) = create_graph(
-        world.element_amount,
-        world.element_amount + world.filler_amount,
-        world.graph_seed,
-        world.intermediate_amount,
-        starting_items,
-    )
+    for compound in range(world.element_amount + world.filler_amount):
+        name = get_compound_name(compound + 1)
+        lname = f"Make {name}"
+        lregion = world.get_region(name)
+        loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], lregion)
+        lregion.locations.append(loc)
 
-    combining = world.get_region("Combining area")
-
-    output_n = 0
-    intermediate_n = 0
-    input_n = 0
-
-    number_map = []
-    for node in statuses:
-        if node == 2:
-            number_map.append(output_n)
-            output_n += 1
-        elif node == 1:
-            number_map.append(input_n)
-            input_n += 1
-        elif node == 0:
-            number_map.append(intermediate_n)
-            intermediate_n += 1
-
-    if hasattr(world.multiworld, "generation_is_fake"):
-        for n in range(starting_items):
-            name = get_name_thing(n, number_map, statuses)
-            world.explanations[name] = (1, name, "", "")
-
-    for input1, input2, output in graph:
-        name = get_name_thing(output, number_map, statuses)
-        in1name = get_name_thing(input1, number_map, statuses)
-        in2name = get_name_thing(input2, number_map, statuses)
-        if statuses[output] == 2:  # is a location recipe
-            lname = f"Make {name}"
-            loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], combining)
-            combining.locations.append(loc)
-            set_rule(loc, make_rule(input1, input2, number_map, statuses, world.player))
-            if hasattr(world.multiworld, "generation_is_fake"):
-                world.explanations[name] = (2, name, in1name, in2name)
-        elif statuses[output] == 1:  # is an element
-            print(f"{output} is an Element, so no rule")
-            if hasattr(world.multiworld, "generation_is_fake"):
-                world.explanations[name] = (1, name, "", "")
-        elif statuses[output] == 0:  # is an intermediate, needs event
-            loc = ElementipelagoLocation(world.player, f"Make {name}", None, combining)
-            combining.locations.append(loc)
-            inter_item = items.ElementipelagoItem(name, ItemClassification.progression, None, world.player)
-            loc.place_locked_item(inter_item)
-            set_rule(loc, make_rule(input1, input2, number_map, statuses, world.player))
-            if hasattr(world.multiworld, "generation_is_fake"):
-                world.explanations[name] = (0, name, in1name, in2name)
+    for intermediate in range(world.intermediate_amount):
+        name = get_intermediate_name(intermediate + 1)
+        lname = f"Make {name}"
+        lregion = world.get_region(name)
+        loc = ElementipelagoLocation(world.player, lname, None, lregion)
+        item = items.ElementipelagoItem(name, ItemClassification.progression, None, world.player)
+        loc.place_locked_item(item)
+        lregion.locations.append(loc)

@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
 from .data import UPGRADE_OFFSET, ELEMENT_AMOUNT, START_ELEMENTS
+from .utils import get_element_name
 
 if TYPE_CHECKING:
     from .world import ElementipelagoWorld
@@ -47,4 +48,4 @@ def create_all_items(world: ElementipelagoWorld) -> None:
     world.multiworld.itempool += itempool
 
     for i in range(START_ELEMENTS):
-        world.push_precollected(world.create_item(f"Element {i + 1}"))
+        world.push_precollected(world.create_item(get_element_name(i+1)))
