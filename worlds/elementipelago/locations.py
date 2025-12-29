@@ -43,14 +43,14 @@ def create_graph_locations(world: ElementipelagoWorld) -> None:
     for compound in range(world.element_amount + world.filler_amount):
         name = get_compound_name(compound + 1)
         lname = f"Make {name}"
-        lregion = world.get_region(name)
+        lregion = world.get_region(f"Can get {name}")
         loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], lregion)
         lregion.locations.append(loc)
 
     for intermediate in range(world.intermediate_amount):
         name = get_intermediate_name(intermediate + 1)
         lname = f"Make {name}"
-        lregion = world.get_region(name)
+        lregion = world.get_region(f"Can get {name}")
         loc = ElementipelagoLocation(world.player, lname, None, lregion)
         item = items.ElementipelagoItem(name, ItemClassification.progression, None, world.player)
         loc.place_locked_item(item)

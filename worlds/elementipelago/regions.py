@@ -64,7 +64,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
     for start in range(START_ELEMENTS):
         ways_to_make[start] = []
         name = get_node_name(start, number_map, statuses)
-        compound_region = Region(name, world.player, world.multiworld)
+        compound_region = Region(f"Can get {name}", world.player, world.multiworld)
         world.multiworld.regions.append(compound_region)
 
     for in1, in2, output in graph:
@@ -73,7 +73,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
         if wtm is None:
             ways_to_make[output] = []
             name = get_node_name(output, number_map, statuses)
-            compound_region = Region(name, world.player, world.multiworld)
+            compound_region = Region(f"Can get {name}", world.player, world.multiworld)
             world.multiworld.regions.append(compound_region)
         if in1 < in2:
             ways_to_make[output].append((in1, in2))
@@ -82,9 +82,11 @@ def graph_regions(world: ElementipelagoWorld) -> None:
 
     print(ways_to_make)
 
+    combining = world.get_region("Combining area")
+
     for compound, requirements in ways_to_make.items():
         compname = get_node_name(compound, number_map, statuses)
-        cp = world.get_region(compname)
+        cp = world.get_region(f"Can get {compname}")
         if statuses[compound] == 1:  # the compound is an Element
             print(f"since {compname} is an element, we connect combining with the region {cp}")
             combining.connect(cp, f"Recieve {compname}", lambda state: state.has(compname, world.player))
@@ -93,7 +95,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             in1name = get_node_name(option[0], number_map, statuses)
             in2name = get_node_name(option[1], number_map, statuses)
 
-            re1 = world.get_region(in1name)
+            re1 = world.get_region(f"Can get {in1name}")
             if option[0] == option[1]:
                 entr = re1.connect(cp, f"Craft {compname} using {in1name} twice")
                 print(f"created entrance {entr}")
@@ -106,5 +108,5 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             )
             print(f"created entrance {entr}")
 
-            re2 = world.get_region(in2name)
+            re2 = world.get_region(f"Can get {in2name}")
             world.multiworld.register_indirect_condition(re2, entr)
