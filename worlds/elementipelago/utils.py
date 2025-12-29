@@ -1,10 +1,10 @@
-def get_node_name(node: int, number_map: list[int], statuses: list[int]) -> str:
-    if statuses[node] == 0:
-        return get_intermediate_name(number_map[node])
-    if statuses[node] == 1:
-        return get_element_name(number_map[node])
-    if statuses[node] == 2:
-        return get_compound_name(number_map[node])
+def get_node_name(node: tuple[int, int]) -> str:
+    if node[1] == 0:
+        return get_element_name(node[0])
+    if node[1] == 1:
+        return get_intermediate_name(node[0])
+    if node[1] == 2:
+        return get_compound_name(node[0])
     return "Illegal Node"
 
 

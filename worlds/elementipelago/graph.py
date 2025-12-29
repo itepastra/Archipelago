@@ -1,4 +1,5 @@
 import random
+import time
 
 
 MASK = 0xFFFFFFFFFFFFFFFF
@@ -25,49 +26,66 @@ class RNG:
 
 def create_graph(
     inputs: int, outputs: int, seed: int, intermediates: int, start_items: int
-) -> tuple[list[tuple[int, int, int]], list[int]]:  # (input1, input2, output)
-    dag_edges: list[tuple[int, int, int]] = []
+) -> list[tuple[int, int, int, int]]:  # (input1, input2, output, type)
+    start = time.time()
+    # 0 -> Element/Input
+    # 1 -> Intermediate
+    # 2 -> Compound/Output
+    dag_edges: list[tuple[int, int, int, int]] = []
     already_used: set[tuple[int, int]] = set()
-    statuses: list[int] = [1 for _ in range(start_items)]  # 0 = intermediate, 1 = input, 2 = output
-    items_len = inputs + intermediates + outputs
     rng = RNG(seed)
 
-    # make a hyper-DAG so there is at least 1 recipe to make each item
-    for i in range(start_items, items_len):
-        while True:
-            item1 = rng.get_random() % i
-            item2 = rng.get_random() % i
-            if (item1, item2) not in already_used and (item2, item1) not in already_used:
-                already_used.add((item1, item2))
-                break
-        output = i
-        dag_edges.append((item1, item2, output))
-        statuses.append(0)
+    inputs_to_place: list[int] = list(range(1, inputs + 1))
+    intermediates_to_place: list[int] = list(range(1, intermediates + 1))
+    outputs_to_place: list[int] = list(range(1, outputs + 1))
 
-    # At any point the amount of compounds needs to be >= the amount of elements for fill
-    r_items_len = items_len - start_items
-    inputs_to_place = inputs - start_items
-    outputs_to_place = outputs
-    while outputs_to_place > 0:
-        idx = (rng.get_random() % r_items_len) + start_items
-        if statuses[idx] != 0:
-            continue
-        statuses[idx] = 2
-        outputs_to_place -= 1
+    # make sure the starting items are placed
+    for i in range(1, start_items + 1):
+        dag_edges.append((-1, -1, i, 0))
+        inputs_to_place.remove(i)
 
-    n = 0
-    excess_outputs: list[int] = []
-    for status in statuses:
-        if status == 2:
-            n += 1
-        excess_outputs.append(n)
+    inputs_placed = 0
+    outputs_placed = 0
 
-    while inputs_to_place > 0:
-        idx = (rng.get_random() % r_items_len) + start_items
-        if statuses[idx] != 0 or excess_outputs[idx] <= 0:
-            continue
-        excess_outputs = [v - 1 for v in excess_outputs]
-        statuses[idx] = 1
-        inputs_to_place -= 1
+    to_place_length = len(inputs_to_place) + len(intermediates_to_place) + len(outputs_to_place)
+    while to_place_length > 0:
+        # print(
+        #     f"started new layer, previous: {dag_edges}, to place:\ninputs: {inputs_to_place}\nintermediates: {intermediates_to_place}\noutputs: {outputs_to_place}"
+        # )
+        previous_items = len(dag_edges)
+        # dag_edges contains all the previously placed (and thus "accessible") places
+        new_layer: list[tuple[int, int, int, int]] = []
+        if min(start_items * start_items - 1, to_place_length - 1) > 0:
+            new_layer_size = (rng.get_random() % min(previous_items * previous_items - 1, to_place_length - 1)) + 1
+        else:
+            new_layer_size = 1
+        for _ in range(new_layer_size):
+            to_place_type = -1
+            while to_place_type == -1:
+                typ = rng.get_random() % 3
+                if typ == 0 and outputs_placed > inputs_placed and len(inputs_to_place) > 0:  # element
+                    to_place_type = 0
+                    inputs_placed += 1
+                elif typ == 1 and len(intermediates_to_place) > 0:  # intermediate
+                    to_place_type = 1
+                elif typ == 2 and len(outputs_to_place) > 0:  # output
+                    to_place_type = 2
+                    outputs_placed += 1
 
-    return (dag_edges, statuses)
+            input1_idx = rng.get_random() % previous_items
+            input2_idx = rng.get_random() % previous_items
+            output_idx = rng.get_random() % len(
+                (inputs_to_place, intermediates_to_place, outputs_to_place)[to_place_type]
+            )
+
+            output = (inputs_to_place, intermediates_to_place, outputs_to_place)[to_place_type].pop(output_idx)
+
+            new_layer.append((input1_idx, input2_idx, output, to_place_type))
+
+        to_place_length = len(inputs_to_place) + len(intermediates_to_place) + len(outputs_to_place)
+        dag_edges.extend(new_layer)
+
+    # print(f"finished generating graph: {dag_edges}")
+    end = time.time()
+    print(f"generating graph took {end - start}")
+    return dag_edges
