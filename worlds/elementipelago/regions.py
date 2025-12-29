@@ -89,7 +89,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
         cp = world.get_region(f"Can get {compname}")
         if statuses[compound] == 1:  # the compound is an Element
             print(f"since {compname} is an element, we connect combining with the region {cp}")
-            combining.connect(cp, f"Recieve {compname}", lambda state: state.has(compname, world.player))
+            _ = combining.connect(cp, f"Recieve {compname}", lambda state, cmp = compname: state.has(cmp, world.player))
             continue  # don't add the recepies
         for option in requirements:
             in1name = get_node_name(option[0], number_map, statuses)
@@ -104,7 +104,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             entr = re1.connect(
                 cp,
                 f"Craft {compname} using {in1name} and {in2name}",
-                lambda state: state.can_reach_region(in2name, world.player),
+                lambda state, cmp = in2name: state.can_reach_region(f"Can get {cmp}", world.player),
             )
             print(f"created entrance {entr}")
 
