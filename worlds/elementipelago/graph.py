@@ -55,8 +55,9 @@ def create_graph(
         previous_items = len(dag_edges)
         # dag_edges contains all the previously placed (and thus "accessible") places
         new_layer: list[tuple[int, int, int, int]] = []
-        if min(start_items * start_items - 1, to_place_length - 1) > 0:
-            new_layer_size = (rng.get_random() % min(previous_items * previous_items - 1, to_place_length - 1)) + 1
+        max_layer_size = min(previous_items * previous_items // 2 - 1, to_place_length - 1)
+        if max_layer_size > 0:
+            new_layer_size = (rng.get_random() % max_layer_size) + 1
         else:
             new_layer_size = 1
         for _ in range(new_layer_size):
