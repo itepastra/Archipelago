@@ -48,7 +48,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
     intermediate_n = 0
     input_n = 0
 
-    number_map = []
+    number_map: list[int] = []
     for node in statuses:
         if node == 2:
             output_n += 1
@@ -60,7 +60,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             intermediate_n += 1
             number_map.append(intermediate_n)
 
-    ways_to_make: dict[int, list[tuple[int, int]]] = dict()
+    ways_to_make: dict[int, list[tuple[int, int]]] = {}
     for start in range(START_ELEMENTS):
         ways_to_make[start] = []
         name = get_node_name(start, number_map, statuses)
