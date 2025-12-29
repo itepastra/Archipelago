@@ -66,7 +66,7 @@ def create_graph(
         idx = (rng.get_random() % r_items_len) + start_items
         if statuses[idx] != 0 or excess_outputs[idx] <= 0:
             continue
-        excess_outputs = [v if i < idx else v - 1 for (i, v) in enumerate(excess_outputs)]
+        excess_outputs = [v - 1 for v in excess_outputs]
         statuses[idx] = 1
         inputs_to_place -= 1
 
