@@ -1,4 +1,4 @@
-from .data import ELEMENT_AMOUNT, LOCATION_AMOUNT
+from .data import ELEMENT_AMOUNT, LOCATION_AMOUNT, START_ELEMENTS
 from dataclasses import dataclass
 
 from Options import Range, PerGameCommonOptions, OptionGroup
@@ -10,7 +10,7 @@ class ElementAmount(Range):
     """
 
     display_name = "Element Amount"
-    range_start = 1
+    range_start = START_ELEMENTS
     range_end = ELEMENT_AMOUNT
     default = 100
 
@@ -22,7 +22,7 @@ class FillerAmount(Range):
 
     display_name = "Filler Amount"
 
-    range_start = 1
+    range_start = 0
     range_end = LOCATION_AMOUNT - ELEMENT_AMOUNT
     default = 100
 

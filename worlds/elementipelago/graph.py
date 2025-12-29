@@ -1,6 +1,3 @@
-from typing import Set
-
-# from .data import START_ELEMENTS
 import random
 
 
@@ -30,12 +27,10 @@ def create_graph(
     inputs: int, outputs: int, seed: int, intermediates: int, start_items: int
 ) -> tuple[list[tuple[int, int, int]], list[int]]:  # (input1, input2, output)
     dag_edges: list[tuple[int, int, int]] = []
-    already_used: Set[tuple[int, int]] = set()
-    statuses = []  # 0 = intermediate, 1 = input, 2 = output
+    already_used: set[tuple[int, int]] = set()
+    statuses: list[int] = [1 for _ in range(start_items)]  # 0 = intermediate, 1 = input, 2 = output
     items_len = inputs + intermediates + outputs
     rng = RNG(seed)
-    for i in range(start_items):
-        statuses.append(1)
 
     # make a hyper-DAG so there is at least 1 recipe to make each item
     for i in range(start_items, items_len):
@@ -49,15 +44,9 @@ def create_graph(
         dag_edges.append((item1, item2, output))
         statuses.append(0)
 
+    # At any point the amount of compounds needs to be >= the amount of elements for fill
     r_items_len = items_len - start_items
     inputs_to_place = inputs - start_items
-    while inputs_to_place > 0:
-        idx = (rng.get_random() % r_items_len) + start_items
-        if statuses[idx] != 0:
-            continue
-        statuses[idx] = 1
-        inputs_to_place -= 1
-
     outputs_to_place = outputs
     while outputs_to_place > 0:
         idx = (rng.get_random() % r_items_len) + start_items
@@ -65,5 +54,20 @@ def create_graph(
             continue
         statuses[idx] = 2
         outputs_to_place -= 1
+
+    n = 0
+    excess_outputs: list[int] = []
+    for status in statuses:
+        if status == 2:
+            n += 1
+        excess_outputs.append(n)
+
+    while inputs_to_place > 0:
+        idx = (rng.get_random() % r_items_len) + start_items
+        if statuses[idx] != 0 or excess_outputs[idx] <= 0:
+            continue
+        excess_outputs = [v if i < idx else v - 1 for (i, v) in enumerate(excess_outputs)]
+        statuses[idx] = 1
+        inputs_to_place -= 1
 
     return (dag_edges, statuses)
