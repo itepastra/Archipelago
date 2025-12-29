@@ -74,6 +74,14 @@ def create_graph(
 
             input1_idx = rng.get_random() % previous_items
             input2_idx = rng.get_random() % previous_items
+
+            while (input1_idx, input2_idx) in already_used:
+                input1_idx = rng.get_random() % previous_items
+                input2_idx = rng.get_random() % previous_items
+
+            already_used.add((input1_idx, input2_idx))
+            already_used.add((input2_idx, input1_idx))
+
             output_idx = rng.get_random() % len(
                 (inputs_to_place, intermediates_to_place, outputs_to_place)[to_place_type]
             )
