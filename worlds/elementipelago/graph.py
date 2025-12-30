@@ -1,9 +1,4 @@
-import random
-import time
-
-
 MASK = 0xFFFFFFFFFFFFFFFF
-
 
 class RNG:
     seed_x: int
@@ -27,7 +22,6 @@ class RNG:
 def create_graph(
     inputs: int, outputs: int, seed: int, intermediates: int, start_items: int
 ) -> list[tuple[int, int, int, int]]:  # (input1, input2, output, type)
-    start = time.time()
     # 0 -> Element/Input
     # 1 -> Intermediate
     # 2 -> Compound/Output
@@ -49,13 +43,10 @@ def create_graph(
 
     to_place_length = len(inputs_to_place) + len(intermediates_to_place) + len(outputs_to_place)
     while to_place_length > 0:
-        # print(
-        #     f"started new layer, previous: {dag_edges}, to place:\ninputs: {inputs_to_place}\nintermediates: {intermediates_to_place}\noutputs: {outputs_to_place}"
-        # )
         previous_items = len(dag_edges)
         # dag_edges contains all the previously placed (and thus "accessible") places
         new_layer: list[tuple[int, int, int, int]] = []
-        max_layer_size = min(previous_items * previous_items // 2 - 1, to_place_length - 1)
+        max_layer_size = min((previous_items * previous_items // 2) - len(already_used) // 2 - 1, to_place_length - 1)
         if max_layer_size > 0:
             new_layer_size = (rng.get_random() % max_layer_size) + 1
         else:
@@ -94,7 +85,4 @@ def create_graph(
         to_place_length = len(inputs_to_place) + len(intermediates_to_place) + len(outputs_to_place)
         dag_edges.extend(new_layer)
 
-    # print(f"finished generating graph: {dag_edges}")
-    end = time.time()
-    print(f"generating graph took {end - start}")
     return dag_edges
