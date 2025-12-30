@@ -1,4 +1,4 @@
-from .data import ELEMENT_AMOUNT, LOCATION_AMOUNT, START_ELEMENTS
+from .data import ELEMENT_AMOUNT, LOCATION_AMOUNT, START_ELEMENTS, INTERMEDIATE_AMOUNT
 from dataclasses import dataclass
 
 from Options import Range, PerGameCommonOptions, OptionGroup
@@ -35,7 +35,7 @@ class IntermediateAmount(Range):
     display_name = "Intermediate Amount"
 
     range_start = 0
-    range_end = 1000
+    range_end = INTERMEDIATE_AMOUNT
     default = 100
 
 

@@ -7,7 +7,7 @@ from BaseClasses import ItemClassification, Location
 
 from . import items
 from .graph import create_graph
-from .data import UPGRADE_OFFSET, ELEMENT_AMOUNT, LOCATION_AMOUNT
+from .data import UPGRADE_OFFSET, ELEMENT_AMOUNT, LOCATION_AMOUNT, INTERMEDIATE_AMOUNT
 from .utils import get_compound_name, get_element_name, get_intermediate_name
 
 if TYPE_CHECKING:
@@ -16,7 +16,9 @@ if TYPE_CHECKING:
 # Every location must have a unique integer ID associated with it.
 # We will have a lookup from location name to ID here that, in world.py, we will import and bind to the world class.
 # Even if a location doesn't exist on specific options, it must be present in this lookup.
-LOCATION_NAME_TO_ID = {f"Make Compound {n + 1}": n + 1 for n in range(LOCATION_AMOUNT)}
+LOCATION_NAME_TO_ID = {f"Make {get_compound_name(n + 1)}": n + 1 for n in range(LOCATION_AMOUNT)} | {
+    f"Make {get_intermediate_name(n + 1)}": n + 1 + LOCATION_AMOUNT for n in range(INTERMEDIATE_AMOUNT)
+}
 
 
 # Each Location instance must correctly report the "game" it belongs to.
@@ -51,7 +53,7 @@ def create_graph_locations(world: ElementipelagoWorld) -> None:
         name = get_intermediate_name(intermediate + 1)
         lname = f"Make {name}"
         lregion = world.get_region(f"Can get {name}")
-        loc = ElementipelagoLocation(world.player, lname, None, lregion)
-        item = items.ElementipelagoItem(name, ItemClassification.progression, None, world.player)
+        loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], lregion)
+        item = items.ElementipelagoItem(name, ItemClassification.progression, world.item_name_to_id[name], world.player)
         loc.place_locked_item(item)
         lregion.locations.append(loc)
