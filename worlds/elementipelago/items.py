@@ -10,7 +10,11 @@ if TYPE_CHECKING:
     from .world import ElementipelagoWorld
 
 
-ITEM_NAME_TO_ID = {get_element_name(n + 1): n + UPGRADE_OFFSET for n in range(ELEMENT_AMOUNT)} | {get_intermediate_name(n+1): n + UPGRADE_OFFSET + ELEMENT_AMOUNT for n in range(INTERMEDIATE_AMOUNT)} | {"TODO": 1}
+ITEM_NAME_TO_ID = (
+    {get_element_name(n + 1): n + UPGRADE_OFFSET for n in range(ELEMENT_AMOUNT)}
+    | {get_intermediate_name(n + 1): n + UPGRADE_OFFSET + ELEMENT_AMOUNT for n in range(INTERMEDIATE_AMOUNT)}
+    | {"TODO": 1}
+)
 
 DEFAULT_ITEM_CLASSIFICATIONS = {f"Element {n + 1}": ItemClassification.progression for n in range(ELEMENT_AMOUNT)} | {
     "TODO": ItemClassification.filler
@@ -18,7 +22,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {f"Element {n + 1}": ItemClassification.progressi
 
 
 class ElementipelagoItem(Item):
-    game = "Elementipelago"
+    game: str = "Elementipelago"
 
 
 def get_random_filler_item_name(world: ElementipelagoWorld) -> str:
