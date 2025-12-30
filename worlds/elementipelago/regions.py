@@ -63,6 +63,9 @@ def graph_regions(world: ElementipelagoWorld) -> None:
         else:
             ways_to_make[(output, typ)].append((in2, in1))
 
+    if hasattr(world.multiworld, "generation_is_fake"):
+        world.recipe_tree = {k: [(graph[a][2:], graph[b][2:]) for a, b in v] for k, v in ways_to_make.items()}
+
     combining = world.get_region("Combining area")
 
     for compound, requirements in ways_to_make.items():

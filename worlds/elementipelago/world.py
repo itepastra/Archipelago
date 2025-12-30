@@ -7,7 +7,7 @@ from NetUtils import JSONMessagePart
 from worlds.AutoWorld import World
 
 # Imports of your world's files must be relative.
-from . import items, locations, regions
+from . import items, locations, regions, utils
 from . import options as elementipelago_options
 
 
@@ -20,9 +20,7 @@ class ElementipelagoWorld(World):
     element_amount: int
     filler_amount: int
     intermediate_amount: int
-
-    # only used in fake generation
-    explanations: dict[str, tuple[int, str, str, str]]
+    recipe_tree: dict[tuple[int, int], list[tuple[tuple[int, int], tuple[int, int]]]]
 
     game = "Elementipelago"
 
@@ -56,7 +54,6 @@ class ElementipelagoWorld(World):
                     self.element_amount = slot_data["element_amount"]
                     self.filler_amount = slot_data["filler_amount"]
                     self.intermediate_amount = slot_data["intermediate_amount"]
-            self.explanations = {}
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
@@ -81,64 +78,110 @@ class ElementipelagoWorld(World):
             "graph_seed": self.graph_seed,
         }
 
-    def rule_steps(self, target_name: str, state: CollectionState) -> tuple[list[dict[str, str]], bool]:
-        print(f"finding {target_name} in {self.explanations}")
-        (rule_type, name, input1, input2) = self.explanations[target_name]
-        if rule_type == 1:
-            msg = [
-                {"type": "text", "text": "Get "},
-                {"type": "color", "color": "blue", "_text": f"{name} "},
-                {"type": "text", "_text": "from multiworld ("},
-            ]
-            can_reach = state.has(target_name, self.player)
-            if can_reach:
+    def rule_steps(self, target_key: tuple[int, int], state: CollectionState) -> tuple[list[dict[str, str]], bool]:
+        name = utils.get_node_name(target_key)
+        if target_key[1] == 0:
+            return (
+                [
+                    {"type": "text", "text": "Get "},
+                    {"type": "color", "color": "blue", "_text": f"{name} "},
+                    {"type": "text", "_text": "from multiworld ("},
+                    (
+                        {"type": "color", "color": "green", "_text": "True"}
+                        if state.has(name, self.player)
+                        else {"type": "color", "color": "red", "_text": "False"}
+                    ),
+                    {"type": "text", "_text": ")\n"},
+                ],
+                state.has(name, self.player),
+            )
+
+        if self.recipe_tree.get(target_key) is None:
+            return ([{"type": "color", "color": "red", "_text": "Could not find item in world"}], False)
+        ltup = self.recipe_tree[target_key]
+
+        msg = [
+            {"type": "text", "text": "Craft "},
+            {"type": "color", "color": "magenta", "_text": f"{name}\n"},
+        ]
+
+        can_craft = False
+
+        for (in1num, in1type), (in2num, in2type) in ltup:
+            lname = utils.get_node_name((in1num, in1type))
+            rname = utils.get_node_name((in2num, in2type))
+
+            lsteps, can_reach_l = self.rule_steps((in1num, in1type), state)
+            rsteps, can_reach_r = self.rule_steps((in2num, in2type), state)
+
+            msg.extend(
+                [
+                    {"type": "text", "text": "With "},
+                    {"type": "color", "color": "blue", "_text": f"{lname} "},
+                    {"type": "text", "_text": "and "},
+                    {"type": "color", "color": "blue", "_text": f"{rname} "},
+                    {"type": "text", "_text": "("},
+                ]
+            )
+            if can_reach_l and can_reach_r:
                 msg.append({"type": "color", "color": "green", "_text": "True"})
+                can_craft = True
             else:
                 msg.append({"type": "color", "color": "red", "_text": "False"})
             msg.append({"type": "text", "_text": ")\n"})
-            return msg, can_reach
 
-        lsteps, can_reach_l = self.rule_steps(input1, state)
-        rsteps, can_reach_r = self.rule_steps(input2, state)
-        msg = [
-            {"type": "text", "text": "Craft "},
-            {"type": "color", "color": "magenta", "_text": f"{name} "},
-            {"type": "text", "_text": "with "},
-            {"type": "color", "color": "blue", "_text": f"{input1} "},
-            {"type": "text", "_text": "and "},
-            {"type": "color", "color": "blue", "_text": f"{input2} "},
-            {"type": "text", "_text": "("},
-        ]
-        if can_reach_l and can_reach_r:
-            msg.append({"type": "color", "color": "green", "_text": "True"})
-        else:
-            msg.append({"type": "color", "color": "red", "_text": "False"})
-        msg.append({"type": "text", "_text": ")\n"})
+            for rule in lsteps:
+                if rule.get("text") is None:
+                    msg.append(rule)
+                    continue
+                dc = dict(rule.items())
+                dc["text"] = f"    {dc['text']}"
+                msg.append(dc)
 
-        for rule in lsteps:
-            if rule.get("text") is None:
-                msg.append(rule)
-                continue
-            dc = dict(rule.items())
-            dc["text"] = f"    {dc['text']}"
-            msg.append(dc)
+            for rule in rsteps:
+                if rule.get("text") is None:
+                    msg.append(rule)
+                    continue
+                dc = dict(rule.items())
+                dc["text"] = f"    {dc['text']}"
+                msg.append(dc)
 
-        for rule in rsteps:
-            if rule.get("text") is None:
-                msg.append(rule)
-                continue
-            dc = dict(rule.items())
-            dc["text"] = f"    {dc['text']}"
-            msg.append(dc)
-
-        return msg, can_reach_l and can_reach_r
+        return msg, can_craft
 
     def explain_rule(self, target_name: str, state: CollectionState) -> list[JSONMessagePart]:
-        msg = []
-        if target_name.startswith("Make "):
-            target_name = target_name.split("Make ", 1)[1]
+        # Universal Tracker may pass names like "Make X" or "Can get X".
+        name = target_name.strip()
+        print(f"I am explaining how to get {name}")
+        for prefix in ("Make ", "Can get "):
+            if name.startswith(prefix):
+                name = name[len(prefix) :].strip()
+        print(f"after stripping I have {name}")
 
-        steps, _can_reach = self.rule_steps(target_name, state)
+        def name_to_key(nm: str) -> tuple[int, int] | None:
+            # Returns (type, number)
+            parts = nm.split()
+            print(f"the parts are {parts}")
+            if len(parts) != 2:
+                return None
+            kind, num_s = parts
+            try:
+                num = int(num_s)
+            except ValueError:
+                return None
+            if kind == "Element":
+                return (num, 0)
+            if kind == "Intermediate":
+                return (num, 1)
+            if kind == "Compound":
+                return (num, 2)
+            return None
+
+        root = name_to_key(name)
+        if root is None:
+            return [{"text": f"Don't know how to explain '{target_name}'."}]
+
+        msg = []
+        steps, _can_reach = self.rule_steps(root, state)
         for step in steps:
             if step.get("_text") is not None:
                 step["text"] = step["_text"]
