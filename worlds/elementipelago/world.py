@@ -21,6 +21,7 @@ class ElementipelagoWorld(World):
     filler_amount: int
     intermediate_amount: int
     recipe_tree: dict[tuple[int, int], list[tuple[tuple[int, int], tuple[int, int]]]]
+    compounds_are_ingredients: bool
 
     game = "Elementipelago"
 
@@ -45,6 +46,7 @@ class ElementipelagoWorld(World):
         self.element_amount = self.options.element_amount.value
         self.filler_amount = self.options.filler_amount.value
         self.intermediate_amount = self.options.intermediate_amount.value
+        self.compounds_are_ingredients = self.options.compounds_are_ingredients.value
 
         if hasattr(self.multiworld, "generation_is_fake"):
             if hasattr(self.multiworld, "re_gen_passthrough"):
@@ -54,6 +56,7 @@ class ElementipelagoWorld(World):
                     self.element_amount = slot_data["element_amount"]
                     self.filler_amount = slot_data["filler_amount"]
                     self.intermediate_amount = slot_data["intermediate_amount"]
+                    self.compounds_are_ingredients = slot_data["compounds_are_ingredients"]
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
@@ -74,7 +77,9 @@ class ElementipelagoWorld(World):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        return self.options.as_dict("element_amount", "filler_amount", "intermediate_amount") | {
+        return self.options.as_dict(
+            "element_amount", "filler_amount", "intermediate_amount", "compounds_are_ingredients"
+        ) | {
             "graph_seed": self.graph_seed,
         }
 

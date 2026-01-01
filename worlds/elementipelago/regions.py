@@ -40,6 +40,7 @@ def graph_regions(world: ElementipelagoWorld) -> None:
         world.graph_seed,
         world.intermediate_amount,
         START_ELEMENTS,
+        world.compounds_are_ingredients,
     )
 
     combining = world.get_region("Combining area")

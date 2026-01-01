@@ -1,5 +1,6 @@
 MASK = 0xFFFFFFFFFFFFFFFF
 
+
 class RNG:
     seed_x: int
     seed_y: int
@@ -20,12 +21,13 @@ class RNG:
 
 
 def create_graph(
-    inputs: int, outputs: int, seed: int, intermediates: int, start_items: int
+    inputs: int, outputs: int, seed: int, intermediates: int, start_items: int, compounds_are_ingredients: bool
 ) -> list[tuple[int, int, int, int]]:  # (input1, input2, output, type)
     # 0 -> Element/Input
     # 1 -> Intermediate
     # 2 -> Compound/Output
     dag_edges: list[tuple[int, int, int, int]] = []
+    compound_edges: list[tuple[int, int, int, int]] = []
     already_used: set[tuple[int, int]] = set()
     rng = RNG(seed)
 
@@ -80,9 +82,19 @@ def create_graph(
 
             output = (inputs_to_place, intermediates_to_place, outputs_to_place)[to_place_type].pop(output_idx)
 
-            new_layer.append((input1_idx, input2_idx, output, to_place_type))
+            if compounds_are_ingredients:
+                new_layer.append((input1_idx, input2_idx, output, to_place_type))
+            elif not compounds_are_ingredients:
+                if to_place_type != 2:
+                    new_layer.append((input1_idx, input2_idx, output, to_place_type))
+                else:
+                    compound_edges.append((input1_idx, input2_idx, output, to_place_type))
 
         to_place_length = len(inputs_to_place) + len(intermediates_to_place) + len(outputs_to_place)
         dag_edges.extend(new_layer)
 
+    dag_edges.extend(compound_edges)
     return dag_edges
+
+
+print(create_graph(10, 10, 2827108, 10, 4, False))
