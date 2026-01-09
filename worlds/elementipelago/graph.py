@@ -66,15 +66,16 @@ def create_graph(
                     to_place_type = 2
                     outputs_placed += 1
 
-            input1_idx = rng.get_random() % previous_items
-            input2_idx = rng.get_random() % previous_items
+            input1_idx = -1
+            input2_idx = -1
 
-            while (input1_idx, input2_idx) in already_used:
+            while input1_idx == -1 or input2_idx == -1 or (input1_idx, input2_idx) in already_used:
                 input1_idx = rng.get_random() % previous_items
                 input2_idx = rng.get_random() % previous_items
+                if input1_idx > input2_idx:
+                    input1_idx, input2_idx = input2_idx, input1_idx
 
             already_used.add((input1_idx, input2_idx))
-            already_used.add((input2_idx, input1_idx))
 
             output_idx = rng.get_random() % len(
                 (inputs_to_place, intermediates_to_place, outputs_to_place)[to_place_type]
@@ -95,6 +96,3 @@ def create_graph(
 
     dag_edges.extend(compound_edges)
     return dag_edges
-
-
-print(create_graph(10, 10, 2827108, 10, 4, False))
