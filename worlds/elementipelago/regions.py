@@ -36,7 +36,7 @@ def connect_regions(world: ElementipelagoWorld) -> None:
 def graph_regions(world: ElementipelagoWorld) -> None:
     graph = create_graph(
         world.element_amount,
-        world.element_amount + world.filler_amount,
+        world.compound_amount,
         world.graph_seed,
         world.intermediate_amount,
         START_ELEMENTS,

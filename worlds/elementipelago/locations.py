@@ -42,7 +42,7 @@ def create_all_locations(world: ElementipelagoWorld) -> None:
 
 
 def create_graph_locations(world: ElementipelagoWorld) -> None:
-    for compound in range(world.element_amount + world.filler_amount):
+    for compound in range(world.compound_amount):
         name = get_compound_name(compound + 1)
         lname = f"Make {name}"
         lregion = world.get_region(f"Can get {name}")
