@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 # Every location must have a unique integer ID associated with it.
 # We will have a lookup from location name to ID here that, in world.py, we will import and bind to the world class.
 # Even if a location doesn't exist on specific options, it must be present in this lookup.
-LOCATION_NAME_TO_ID = {f"Make {get_compound_name(n + 1)}": n + 1 for n in range(LOCATION_AMOUNT)} | {
-    f"Make {get_intermediate_name(n + 1)}": n + 1 + LOCATION_AMOUNT for n in range(INTERMEDIATE_AMOUNT)
+LOCATION_NAME_TO_ID = {f"{get_compound_name(n + 1)}": n + 1 for n in range(LOCATION_AMOUNT)} | {
+    f"{get_intermediate_name(n + 1)}": n + 1 + LOCATION_AMOUNT for n in range(INTERMEDIATE_AMOUNT)
 }
 
 
@@ -44,14 +44,14 @@ def create_all_locations(world: ElementipelagoWorld) -> None:
 def create_graph_locations(world: ElementipelagoWorld) -> None:
     for compound in range(world.compound_amount):
         name = get_compound_name(compound + 1)
-        lname = f"Make {name}"
+        lname = f"{name}"
         lregion = world.get_region(f"Can get {name}")
         loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], lregion)
         lregion.locations.append(loc)
 
     for intermediate in range(world.intermediate_amount):
         name = get_intermediate_name(intermediate + 1)
-        lname = f"Make {name}"
+        lname = f"{name}"
         lregion = world.get_region(f"Can get {name}")
         loc = ElementipelagoLocation(world.player, lname, world.location_name_to_id[lname], lregion)
         item = items.ElementipelagoItem(name, ItemClassification.progression, world.item_name_to_id[name], world.player)

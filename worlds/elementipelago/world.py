@@ -80,7 +80,9 @@ class ElementipelagoWorld(World):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        return self.options.as_dict("element_amount", "intermediate_amount", "filler_amount", "compounds_are_ingredients") | {
+        return self.options.as_dict(
+            "element_amount", "intermediate_amount", "filler_amount", "compounds_are_ingredients"
+        ) | {
             "compound_amount": self.compound_amount,
             "graph_seed": self.graph_seed,
         }
