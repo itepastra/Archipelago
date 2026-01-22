@@ -86,6 +86,7 @@ class ElementipelagoWorld(World):
         ) | {
             "compound_amount": self.compound_amount,
             "graph_seed": self.graph_seed,
+            "version": "0.3.0",
         }
 
     def rule_steps(self, target_key: tuple[int, int], state: CollectionState) -> tuple[list[dict[str, str]], bool]:
