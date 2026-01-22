@@ -34,7 +34,7 @@ class IntermediateAmount(Range):
 
     display_name = "Intermediate amount"
 
-    range_start = 0
+    range_start = 1
     range_end = INTERMEDIATE_AMOUNT
     default = 100
 
