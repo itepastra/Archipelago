@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import Entrance, Region
 from .graph import create_graph
-from .utils import get_node_name
+from .utils import get_node_name, get_node_name_event
 from .data import START_ELEMENTS
 
 if TYPE_CHECKING:
@@ -34,6 +34,9 @@ def connect_regions(world: ElementipelagoWorld) -> None:
 
 
 def graph_regions(world: ElementipelagoWorld) -> None:
+    from .items import ElementipelagoItem
+    from .locations import ElementipelagoLocation
+
     graph = create_graph(
         world.element_amount,
         world.compound_amount,
@@ -58,6 +61,10 @@ def graph_regions(world: ElementipelagoWorld) -> None:
             ways_to_make[(output, typ)] = []
             name = get_node_name((output, typ))
             compound_region = Region(f"Can get {name}", world.player, world.multiworld)
+            if typ == 2:
+                compound_region.add_event(
+                    f"{name} Event", f"{name} Event", location_type=ElementipelagoLocation, item_type=ElementipelagoItem
+                )
             world.multiworld.regions.append(compound_region)
         if in1 < in2:
             ways_to_make[(output, typ)].append((in1, in2))
@@ -78,17 +85,18 @@ def graph_regions(world: ElementipelagoWorld) -> None:
         for option in requirements:
             in1name = get_node_name(graph[option[0]][2:])
             in2name = get_node_name(graph[option[1]][2:])
+            in1e = get_node_name_event(graph[option[0]][2:])
+            in2e = get_node_name_event(graph[option[1]][2:])
 
             re1 = world.get_region(f"Can get {in1name}")
-            if option[0] == option[1]:
-                entr = re1.connect(cp, f"Craft {compname} using {in1name} twice")
-                continue
+            re2 = world.get_region(f"Can get {in2name}")
 
             entr = re1.connect(
                 cp,
-                f"Craft {compname} using {in1name} and {in2name}",
-                lambda state, cmp=in2name: state.can_reach_region(f"Can get {cmp}", world.player),
+                f"Can craft {compname} with {in1e} and {in2e}",
+                lambda state, slf=in1e, cmp=in2e: state.has(slf, world.player) and state.has(cmp, world.player),
             )
 
-            re2 = world.get_region(f"Can get {in2name}")
+            gt1, gt2 = graph[option[0]][3], graph[option[1]][3]
+
             world.multiworld.register_indirect_condition(re2, entr)
