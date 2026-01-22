@@ -20,7 +20,7 @@ ITEM_NAME_TO_ID = (
 DEFAULT_ITEM_CLASSIFICATIONS = {f"Element {n + 1}": ItemClassification.progression for n in range(ELEMENT_AMOUNT)} | {
     "TODO": ItemClassification.filler,
     "Progressive Item Limit": ItemClassification.filler,
-    "Progressive Filter": ItemClassification.useful,
+    "Progressive Filter": ItemClassification.progression | ItemClassification.useful,
     "Clutter Trap": ItemClassification.trap,
 }
 

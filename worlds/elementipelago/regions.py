@@ -85,18 +85,27 @@ def graph_regions(world: ElementipelagoWorld) -> None:
         for option in requirements:
             in1name = get_node_name(graph[option[0]][2:])
             in2name = get_node_name(graph[option[1]][2:])
-            in1e = get_node_name_event(graph[option[0]][2:])
-            in2e = get_node_name_event(graph[option[1]][2:])
+            needs_filter_1, in1e = get_node_name_event(graph[option[0]][2:])
+            needs_filter_2, in2e = get_node_name_event(graph[option[1]][2:])
 
             re1 = world.get_region(f"Can get {in1name}")
             re2 = world.get_region(f"Can get {in2name}")
 
-            entr = re1.connect(
-                cp,
-                f"Can craft {compname} with {in1e} and {in2e}",
-                lambda state, slf=in1e, cmp=in2e: state.has(slf, world.player) and state.has(cmp, world.player),
-            )
-
-            gt1, gt2 = graph[option[0]][3], graph[option[1]][3]
+            if needs_filter_1 or needs_filter_2:
+                entr = re1.connect(
+                    cp,
+                    f"Can craft {compname} with {in1e} and {in2e}",
+                    lambda state, slf=in1e, cmp=in2e: state.has(
+                        "Progressive Filter", world.player, int(needs_filter_1 + needs_filter_2) // 2
+                    )
+                    and state.has_all([slf, cmp], world.player)
+                    and state.has(cmp, world.player),
+                )
+            else:
+                entr = re1.connect(
+                    cp,
+                    f"Can craft {compname} with {in1e} and {in2e}",
+                    lambda state, slf=in1e, cmp=in2e: state.has_all([slf, cmp], world.player),
+                )
 
             world.multiworld.register_indirect_condition(re2, entr)
