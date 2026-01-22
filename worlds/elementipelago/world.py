@@ -1,3 +1,4 @@
+from worlds.elementipelago.data import PROGRESSION_AMOUNT, START_ELEMENTS
 from collections.abc import Mapping
 from typing import Any
 
@@ -47,7 +48,7 @@ class ElementipelagoWorld(World):
         self.element_amount = self.options.element_amount.value
         self.filler_amount = self.options.filler_amount.value
         self.intermediate_amount = self.options.intermediate_amount.value
-        self.compound_amount = self.element_amount + self.filler_amount
+        self.compound_amount = self.element_amount + self.filler_amount - START_ELEMENTS + PROGRESSION_AMOUNT
         self.compounds_are_ingredients = self.options.compounds_are_ingredients.value
 
         if hasattr(self.multiworld, "generation_is_fake"):
