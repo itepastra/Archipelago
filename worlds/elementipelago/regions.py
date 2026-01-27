@@ -95,17 +95,17 @@ def graph_regions(world: ElementipelagoWorld) -> None:
                 entr = re1.connect(
                     cp,
                     f"Can craft {compname} with {in1e} and {in2e}",
-                    lambda state, slf=in1e, cmp=in2e: state.has(
-                        "Progressive Filter", world.player, int(needs_filter_1 + needs_filter_2) // 2
+                    lambda state, slf=in1e, cmp=in2e, nf=needs_filter_1 + needs_filter_2: (
+                        state.has("Progressive Filter", world.player, nf) or state.has("Glitch Item", world.player)
                     )
-                    and state.has_all([slf, cmp], world.player)
+                    and state.has(slf, world.player)
                     and state.has(cmp, world.player),
                 )
             else:
                 entr = re1.connect(
                     cp,
                     f"Can craft {compname} with {in1e} and {in2e}",
-                    lambda state, slf=in1e, cmp=in2e: state.has_all([slf, cmp], world.player),
+                    lambda state, slf=in1e, cmp=in2e: state.has(slf, world.player) and state.has(cmp, world.player),
                 )
 
             world.multiworld.register_indirect_condition(re2, entr)

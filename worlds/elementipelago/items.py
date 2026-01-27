@@ -14,11 +14,12 @@ if TYPE_CHECKING:
 ITEM_NAME_TO_ID = (
     {get_element_name(n + 1): n + UPGRADE_OFFSET for n in range(ELEMENT_AMOUNT)}
     | {get_intermediate_name(n + 1): n + UPGRADE_OFFSET + ELEMENT_AMOUNT for n in range(INTERMEDIATE_AMOUNT)}
-    | {"TODO": 1, "Progressive Filter": 2, "Progressive Item Limit": 3, "Clutter Trap": 50}
+    | {"TODO": 1, "Progressive Filter": 2, "Progressive Item Limit": 3, "Clutter Trap": 50, "Glitch Item": 13}
 )
 
 DEFAULT_ITEM_CLASSIFICATIONS = {f"Element {n + 1}": ItemClassification.progression for n in range(ELEMENT_AMOUNT)} | {
     "TODO": ItemClassification.filler,
+    "Glitch Item": ItemClassification.progression,
     "Progressive Item Limit": ItemClassification.filler,
     "Progressive Filter": ItemClassification.progression | ItemClassification.useful,
     "Clutter Trap": ItemClassification.trap,

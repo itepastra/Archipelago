@@ -14,7 +14,7 @@ def get_node_name_event(node: tuple[int, int]) -> tuple[int, str]:
     if node[1] == 1:
         return 1, get_intermediate_name(node[0])
     if node[1] == 2:
-        return 2, f"{get_compound_name(node[0])} Event"
+        return 1, f"{get_compound_name(node[0])} Event"
     return 0, "Illegal Node"
 
 

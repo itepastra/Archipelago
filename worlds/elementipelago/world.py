@@ -41,7 +41,7 @@ class ElementipelagoWorld(World):
     def interpret_slot_data(slot_data: dict[str, Any]) -> dict[str, Any]:
         return slot_data
 
-    glitches_item_name = "Progressive Filter"
+    glitches_item_name = "Glitch Item"
     ut_can_gen_without_yaml = True
 
     def generate_early(self) -> None:
