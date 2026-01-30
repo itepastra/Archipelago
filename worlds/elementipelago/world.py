@@ -1,4 +1,3 @@
-from worlds.elementipelago.data import PROGRESSION_AMOUNT, START_ELEMENTS
 from collections.abc import Mapping
 from typing import Any
 
@@ -6,10 +5,12 @@ from typing import Any
 from BaseClasses import CollectionState
 from NetUtils import JSONMessagePart
 from worlds.AutoWorld import World
+from worlds.elementipelago.data import PROGRESSION_AMOUNT, START_ELEMENTS
 
 # Imports of your world's files must be relative.
-from . import items, locations, regions, utils
+from . import items, locations
 from . import options as elementipelago_options
+from . import regions, utils
 
 
 class ElementipelagoWorld(World):
@@ -84,11 +85,7 @@ class ElementipelagoWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         return self.options.as_dict(
             "element_amount", "intermediate_amount", "filler_amount", "compounds_are_ingredients"
-        ) | {
-            "compound_amount": self.compound_amount,
-            "graph_seed": self.graph_seed,
-            "version": "0.3.0",
-        }
+        ) | {"compound_amount": self.compound_amount, "graph_seed": self.graph_seed, "version": "1.0.0"}
 
     def rule_steps(self, target_key: tuple[int, int], state: CollectionState) -> tuple[list[dict[str, str]], bool]:
         name = utils.get_node_name(target_key)
@@ -112,10 +109,7 @@ class ElementipelagoWorld(World):
             return ([{"type": "color", "color": "red", "_text": "Could not find item in world"}], False)
         ltup = self.recipe_tree[target_key]
 
-        msg = [
-            {"type": "text", "text": "Craft "},
-            {"type": "color", "color": "magenta", "_text": f"{name}\n"},
-        ]
+        msg = [{"type": "text", "text": "Craft "}, {"type": "color", "color": "magenta", "_text": f"{name}\n"}]
 
         can_craft = False
 
