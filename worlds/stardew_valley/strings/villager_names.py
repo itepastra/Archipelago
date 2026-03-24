@@ -35,6 +35,9 @@ class NPC:
     wizard = "Wizard"
     pet = "Pet"
 
+    gunther = "Gunther"
+
+
 class ModNPC:
     alec = "Alec"
     ayeisha = "Ayeisha"

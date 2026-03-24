@@ -10,6 +10,7 @@ from ..strings.forageable_names import Forageable
 from ..strings.material_names import Material
 from ..strings.metal_names import MetalBar, Mineral
 from ..strings.region_names import Region
+from ..strings.villager_names import NPC
 
 AUTO_BUILDING_BUILDINGS = {Building.shipping_bin, Building.pet_bowl, Building.farm_house}
 
@@ -58,7 +59,7 @@ class BuildingLogic(BaseLogic):
 
     @cached_property
     def can_construct_buildings(self) -> StardewRule:
-        return self.logic.region.can_reach(Region.carpenter)
+        return self.logic.region.can_reach(Region.carpenter) & self.logic.villager.has(NPC.robin)
 
     def can_purchase_wizard_blueprint(self, building_name: str) -> StardewRule:
         # This rule is part of the region, so not needed here

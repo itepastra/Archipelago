@@ -235,7 +235,7 @@ class StartWithout(OptionSet):
     valid_keys = frozenset({
         StartWithoutOptionName.tools, StartWithoutOptionName.backpack,
         StartWithoutOptionName.landslide, StartWithoutOptionName.community_center,
-        StartWithoutOptionName.buildings,
+        StartWithoutOptionName.buildings, StartWithoutOptionName.villagers,
     })
     preset_none = frozenset()
     preset_easy = frozenset({StartWithoutOptionName.landslide, StartWithoutOptionName.community_center})

@@ -147,6 +147,7 @@ def set_rules(world):
     set_hatsanity_rules(logic, rule_collector, world_content)
     set_eatsanity_rules(all_location_names, logic, rule_collector, world_options)
     set_endgame_locations_rules(logic, rule_collector, world_options)
+    set_villager_rules(all_location_names, logic, rule_collector)
 
     set_deepwoods_rules(logic, rule_collector, world_content)
     set_magic_spell_rules(logic, rule_collector, world_content)
@@ -158,7 +159,7 @@ def set_isolated_locations_rules(logic: StardewLogic, rule_collector: StardewRul
     rule_collector.set_location_rule("Grim Reaper Statue", logic.combat.can_fight_at_level(Performance.decent) & logic.tool.has_tool(Tool.pickaxe))
     rule_collector.set_location_rule("Galaxy Sword Shrine", logic.has("Prismatic Shard"))
     rule_collector.set_location_rule("Krobus Stardrop", logic.money.can_spend(20000))
-    rule_collector.set_location_rule("Demetrius's Breakthrough", logic.money.can_have_earned_total(25000))
+    rule_collector.set_location_rule("Demetrius's Breakthrough", logic.money.can_have_earned_total(25000) & logic.received(NPC.demetrius))
     for request_type in trash_bear_requests:
         location = f"Trash Bear {request_type}"
         items = trash_bear_requests[request_type]
@@ -628,6 +629,9 @@ def set_story_quests_rules(all_location_names: Set[str], logic: StardewLogic, ru
             quest_name = quest_location_name[len(quest_prefix):]
             rule_collector.set_location_rule(quest_location_name, logic.registry.quest_rules[quest_name])
 
+def set_villager_rules(all_location_names: set[str], logic: StardewLogic, rule_collector: StardewRuleCollector):
+    rule_collector.set_location_rule("Bamboo Pole Cutscene", logic.villager.has(NPC.willy))
+    rule_collector.set_location_rule("Rat Problem Cutscene", logic.villager.has(NPC.lewis))
 
 def set_special_order_rules(all_location_names: Set[str], logic: StardewLogic, rule_collector: StardewRuleCollector,
                             world_options: StardewValleyOptions, content: StardewContent):

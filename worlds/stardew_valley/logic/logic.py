@@ -52,6 +52,7 @@ from .tool_logic import ToolLogicMixin
 from .traveling_merchant_logic import TravelingMerchantLogicMixin
 from .wallet_logic import WalletLogicMixin
 from .walnut_logic import WalnutLogicMixin
+from .villager_logic import VillagerLogicMixin
 from ..content.game_content import StardewContent
 from ..content.vanilla.ginger_island import ginger_island_content_pack
 from ..data.craftable_data import all_crafting_recipes
@@ -104,7 +105,7 @@ class StardewLogic(ReceivedLogicMixin, HasLogicMixin, RegionLogicMixin, Travelin
                    SkillLogicMixin, FarmingLogicMixin, BundleLogicMixin, FishingLogicMixin, MineLogicMixin, CookingLogicMixin, AbilityLogicMixin,
                    SpecialOrderLogicMixin, QuestLogicMixin, CraftingLogicMixin, ModLogicMixin, HarvestingLogicMixin, SourceLogicMixin,
                    RequirementLogicMixin, BookLogicMixin, GrindLogicMixin, FestivalLogicMixin, WalnutLogicMixin, GoalLogicMixin, SpecialItemsLogicMixin,
-                   MovieLogicMixin, MemeItemsLogicMixin, HatLogicMixin, ShirtLogicMixin, TailoringLogicMixin, FishPondLogicMixin):
+                   MovieLogicMixin, MemeItemsLogicMixin, HatLogicMixin, ShirtLogicMixin, TailoringLogicMixin, FishPondLogicMixin, VillagerLogicMixin):
     player: int
     options: StardewValleyOptions
     content: StardewContent

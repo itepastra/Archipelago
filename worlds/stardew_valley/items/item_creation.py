@@ -111,6 +111,7 @@ def create_unique_items(item_factory: StardewItemFactory, options: StardewValley
     items.append(item_factory("Return Scepter"))
     create_seasons(item_factory, options, items)
     create_seeds(item_factory, content, items)
+    create_villagers(item_factory, content, items)
     create_friendsanity_items(item_factory, options, content, items, random)
     create_festival_rewards(item_factory, options, items)
     create_special_order_board_rewards(item_factory, options, items)
@@ -318,6 +319,11 @@ def create_museum_items(item_factory: StardewItemFactory, options: StardewValley
     items.extend(item_factory(item) for item in ["Ancient Seeds"] * 5)
     items.append(item_factory(Wallet.metal_detector))
 
+def create_villagers(item_factory: StardewItemFactory, content: StardewContent, items: list[Item]):
+    for villager in content.villagers.values():
+        item_name = villager.name
+
+        items.append(item_factory(item_name))
 
 def create_friendsanity_items(item_factory: StardewItemFactory, options: StardewValleyOptions, content: StardewContent, items: List[Item], random: Random):
     if not content.features.friendsanity.is_enabled:

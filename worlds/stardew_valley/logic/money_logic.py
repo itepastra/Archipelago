@@ -14,6 +14,7 @@ from ..strings.currency_names import Currency, MemeCurrency
 from ..strings.food_names import Beverage
 from ..strings.region_names import Region, LogicRegion
 from ..strings.season_names import Season
+from ..strings.villager_names import NPC
 
 qi_gem_rewards = ("100 Qi Gems", "50 Qi Gems", "40 Qi Gems", "35 Qi Gems", "25 Qi Gems",
                   "20 Qi Gems", "15 Qi Gems", "10 Qi Gems")
@@ -80,7 +81,19 @@ class MoneyLogic(BaseLogic):
 
     # Should be cached
     def can_spend_at(self, region: str, amount: int) -> StardewRule:
-        return self.logic.region.can_reach(region) & self.logic.money.can_spend(amount)
+        additional = self.logic.true_
+        if region == Region.saloon:
+            additional = self.logic.villager.has(NPC.gus)
+        elif region == Region.ranch:
+            additional = self.logic.villager.has(NPC.marnie)
+        elif region == Region.fish_shop:
+            additional = self.logic.villager.has(NPC.willy)
+        elif region == Region.pierre_store:
+            additional = self.logic.villager.has(NPC.pierre)
+        elif region == Region.carpenter:
+            additional = self.logic.villager.has(NPC.robin)
+
+        return self.logic.region.can_reach(region) & self.logic.money.can_spend(amount) & additional
 
     def can_shop_from_hat_mouse(self, source: HatMouseSource) -> StardewRule:
         money_rule = self.logic.money.can_spend(source.price) if source.price is not None else true_

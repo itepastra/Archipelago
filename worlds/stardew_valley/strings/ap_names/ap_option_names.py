@@ -49,6 +49,7 @@ class StartWithoutOptionName:
     landslide = "Landslide"
     community_center = "Community Center"
     buildings = "Buildings"
+    villagers = "Villagers"
 
 
 class HatsanityOptionName:

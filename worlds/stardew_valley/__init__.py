@@ -1,3 +1,4 @@
+from worlds.stardew_valley.strings.villager_names import NPC
 import logging
 import math
 import typing
@@ -281,6 +282,9 @@ class StardewValleyWorld(World):
         if StartWithoutOptionName.buildings not in self.options.start_without:
             self.multiworld.push_precollected(self.create_item("Shipping Bin"))
             self.multiworld.push_precollected(self.create_item("Pet Bowl"))
+        if StartWithoutOptionName.villagers not in self.options.start_without:
+            for npc in self.content.villagers.values():
+                self.multiworld.push_precollected(self.create_item(npc.name))
 
     def precollect_starting_season(self):
         if self.options.season_randomization == SeasonRandomization.option_progressive:

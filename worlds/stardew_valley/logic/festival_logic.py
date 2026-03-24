@@ -1,4 +1,3 @@
-from .base_logic import BaseLogicMixin, BaseLogic
 from ..options import FestivalLocations
 from ..stardew_rule import StardewRule
 from ..strings.animal_product_names import AnimalProduct
@@ -13,6 +12,8 @@ from ..strings.machine_names import Machine
 from ..strings.monster_names import Monster
 from ..strings.region_names import Region
 from ..strings.season_names import Season
+from ..strings.villager_names import NPC
+from .base_logic import BaseLogic, BaseLogicMixin
 
 
 class FestivalLogicMixin(BaseLogicMixin):
@@ -24,91 +25,117 @@ class FestivalLogicMixin(BaseLogicMixin):
 class FestivalLogic(BaseLogic):
 
     def initialize_rules(self):
-        self.registry.festival_rules.update({
-            FestivalCheck.egg_hunt: self.logic.festival.can_win_egg_hunt(),
-            FestivalCheck.strawberry_seeds: self.logic.money.can_spend(1000),
-            FestivalCheck.dance: self.logic.relationship.has_hearts_with_any_bachelor(4),
-            FestivalCheck.tub_o_flowers: self.logic.money.can_spend(2000),
-            FestivalCheck.rarecrow_5: self.logic.money.can_spend(2500),
-            FestivalCheck.luau_soup: self.logic.festival.can_succeed_luau_soup(),
-            FestivalCheck.moonlight_jellies: self.logic.true_,
-            FestivalCheck.moonlight_jellies_banner: self.logic.money.can_spend(800),
-            FestivalCheck.starport_decal: self.logic.money.can_spend(1000),
-            FestivalCheck.smashing_stone: self.logic.true_,
-            FestivalCheck.grange_display: self.logic.festival.can_succeed_grange_display(),
-            FestivalCheck.rarecrow_1: self.logic.true_,  # only cost star tokens
-            FestivalCheck.fair_stardrop: self.logic.true_,  # only cost star tokens
-            FestivalCheck.spirit_eve_maze: self.logic.true_,
-            FestivalCheck.jack_o_lantern: self.logic.money.can_spend(2000),
-            FestivalCheck.rarecrow_2: self.logic.money.can_spend(5000),
-            FestivalCheck.fishing_competition: self.logic.festival.can_win_fishing_competition(),
-            FestivalCheck.rarecrow_4: self.logic.money.can_spend(5000),
-            FestivalCheck.mermaid_show: self.logic.true_,
-            FestivalCheck.cone_hat: self.logic.money.can_spend(2500),
-            FestivalCheck.iridium_fireplace: self.logic.money.can_spend(15000),
-            FestivalCheck.rarecrow_7: self.logic.money.can_spend(5000) & self.logic.museum.can_donate_museum_artifacts(20),
-            FestivalCheck.rarecrow_8: self.logic.money.can_spend(5000) & self.logic.museum.can_donate_museum_items(40),
-            FestivalCheck.lupini_red_eagle: self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_portrait_mermaid: self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_solar_kingdom: self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_clouds: self.logic.time.has_year_two & self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_1000_years: self.logic.time.has_year_two & self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_three_trees: self.logic.time.has_year_two & self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_the_serpent: self.logic.time.has_year_three & self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_tropical_fish: self.logic.time.has_year_three & self.logic.money.can_spend(1200),
-            FestivalCheck.lupini_land_of_clay: self.logic.time.has_year_three & self.logic.money.can_spend(1200),
-            FestivalCheck.secret_santa: self.logic.gifts.has_any_universal_love,
-            FestivalCheck.legend_of_the_winter_star: self.logic.true_,
-            FestivalCheck.rarecrow_3: self.logic.true_,
-            FestivalCheck.all_rarecrows: self.logic.region.can_reach(Region.farm) & self.logic.festival.has_all_rarecrows(),
-            FestivalCheck.calico_race: self.logic.true_,
-            FestivalCheck.mummy_mask: self.logic.true_,
-            FestivalCheck.calico_statue: self.logic.true_,
-            FestivalCheck.emily_outfit_service: self.logic.true_,
-            FestivalCheck.earthy_mousse: self.logic.true_,
-            FestivalCheck.sweet_bean_cake: self.logic.true_,
-            FestivalCheck.skull_cave_casserole: self.logic.true_,
-            FestivalCheck.spicy_tacos: self.logic.true_,
-            FestivalCheck.mountain_chili: self.logic.true_,
-            FestivalCheck.crystal_cake: self.logic.true_,
-            FestivalCheck.cave_kebab: self.logic.true_,
-            FestivalCheck.hot_log: self.logic.true_,
-            FestivalCheck.sour_salad: self.logic.true_,
-            FestivalCheck.superfood_cake: self.logic.true_,
-            FestivalCheck.warrior_smoothie: self.logic.true_,
-            FestivalCheck.rumpled_fruit_skin: self.logic.true_,
-            FestivalCheck.calico_pizza: self.logic.true_,
-            FestivalCheck.stuffed_mushrooms: self.logic.true_,
-            FestivalCheck.elf_quesadilla: self.logic.true_,
-            FestivalCheck.nachos_of_the_desert: self.logic.true_,
-            FestivalCheck.cloppino: self.logic.true_,
-            FestivalCheck.rainforest_shrimp: self.logic.true_,
-            FestivalCheck.shrimp_donut: self.logic.true_,
-            FestivalCheck.smell_of_the_sea: self.logic.true_,
-            FestivalCheck.desert_gumbo: self.logic.true_,
-            FestivalCheck.free_cactis: self.logic.true_,
-            FestivalCheck.monster_hunt: self.logic.monster.can_kill(Monster.serpent),
-            FestivalCheck.deep_dive: self.logic.region.can_reach(Region.skull_cavern_50),
-            FestivalCheck.treasure_hunt: self.logic.region.can_reach(Region.skull_cavern_25),
-            FestivalCheck.touch_calico_statue: self.logic.region.can_reach(Region.skull_cavern_25),
-            FestivalCheck.real_calico_egg_hunter: self.logic.region.can_reach(Region.skull_cavern_100),
-            FestivalCheck.willy_challenge: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.scorpion_carp]),
-            FestivalCheck.desert_scholar: self.logic.true_,
-            FestivalCheck.squidfest_day_1_copper: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid]),
-            FestivalCheck.squidfest_day_1_iron: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid]) & self.logic.fishing.can_use_any_bait(),
-            FestivalCheck.squidfest_day_1_gold: self.logic.festival.can_squidfest_iridium_reward(),
-            FestivalCheck.squidfest_day_1_iridium: self.logic.festival.can_squidfest_iridium_reward(),
-            FestivalCheck.squidfest_day_2_copper: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid]),
-            FestivalCheck.squidfest_day_2_iron: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid]) & self.logic.fishing.can_use_any_bait(),
-            FestivalCheck.squidfest_day_2_gold: self.logic.festival.can_squidfest_iridium_reward(),
-            FestivalCheck.squidfest_day_2_iridium: self.logic.festival.can_squidfest_iridium_reward(),
-        })
+        self.registry.festival_rules.update(
+            {
+                FestivalCheck.egg_hunt: self.logic.festival.can_win_egg_hunt()
+                & self.logic.villager.has_all(NPC.lewis, NPC.jas, NPC.vincent, NPC.abigail),
+                FestivalCheck.strawberry_seeds: self.logic.money.can_spend(1000) & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.dance: self.logic.relationship.has_hearts_with_any_bachelor(4)
+                & self.logic.villager.has_any(
+                    NPC.abigail, NPC.alex, NPC.elliott, NPC.emily, NPC.haley, NPC.shane, NPC.sebastian, NPC.maru
+                ),
+                FestivalCheck.tub_o_flowers: self.logic.money.can_spend(2000) & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.rarecrow_5: self.logic.money.can_spend(2500) & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.luau_soup: self.logic.festival.can_succeed_luau_soup()
+                & self.logic.villager.has_all(NPC.pierre),  # TODO: add govenor
+                FestivalCheck.moonlight_jellies: self.logic.villager.has(NPC.lewis),
+                FestivalCheck.moonlight_jellies_banner: self.logic.money.can_spend(800)
+                & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.starport_decal: self.logic.money.can_spend(1000) & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.smashing_stone: self.logic.true_,
+                FestivalCheck.grange_display: self.logic.festival.can_succeed_grange_display()
+                & self.logic.villager.has(NPC.lewis),
+                FestivalCheck.rarecrow_1: self.logic.true_,  # only cost star tokens
+                FestivalCheck.fair_stardrop: self.logic.true_,  # only cost star tokens
+                FestivalCheck.spirit_eve_maze: self.logic.true_,
+                FestivalCheck.jack_o_lantern: self.logic.money.can_spend(2000) & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.rarecrow_2: self.logic.money.can_spend(5000) & self.logic.villager.has(NPC.pierre),
+                FestivalCheck.fishing_competition: self.logic.festival.can_win_fishing_competition()
+                & self.logic.villager.has_all(NPC.pierre, NPC.willy, NPC.pam),  # TODO: check who I'm missing
+                FestivalCheck.rarecrow_4: self.logic.money.can_spend(5000),
+                FestivalCheck.mermaid_show: self.logic.true_,
+                FestivalCheck.cone_hat: self.logic.money.can_spend(2500),
+                FestivalCheck.iridium_fireplace: self.logic.money.can_spend(15000),
+                FestivalCheck.rarecrow_7: self.logic.money.can_spend(5000)
+                & self.logic.museum.can_donate_museum_artifacts(20),
+                FestivalCheck.rarecrow_8: self.logic.money.can_spend(5000)
+                & self.logic.museum.can_donate_museum_items(40),
+                FestivalCheck.lupini_red_eagle: self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_portrait_mermaid: self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_solar_kingdom: self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_clouds: self.logic.time.has_year_two & self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_1000_years: self.logic.time.has_year_two & self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_three_trees: self.logic.time.has_year_two & self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_the_serpent: self.logic.time.has_year_three & self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_tropical_fish: self.logic.time.has_year_three & self.logic.money.can_spend(1200),
+                FestivalCheck.lupini_land_of_clay: self.logic.time.has_year_three & self.logic.money.can_spend(1200),
+                FestivalCheck.secret_santa: self.logic.gifts.has_any_universal_love,  # TODO: check that has any/enough villagers
+                FestivalCheck.legend_of_the_winter_star: self.logic.villager.has(NPC.willy),
+                FestivalCheck.rarecrow_3: self.logic.true_,
+                FestivalCheck.all_rarecrows: self.logic.region.can_reach(Region.farm)
+                & self.logic.festival.has_all_rarecrows(),
+                FestivalCheck.calico_race: self.logic.true_,
+                FestivalCheck.mummy_mask: self.logic.true_,
+                FestivalCheck.calico_statue: self.logic.true_,
+                FestivalCheck.emily_outfit_service: self.logic.true_,
+                FestivalCheck.earthy_mousse: self.logic.true_,
+                FestivalCheck.sweet_bean_cake: self.logic.true_,
+                FestivalCheck.skull_cave_casserole: self.logic.true_,
+                FestivalCheck.spicy_tacos: self.logic.true_,
+                FestivalCheck.mountain_chili: self.logic.true_,
+                FestivalCheck.crystal_cake: self.logic.true_,
+                FestivalCheck.cave_kebab: self.logic.true_,
+                FestivalCheck.hot_log: self.logic.true_,
+                FestivalCheck.sour_salad: self.logic.true_,
+                FestivalCheck.superfood_cake: self.logic.true_,
+                FestivalCheck.warrior_smoothie: self.logic.true_,
+                FestivalCheck.rumpled_fruit_skin: self.logic.true_,
+                FestivalCheck.calico_pizza: self.logic.true_,
+                FestivalCheck.stuffed_mushrooms: self.logic.true_,
+                FestivalCheck.elf_quesadilla: self.logic.true_,
+                FestivalCheck.nachos_of_the_desert: self.logic.true_,
+                FestivalCheck.cloppino: self.logic.true_,
+                FestivalCheck.rainforest_shrimp: self.logic.true_,
+                FestivalCheck.shrimp_donut: self.logic.true_,
+                FestivalCheck.smell_of_the_sea: self.logic.true_,
+                FestivalCheck.desert_gumbo: self.logic.true_,
+                FestivalCheck.free_cactis: self.logic.true_,
+                FestivalCheck.monster_hunt: self.logic.monster.can_kill(Monster.serpent),
+                FestivalCheck.deep_dive: self.logic.region.can_reach(Region.skull_cavern_50),
+                FestivalCheck.treasure_hunt: self.logic.region.can_reach(Region.skull_cavern_25),
+                FestivalCheck.touch_calico_statue: self.logic.region.can_reach(Region.skull_cavern_25),
+                FestivalCheck.real_calico_egg_hunter: self.logic.region.can_reach(Region.skull_cavern_100),
+                FestivalCheck.willy_challenge: self.logic.fishing.can_catch_fish(
+                    self.content.fishes[Fish.scorpion_carp]
+                )
+                & self.logic.villager.has(NPC.willy),
+                FestivalCheck.desert_scholar: self.logic.true_,
+                FestivalCheck.squidfest_day_1_copper: self.logic.fishing.can_catch_fish(
+                    self.content.fishes[Fish.squid]
+                ),
+                FestivalCheck.squidfest_day_1_iron: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid])
+                & self.logic.fishing.can_use_any_bait(),
+                FestivalCheck.squidfest_day_1_gold: self.logic.festival.can_squidfest_iridium_reward(),
+                FestivalCheck.squidfest_day_1_iridium: self.logic.festival.can_squidfest_iridium_reward(),
+                FestivalCheck.squidfest_day_2_copper: self.logic.fishing.can_catch_fish(
+                    self.content.fishes[Fish.squid]
+                ),
+                FestivalCheck.squidfest_day_2_iron: self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid])
+                & self.logic.fishing.can_use_any_bait(),
+                FestivalCheck.squidfest_day_2_gold: self.logic.festival.can_squidfest_iridium_reward(),
+                FestivalCheck.squidfest_day_2_iridium: self.logic.festival.can_squidfest_iridium_reward(),
+            }
+        )
         for i in range(1, 11):
             check_name = f"{FestivalCheck.trout_derby_reward_pattern}{i}"
-            self.registry.festival_rules[check_name] = self.logic.fishing.can_catch_fish(self.content.fishes[Fish.rainbow_trout])
+            self.registry.festival_rules[check_name] = self.logic.fishing.can_catch_fish(
+                self.content.fishes[Fish.rainbow_trout]
+            )
 
     def can_squidfest_iridium_reward(self) -> StardewRule:
-        return self.logic.fishing.can_catch_fish(self.content.fishes[Fish.squid]) & self.logic.fishing.can_use_specific_bait(Fish.squid)
+        return self.logic.fishing.can_catch_fish(
+            self.content.fishes[Fish.squid]
+        ) & self.logic.fishing.can_use_specific_bait(Fish.squid)
 
     def has_squidfest_day_1_iridium_reward(self) -> StardewRule:
         if self.options.festival_locations == FestivalLocations.option_disabled:
