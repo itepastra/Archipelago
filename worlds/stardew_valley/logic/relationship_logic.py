@@ -103,13 +103,13 @@ class RelationshipLogic(BaseLogic):
             return false_
 
         if hearts == 0:
-            return true_
+            return self.logic.villager.has(villager.name)
 
         heart_steps = self.content.features.friendsanity.get_randomized_hearts(villager)
         if not heart_steps or hearts > heart_steps[-1]:  # Hearts are sorted, bigger is the last one.
             return self.logic.relationship.can_earn_relationship(npc, hearts)
 
-        return self.logic.relationship.received_hearts(villager, hearts)
+        return self.logic.relationship.received_hearts(villager, hearts) & self.logic.villager.has(villager.name)
 
     # Should be cached
     def received_hearts(self, villager: Villager, hearts: int) -> StardewRule:
@@ -171,7 +171,7 @@ class RelationshipLogic(BaseLogic):
             return false_
 
         if hearts == 0:
-            return True_()
+            return self.logic.villager.has(villager.name)
 
         rules = [self.logic.relationship.can_meet(npc)]
 

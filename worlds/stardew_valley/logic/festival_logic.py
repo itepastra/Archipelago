@@ -30,10 +30,7 @@ class FestivalLogic(BaseLogic):
                 FestivalCheck.egg_hunt: self.logic.festival.can_win_egg_hunt()
                 & self.logic.villager.has_all(NPC.lewis, NPC.jas, NPC.vincent, NPC.abigail),
                 FestivalCheck.strawberry_seeds: self.logic.money.can_spend(1000) & self.logic.villager.has(NPC.pierre),
-                FestivalCheck.dance: self.logic.relationship.has_hearts_with_any_bachelor(4)
-                & self.logic.villager.has_any(
-                    NPC.abigail, NPC.alex, NPC.elliott, NPC.emily, NPC.haley, NPC.shane, NPC.sebastian, NPC.maru
-                ),
+                FestivalCheck.dance: self.logic.relationship.has_hearts_with_any_bachelor(4),
                 FestivalCheck.tub_o_flowers: self.logic.money.can_spend(2000) & self.logic.villager.has(NPC.pierre),
                 FestivalCheck.rarecrow_5: self.logic.money.can_spend(2500) & self.logic.villager.has(NPC.pierre),
                 FestivalCheck.luau_soup: self.logic.festival.can_succeed_luau_soup()
