@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Protocol, ClassVar
 
 from Options import Range, NamedRange, Toggle, Choice, OptionSet, PerGameCommonOptions, DeathLink, OptionList, \
-    Visibility, Removed, OptionCounter
+    Visibility, Removed, OptionCounter, OptionDict
 from .jojapocalypse_options import Jojapocalypse, JojaStartPrice, JojaEndPrice, JojaPricingPattern, JojaPurchasesForMembership, JojaAreYouSure
 from ..mods.mod_data import ModNames, invalid_mod_combinations
 from ..strings.ap_names.ap_option_names import BuffOptionName, WalnutsanityOptionName, SecretsanityOptionName, EatsanityOptionName, ChefsanityOptionName, \
@@ -251,6 +251,21 @@ class EntranceRandomizationBehavior(OptionSet):
 
     def is_chaos(self) -> bool:
         return EntranceRandomizationBehaviorOptionName.chaos in self.value
+
+
+class EntrancePlando(OptionDict):
+    """Set where specific Entrances go instead of being randomized.
+    Should have entries of the format
+    `Farm to Forest: Forest to Town`
+    which will make leaving the farm leads to the town from the left bottom.
+    Note that this even works for entrances that are not randomized by Entrance Randomization,
+    in the example Forest to Farm would also get randomized even if it wasn't before to negate failures.
+    """
+    default = {}
+    internal_name = "entrance_plando"
+    display_name = "Entrance Plando"
+
+    visibility = Visibility.all & ~Visibility.simple_ui
 
 
 class StartWithout(OptionSet):
@@ -1277,6 +1292,7 @@ class StardewValleyOptions(PerGameCommonOptions):
     bundles_per_room: BundlesPerRoom
     entrance_randomization: EntranceRandomization
     entrance_randomization_behavior: EntranceRandomizationBehavior
+    entrance_plando: EntrancePlando
     start_without: StartWithout
     season_randomization: SeasonRandomization
     cropsanity: Cropsanity

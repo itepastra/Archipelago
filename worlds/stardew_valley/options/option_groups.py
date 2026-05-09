@@ -79,6 +79,7 @@ else:
             options.AllowedFillerItems,
             options.TrapDistribution,
             options.CustomLogic,
+            options.EntrancePlando,
             ap_options.ProgressionBalancing,
             ap_options.Accessibility,
         ]),

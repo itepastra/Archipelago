@@ -8,20 +8,8 @@ from ..strings.ap_names.ap_option_names import EntranceRandomizationBehaviorOpti
 from .model import ConnectionData, GroupFlag, RandomizationFlag, RegionData, reverse_connection_name
 
 
-def create_player_randomization_flag(
-        entrance_randomization_choice: EntranceRandomization,
-        entrance_behavior_choice: set[EntranceRandomizationBehaviorOptionName],
-        include_endgame: bool,
-        content: StardewContent,
-):
-    """Return the flag that a connection is expected to have to be randomized. Only the bit corresponding to the player randomization choice will be enabled.
-
-    Other bits for content exclusion might also be enabled, tho the preferred solution to exclude content should be to not create those regions at alls, when possible.
-    """
+def create_base_randomization_flag(entrance_randomization_choice: EntranceRandomization) -> RandomizationFlag:
     flag = RandomizationFlag.NOT_RANDOMIZED
-
-    if entrance_randomization_choice.value == EntranceRandomization.option_disabled:
-        return flag
 
     if entrance_randomization_choice == EntranceRandomization.option_pelican_town:
         flag |= RandomizationFlag.SET_PELICAN_TOWN
@@ -34,8 +22,28 @@ def create_player_randomization_flag(
     elif entrance_randomization_choice == EntranceRandomization.option_everywhere:
         flag |= RandomizationFlag.SET_EVERYTHING
 
-    if (EntranceRandomizationBehaviorOptionName.shuffle_farmhouse in entrance_behavior_choice
-            or EntranceRandomizationBehaviorOptionName.shuffle_farmhouse_anywhere in entrance_behavior_choice):
+    return flag
+
+
+def create_player_randomization_flag(
+        entrance_randomization_choice: EntranceRandomization,
+        entrance_behavior_choice: set[EntranceRandomizationBehaviorOptionName],
+        include_endgame: bool,
+        content: StardewContent,
+):
+    """Return the flag that a connection is expected to have to be randomized. Only the bit corresponding to the player randomization choice will be enabled.
+
+    Other bits for content exclusion might also be enabled, tho the preferred solution to exclude content should be to not create those regions at alls, when possible.
+    """
+    if entrance_randomization_choice.value == EntranceRandomization.option_disabled:
+        return RandomizationFlag.NOT_RANDOMIZED
+
+    flag = create_base_randomization_flag(entrance_randomization_choice)
+
+    if (
+            EntranceRandomizationBehaviorOptionName.shuffle_farmhouse in entrance_behavior_choice
+            or EntranceRandomizationBehaviorOptionName.shuffle_farmhouse_anywhere in entrance_behavior_choice
+    ):
         flag |= RandomizationFlag.FARMHOUSE
     if content.features.skill_progression.are_masteries_shuffled:
         flag |= RandomizationFlag.MASTERY_CAVE
@@ -51,14 +59,22 @@ def get_target_groups(entrance_randomization_behavior: EntranceRandomizationBeha
         GroupFlag.DOWN: [GroupFlag.UP, GroupFlag.DOOR, GroupFlag.TO_ANY],
         GroupFlag.LEFT: [GroupFlag.RIGHT, GroupFlag.TO_ANY],
         GroupFlag.RIGHT: [GroupFlag.LEFT, GroupFlag.TO_ANY],
-        GroupFlag.DOOR: [GroupFlag.DOWN, GroupFlag.TO_ANY]}
+        GroupFlag.DOOR: [GroupFlag.DOWN, GroupFlag.TO_ANY],
+    }
 
     area_matching_group_lookup = {
-        GroupFlag.TO_ANY: [GroupFlag.IN_TO_IN, GroupFlag.IN_TO_OUT, GroupFlag.OUT_TO_IN, GroupFlag.OUT_TO_OUT, GroupFlag.TO_ANY],
+        GroupFlag.TO_ANY: [
+            GroupFlag.IN_TO_IN,
+            GroupFlag.IN_TO_OUT,
+            GroupFlag.OUT_TO_IN,
+            GroupFlag.OUT_TO_OUT,
+            GroupFlag.TO_ANY,
+        ],
         GroupFlag.IN_TO_IN: [GroupFlag.IN_TO_IN, GroupFlag.TO_ANY],
         GroupFlag.IN_TO_OUT: [GroupFlag.IN_TO_OUT, GroupFlag.TO_ANY],
         GroupFlag.OUT_TO_IN: [GroupFlag.OUT_TO_IN, GroupFlag.TO_ANY],
-        GroupFlag.OUT_TO_OUT: [GroupFlag.OUT_TO_OUT, GroupFlag.TO_ANY]}
+        GroupFlag.OUT_TO_OUT: [GroupFlag.OUT_TO_OUT, GroupFlag.TO_ANY],
+    }
 
     dir_mask = 0b0
     area_mask = 0b0
@@ -72,26 +88,35 @@ def get_target_groups(entrance_randomization_behavior: EntranceRandomizationBeha
 
     groups = {
         int(direction | inorout): [
-            int(pair_direction | pair_inorout) for pair_direction in direction_matching_group_lookup[direction & dir_mask]
-            for pair_inorout in area_matching_group_lookup[inorout & area_mask]]
+            int(pair_direction | pair_inorout)
+            for pair_direction in direction_matching_group_lookup[direction & dir_mask]
+            for pair_inorout in area_matching_group_lookup[inorout & area_mask]
+        ]
         for direction in [
             GroupFlag.TO_ANY,
             GroupFlag.UP,
             GroupFlag.DOWN,
             GroupFlag.LEFT,
             GroupFlag.RIGHT,
-            GroupFlag.DOOR, ]
+            GroupFlag.DOOR,
+        ]
         for inorout in [
             GroupFlag.TO_ANY,
             GroupFlag.IN_TO_IN,
             GroupFlag.IN_TO_OUT,
             GroupFlag.OUT_TO_IN,
-            GroupFlag.OUT_TO_OUT, ]}
+            GroupFlag.OUT_TO_OUT,
+        ]
+    }
 
     groups[int(GroupFlag.DOWN | GroupFlag.IN_TO_OUT | GroupFlag.FROM_FARMHOUSE)] = [
-        int(pair_direction | pair_inorout | farmhouse_flag) for pair_direction in direction_matching_group_lookup[GroupFlag.DOWN & dir_mask]
-        for pair_inorout in (area_matching_group_lookup[GroupFlag.IN_TO_OUT] + area_matching_group_lookup[GroupFlag.OUT_TO_OUT]) for farmhouse_flag in
-        [GroupFlag.FROM_FARMHOUSE, GroupFlag.TO_ANY]]
+        int(pair_direction | pair_inorout | farmhouse_flag)
+        for pair_direction in direction_matching_group_lookup[GroupFlag.DOWN & dir_mask]
+        for pair_inorout in (
+                area_matching_group_lookup[GroupFlag.IN_TO_OUT] + area_matching_group_lookup[GroupFlag.OUT_TO_OUT]
+        )
+        for farmhouse_flag in [GroupFlag.FROM_FARMHOUSE, GroupFlag.TO_ANY]
+    ]
     return groups
 
 
@@ -100,9 +125,10 @@ def connect_regions(
         connection_data_by_name: dict[str, ConnectionData],
         regions_by_name: dict[str, Region],
         player_randomization_flag: RandomizationFlag,
-        is_chaos: bool
-) -> set[str]:
-    randomized_entrances: set[str] = set()
+        er_plando: dict[str, str],
+        is_chaos: bool,
+) -> dict[str, str]:
+    special_randomized_entrances: dict[str, str] = {}
     for region_name, region_data in region_data_by_name.items():
         origin_region = regions_by_name[region_name]
 
@@ -112,14 +138,19 @@ def connect_regions(
 
             eligible = connection_data.is_eligible_for_randomization(player_randomization_flag)
             if eligible and is_chaos:
-                randomized_entrances.add(connection_data.name)
+                special_randomized_entrances[connection_data.name] = connection_data.name
                 origin_region.connect(destination_region, connection_data.name)
-            elif eligible:
-                randomized_entrances.add(connection_data.name)
+            elif connection_data.name in er_plando:
+                new_connection_name = er_plando[connection_data.name]
+                new_connection = connection_data_by_name[new_connection_name]
+                special_randomized_entrances[connection_data.name] = new_connection_name
+                dest = regions_by_name[new_connection.destination]
+                origin_region.connect(dest, connection_data.name)
+            elif eligible or connection_data.reverse in er_plando:
                 create_entrance_rando_target(origin_region, destination_region, connection_data)
             else:
                 origin_region.connect(destination_region, connection_data.name)
-    return randomized_entrances
+    return special_randomized_entrances
 
 
 def create_entrance_rando_target(origin: Region, destination: Region, connection_data: ConnectionData) -> None:
@@ -139,20 +170,10 @@ def create_entrance_rando_target(origin: Region, destination: Region, connection
     exit = origin.create_exit(connection_data.name)
     exit.randomization_type = EntranceType.TWO_WAY
     exit.randomization_group = connection_data.group
-    destination.create_er_target(rev).randomization_type = EntranceType.TWO_WAY
+    origin.create_er_target(connection_data.name).randomization_type = EntranceType.TWO_WAY
 
 
-def prepare_chaos_data(
-        randomized_connections: set[str]
-) -> dict[str, str]:
-    randomized_entrances: dict[str, str] = {}
-
-    for connection in randomized_connections:
-        randomized_entrances[connection] = connection
-    return randomized_entrances
-
-
-def prepare_mod_data(placements: ERPlacementState) -> dict[str, str]:
+def prepare_mod_data(placements: ERPlacementState, forced_placements: dict[str, str]) -> dict[str, str]:
     """Take the placements from GER and prepare the data for the mod.
     The mod require a dictionary detailing which connections need to be swapped. It acts as if the connections are decoupled, so both directions are required.
 
@@ -167,4 +188,5 @@ def prepare_mod_data(placements: ERPlacementState) -> dict[str, str]:
     for entrance, exit_ in placements.pairings:
         swapped_connections[entrance] = reverse_connection_name(exit_) or exit_
 
+    swapped_connections.update(forced_placements)
     return swapped_connections
