@@ -79,7 +79,7 @@ else:
             options.BundleWhitelist,
             options.BundleBlacklist,
             options.CustomLogic,
-            options.EntranceRandomizationPlando,
+            options.EntrancePlando,
             ap_options.ProgressionBalancing,
             ap_options.Accessibility,
         ]),
