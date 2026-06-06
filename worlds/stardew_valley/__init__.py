@@ -8,10 +8,10 @@ from typing import Any, ClassVar, Dict, List, Optional, TextIO
 
 import entrance_rando
 from BaseClasses import CollectionState, Entrance, Item, ItemClassification, Location, MultiWorld, Region, Tutorial
+from NetUtils import JSONMessagePart
 from Options import PerGameCommonOptions
 from worlds.AutoWorld import WebWorld, World
 from worlds.LauncherComponents import Component, Type, components, icon_paths
-from worlds.stardew_valley.regions.model import reverse_connection_name
 from .bundles.bundle_room import BundleRoom
 from .bundles.bundles import get_all_bundles, get_trash_bear_requests
 from .content import StardewContent, create_content
@@ -35,9 +35,11 @@ from .options.settings import StardewSettings
 from .options.worlds_group import apply_most_restrictive_options
 from .regions import create_regions, prepare_mod_data
 from .regions.entrance_rando import get_target_groups
+from .regions.model import reverse_connection_name
 from .rules import set_rules
 from .stardew_rule import HasProgressionPercent, StardewRule, True_
 from .strings.ap_names.ap_option_names import EntranceRandomizationBehaviorOptionName, StartWithoutOptionName
+from .stardew_rule.rule_explain import RuleExplanation
 from .strings.ap_names.ap_weapon_names import APWeapon
 from .strings.ap_names.event_names import Event
 from .strings.entrance_names import Entrance as EntranceNames
@@ -94,26 +96,6 @@ class StardewWebWorld(WebWorld):
     )
 
     tutorials = [setup_en, setup_fr]
-
-
-if TRACKER_ENABLED:
-    import os
-
-    from .. import user_folder
-
-    # Best effort to detect if universal tracker is installed
-    if any("tracker.apworld" in f.name for f in os.scandir(user_folder)):
-        def launch_client(*args):
-            from worlds.LauncherComponents import launch
-
-            from .client import launch as client_main
-
-            launch(client_main, name="Stardew Valley Tracker", args=args)
-
-
-        components.append(Component("Stardew Valley Tracker", func=launch_client, component_type=Type.CLIENT, icon="stardew"))
-
-        icon_paths["stardew"] = f"ap:{__name__}/stardew.png"
 
 
 class StardewValleyWorld(World):
@@ -474,6 +456,7 @@ class StardewValleyWorld(World):
         set_rules(self)
 
     def connect_entrances(self) -> None:
+        self.entrance_cache_invalid = True
         is_chaos = self.options.entrance_randomization_behavior.is_chaos()
         # when the cutscene-relevant entrances aren't randomized, connect them manually
         if self.options.entrance_randomization.value < EntranceRandomization.option_overworld or is_chaos:
@@ -512,9 +495,17 @@ class StardewValleyWorld(World):
             )
             self.randomized_entrances = prepare_mod_data(placement, self.forced_entrances)
         elif not is_chaos:
+
             # randomized_entrances were in the slot_data, connecting them as entered
             entrances = {entrance.name: entrance for region in self.get_regions() for entrance in region.entrances if entrance.parent_region is None}
             exits = {exit_.name: exit_ for region in self.get_regions() for exit_ in region.exits if exit_.connected_region is None}
+
+            is_ut = getattr(self.multiworld, "generation_is_fake", False)
+            if is_ut and self.multiworld.enforce_deferred_connections in ("on", "default"):
+                from .client import setup_ut_deferred_entrances
+                self.entrance_data_map = setup_ut_deferred_entrances(self.randomized_entrances, entrances, exits)
+                self.visited_entrances = 0
+                return
 
             for original, random in self.randomized_entrances.items():
                 rev_random = reverse_connection_name(random) or random
@@ -642,3 +633,40 @@ class StardewValleyWorld(World):
             # Total progression items is not set until all items are created, but collect will be called during the item creation when an item is precollected.
             # We can't update the percentage if we don't know the total progression items, can't divide by 0.
             player_state[Event.received_progression_percent] = (received_progression_count * 100 // self.total_progression_items)
+
+    # UT support
+    found_entrances_datastorage_key = "Slot:{player}:found_entrances"
+    entrance_cache_invalid: bool
+    previous_explanation: RuleExplanation | None = None
+
+    def explain_rule(self, target_name: str, state: CollectionState) -> list[JSONMessagePart]:
+        from .client import cmd_explain
+
+        return cmd_explain(self, target_name, state)
+
+    def explain_more(self, target_name: str, state: CollectionState) -> list[JSONMessagePart]:
+        from .client import cmd_more
+
+        return cmd_more(self, target_name, state)
+
+    def reconnect_found_entrances(self, key: str, value: Any) -> None:
+        if value is None or key is None or self.multiworld.enforce_deferred_connections == "off":
+            return
+        if key != self.found_entrances_datastorage_key.replace("{player}", str(self.player)):
+            return
+
+        new_bits: int = value & (~self.visited_entrances)
+        index = 0
+        self.visited_entrances |= new_bits
+        while new_bits != 0:
+            this_iter = new_bits & 0b1
+            new_bits = new_bits >> 1
+            if this_iter:
+                entrance_cache_invalid = True
+
+                entr, exit = self.entrance_data_map[index]
+                target = exit.connected_region
+                entr.connect(target)
+                target.entrances.remove(exit)
+
+            index += 1
