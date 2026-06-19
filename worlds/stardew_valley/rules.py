@@ -176,6 +176,8 @@ def set_rules(world):
     set_magic_spell_rules(logic, rule_collector, world_content)
     set_sve_rules(logic, rule_collector, world_content)
 
+    set_cutscene_rules(logic, rule_collector)
+
 
 def set_isolated_locations_rules(logic: StardewLogic, rule_collector: StardewRuleCollector, content: StardewContent, trash_bear_requests: Dict[str, List[str]]):
     rule_collector.set_location_rule("Beach Bridge Repair", logic.grind.can_grind_item(300, "Wood"))
@@ -223,6 +225,8 @@ def set_tool_rules(logic: StardewLogic, rule_collector: StardewRuleCollector, co
         upgrade_rule = logic.tool.has_tool(tool, previous) & logic.source.has_access_to_any(upgrade_data.sources)
         rule_collector.set_location_rule(location_name, upgrade_rule)
 
+def set_cutscene_rules(logic: StardewLogic, rule_collector: StardewRuleCollector):
+    rule_collector.set_location_rule("Bamboo Pole Cutscene", logic.relationship.exists(NPC.willy))
 
 def set_building_rules(logic: StardewLogic, rule_collector: StardewRuleCollector, content: StardewContent):
     building_progression = content.features.building_progression
