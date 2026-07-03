@@ -14,6 +14,7 @@ vanilla_regions: tuple[RegionData, ...] = (
             LogicEntrance.wearing_hats,
             LogicEntrance.crafting,
             LogicEntrance.eating,
+            LogicEntrance.die_to_respawn_at_harvey,
         ),
     ),
     RegionData(
@@ -1618,6 +1619,7 @@ vanilla_connections: tuple[ConnectionData, ...] = (
     ConnectionData(LogicEntrance.town_cutscenes_from_mountain_cave_shortcut, LogicRegion.town_cutscenes),
     ConnectionData(LogicEntrance.town_cutscenes_from_mountain_fence_shortcut, LogicRegion.town_cutscenes),
     ConnectionData(LogicEntrance.town_cutscenes_from_tide_pools_shortcut, LogicRegion.town_cutscenes),
+    ConnectionData(LogicEntrance.die_to_respawn_at_harvey, RegionName.hospital)
 )
 
 connections_without_ginger_island_by_name: Mapping[str, ConnectionData] = MappingProxyType({connection.name: connection for connection in vanilla_connections})

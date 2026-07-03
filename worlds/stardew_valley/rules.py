@@ -431,6 +431,9 @@ def set_entrance_rules(logic: StardewLogic, rule_collector: StardewRuleCollector
     rule_collector.set_entrance_rule(LogicEntrance.purchase_from_pierre_spirit_eve, logic.relationship.exists(NPC.pierre))
     rule_collector.set_entrance_rule(LogicEntrance.purchase_from_pierre_winter_star, logic.relationship.exists(NPC.pierre))
 
+    # Glitch logic for UT
+    rule_collector.set_entrance_rule(LogicEntrance.die_to_respawn_at_harvey, logic.glitched.death_glitched_rule())
+
 
 def set_bookseller_rules(logic, rule_collector):
     rule_collector.set_entrance_rule(LogicEntrance.buy_books, logic.received(Bookseller.days))

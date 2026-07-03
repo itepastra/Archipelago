@@ -21,3 +21,6 @@ class GlitchedLogic(BaseLogic):
 
     def mines_glitched_rule(self) -> StardewRule:
         return Glitched(self.logic.glitched.has_glitch_item() & self.logic.region.can_reach(Region.mines_floor_5), "Mine all floors at once")
+
+    def death_glitched_rule(self) -> StardewRule:
+        return Glitched(self.logic.glitched.has_glitch_item(), "Die to respawn at Hospital")

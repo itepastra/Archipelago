@@ -484,6 +484,7 @@ class LogicEntrance:
     purchase_from_pierre_spirit_eve = "Purchase From Pierre (Spirit's Eve)"
     purchase_from_pierre_winter_star = "Purchase From Pierre (Winter Star)"
 
+    die_to_respawn_at_harvey = "Die to respawn at Harvey"
 
 # Skull Cavern Elevator
 
