@@ -27,6 +27,9 @@ class True_(LiteralStardewRule):  # noqa
             _cache.append(super(True_, cls).__new__(cls))
         return _cache[0]
 
+    def __neg__(self) -> StardewRule:
+        return False_()
+
     def __or__(self, other) -> StardewRule:
         return self
 

@@ -58,6 +58,9 @@ class Received(CombinableStardewRule):
     def __call__(self, state: CollectionState) -> bool:
         return state.prog_items[self.player][self.item] >= self.count
 
+    def __neg__(self) -> StardewRule:
+        return NotReceived(self.item, self.player, self.count, self.event)
+
     def evaluate_while_simplifying(self, state: CollectionState) -> Tuple[StardewRule, bool]:
         return self, self(state)
 
@@ -65,6 +68,33 @@ class Received(CombinableStardewRule):
         if self.count == 1:
             return f"Received {'event ' if self.event else ''}{self.item}"
         return f"Received {'event ' if self.event else ''}{self.count} {self.item}"
+
+
+@dataclass(frozen=True)
+class NotReceived(CombinableStardewRule):
+    item: str
+    player: int
+    count: int
+    event: bool = False
+
+    @property
+    def combination_key(self) -> Hashable:
+        return self.item
+
+    @property
+    def value(self):
+        return self.count
+
+    def __call__(self, state: CollectionState) -> bool:
+        return state.prog_items[self.player][self.item] < self.count
+
+    def evaluate_while_simplifying(self, state: CollectionState) -> Tuple[StardewRule, bool]:
+        return self, self(state)
+
+    def __repr__(self):
+        if self.count == 1:
+            return f"Haven't Received {'event ' if self.event else ''}{self.item}"
+        return f"Haven't Received {'event ' if self.event else ''}{self.count} {self.item}"
 
 
 @dataclass(frozen=True)

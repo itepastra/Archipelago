@@ -46,6 +46,7 @@ class MoneyLogic(BaseLogic):
 
         shipping_rule = self.logic.shipping.can_use_any_shipping_bin
         farming_rule = self.logic.farming.can_plant_and_grow_item(Season.not_winter)
+        glitched_money_rule = self.logic.glitched.glitched_money()
 
         if amount <= 5000:
             pierre_forage_rule = self.logic.region.can_reach_all(Region.pierre_shop, Region.forest)
@@ -55,25 +56,25 @@ class MoneyLogic(BaseLogic):
 
             if amount <= 2000:
                 selling_any_rule = shipping_rule | pierre_forage_rule | willy_rule | clint_rule | robin_rule
-                return selling_any_rule
+                return selling_any_rule | glitched_money_rule
 
             if amount <= 3000:
                 selling_any_rule = shipping_rule | pierre_forage_rule | willy_rule
-                return selling_any_rule
+                return selling_any_rule | glitched_money_rule
 
             if amount <= 5000:
                 selling_all_rule = shipping_rule | (pierre_forage_rule & farming_rule) | (pierre_forage_rule & willy_rule & clint_rule & robin_rule)
-                return selling_all_rule
+                return selling_all_rule | glitched_money_rule
 
         if amount <= 10000:
-            return shipping_rule & farming_rule
+            return (shipping_rule & farming_rule) | glitched_money_rule
 
         seed_rules = self.logic.region.can_reach(Region.pierre_shop)
         if amount <= 40000:
-            return shipping_rule & seed_rules & farming_rule
+            return (shipping_rule & seed_rules & farming_rule) | glitched_money_rule
 
         percent_progression_items_needed = min(90, amount // 20000)
-        return shipping_rule & seed_rules & farming_rule & HasProgressionPercent(self.player, percent_progression_items_needed)
+        return (shipping_rule & seed_rules & farming_rule & HasProgressionPercent(self.player, percent_progression_items_needed)) | glitched_money_rule
 
     @cache_self1
     def can_spend(self, amount: int) -> StardewRule:
@@ -84,6 +85,8 @@ class MoneyLogic(BaseLogic):
 
     # Should be cached
     def can_spend_at(self, region: str, amount: int) -> StardewRule:
+        if region == Region.pierre_shop:
+            return (self.logic.region.can_reach(region) | self.logic.glitched.joja_glitched_rule()) & self.logic.money.can_spend(amount)
         return self.logic.region.can_reach(region) & self.logic.money.can_spend(amount)
 
     def can_shop_from_hat_mouse(self, source: HatMouseSource) -> StardewRule:
@@ -155,7 +158,8 @@ class MoneyLogic(BaseLogic):
         if currency == MemeCurrency.goat:
             return self.logic.animal.has_animal(Animal.goat)
         if currency == MemeCurrency.yeehaw:
-            yeehaw_hats = [Hats.cowgal_hat, Hats.blue_cowboy_hat, Hats.red_cowboy_hat, Hats.dark_cowboy_hat, Hats.magic_cowboy_hat] # , Hats.cowboy, Hats.cowpoke_hat, Hats.deluxe_cowboy_hat
+            yeehaw_hats = [Hats.cowgal_hat, Hats.blue_cowboy_hat, Hats.red_cowboy_hat, Hats.dark_cowboy_hat,
+                           Hats.magic_cowboy_hat]  # , Hats.cowboy, Hats.cowpoke_hat, Hats.deluxe_cowboy_hat
             return self.logic.or_(*(self.logic.hat.can_wear(hat) for hat in yeehaw_hats))
         if currency == MemeCurrency.error:
             return self.logic.true_
