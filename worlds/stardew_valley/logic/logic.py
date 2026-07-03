@@ -21,6 +21,7 @@ from .fish_pond_logic import FishPondLogicMixin
 from .fishing_logic import FishingLogicMixin
 from .gift_logic import GiftLogicMixin
 from .goal_logic import GoalLogicMixin
+from .glitched_logic import GlitchedLogicMixin
 from .grind_logic import GrindLogicMixin
 from .harvesting_logic import HarvestingLogicMixin
 from .has_logic import HasLogicMixin
@@ -103,7 +104,8 @@ class StardewLogic(ReceivedLogicMixin, HasLogicMixin, RegionLogicMixin, Travelin
                    SkillLogicMixin, FarmingLogicMixin, BundleLogicMixin, FishingLogicMixin, MineLogicMixin, CookingLogicMixin, AbilityLogicMixin,
                    SpecialOrderLogicMixin, QuestLogicMixin, CraftingLogicMixin, ModLogicMixin, HarvestingLogicMixin, SourceLogicMixin,
                    RequirementLogicMixin, BookLogicMixin, GrindLogicMixin, FestivalLogicMixin, WalnutLogicMixin, GoalLogicMixin, SpecialItemsLogicMixin,
-                   MovieLogicMixin, MemeItemsLogicMixin, HatLogicMixin, ShirtLogicMixin, PantsLogicMixin, TailoringLogicMixin, FishPondLogicMixin):
+                   MovieLogicMixin, MemeItemsLogicMixin, HatLogicMixin, ShirtLogicMixin, PantsLogicMixin, TailoringLogicMixin, FishPondLogicMixin,
+                   GlitchedLogicMixin):
     player: int
     options: StardewValleyOptions
     content: StardewContent

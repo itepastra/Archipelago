@@ -41,6 +41,7 @@ from .stardew_rule.rule_explain import RuleExplanation
 from .strings.ap_names.ap_option_names import EntranceRandomizationBehaviorOptionName, StartWithoutOptionName
 from .strings.ap_names.ap_weapon_names import APWeapon
 from .strings.ap_names.event_names import Event
+from .strings.generic_names import Generic
 from .strings.entrance_names import Entrance as EntranceNames
 from .strings.goal_names import Goal as GoalName
 from .strings.quest_names import Quest
@@ -646,6 +647,7 @@ class StardewValleyWorld(World):
     found_entrances_datastorage_key = "Slot:{player}:found_entrances"
     entrance_cache_invalid: bool
     previous_explanation: RuleExplanation | None = None
+    glitches_item_name = Generic.glitch_item
 
     def explain_rule(self, target_name: str, state: CollectionState) -> list[JSONMessagePart]:
         from .client import cmd_explain

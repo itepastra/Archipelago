@@ -545,7 +545,7 @@ def set_mines_floor_entrance_rules(logic, rule_collector: StardewRuleCollector, 
         rule = logic.mine.has_mine_elevator_to_floor(floor - elevator_difference)
         if floor == 5 or floor == 45 or floor == 85:
             rule = rule & logic.mine.can_progress_in_the_mines_from_floor(floor)
-        rule_collector.set_entrance_rule(dig_to_mines_floor(floor), rule)
+        rule_collector.set_entrance_rule(dig_to_mines_floor(floor), rule | logic.glitched.mines_glitched_rule())
 
 
 def set_skull_cavern_floor_entrance_rules(logic, rule_collector: StardewRuleCollector, world_options: StardewValleyOptions):

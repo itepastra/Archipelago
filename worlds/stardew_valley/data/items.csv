@@ -1145,3 +1145,4 @@ id,name,classification,groups,content_packs
 10720,Recycling Bin,filler,"FILLER_MACHINE",Binning Skill
 10721,Advanced Recycling Machine,filler,"FILLER_MACHINE",Binning Skill
 10722,Digging Like Worms,filler,"FILLER_CONSUMABLE",Archaeology
+100000,Glitch Item,progression,DEPRECATED,

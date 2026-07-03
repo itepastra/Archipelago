@@ -519,3 +519,27 @@ class RepeatableChain(Iterable, Sized):
 
     def __contains__(self, item):
         return any(item in it for it in self.iterables)
+
+
+class Glitched(BaseStardewRule):
+    """
+    A glitch can be many things, add an explanation to how it is glitched
+    """
+    rule: StardewRule
+    explanation: str
+
+    def __init__(self, rule: StardewRule, explanation: str):
+        self.rule = rule
+        self.explanation = explanation
+
+    def __call__(self, state: CollectionState) -> bool:
+        return self.evaluate_while_simplifying(state)[1]
+
+    def __str__(self):
+        return f"Glitch ({self.explanation}): {str(self.rule)}"
+
+    def __repr__(self):
+        return f"Glitch ({self.explanation}): {repr(self.rule)}"
+
+    def evaluate_while_simplifying(self, state: CollectionState) -> Tuple[StardewRule, bool]:
+        return self, self.rule(state)
