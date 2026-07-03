@@ -17,7 +17,7 @@ class RegionFactory(Protocol):
         raise NotImplementedError
 
 
-def create_regions(region_factory: RegionFactory, world_options: StardewValleyOptions, content: StardewContent) -> tuple[dict[str, Region], dict[str, str]]:
+def create_regions(region_factory: RegionFactory, world_options: StardewValleyOptions, content: StardewContent, is_fake) -> tuple[dict[str, Region], dict[str, str]]:
     # the ginger island regions are now a content pack instead of a special case, but this does mean the pack needs to be registerd
     if not world_options.exclude_ginger_island.value:
         content.registered_packs.add(ModNames.ginger_island)
@@ -35,8 +35,7 @@ def create_regions(region_factory: RegionFactory, world_options: StardewValleyOp
                                                           world_options.include_endgame_locations == IncludeEndgameLocations.option_true, content)
 
     is_chaos = world_options.entrance_randomization_behavior.is_chaos()
-    randomized_entrances = connect_regions(region_data_by_name, connection_data_by_name, regions_by_name, randomization_flag,
-                                           world_options.entrance_plando.value, is_chaos)
+    randomized_entrances = connect_regions(region_data_by_name, connection_data_by_name, regions_by_name, randomization_flag, world_options.entrance_plando.value if is_fake else {}, is_chaos)
 
     return regions_by_name, randomized_entrances
 

@@ -198,7 +198,7 @@ class StardewValleyWorld(World):
         def create_region(name: str) -> Region:
             return Region(name, self.player, self.multiworld)
 
-        world_regions, randomized_connections = create_regions(create_region, self.options, self.content)
+        world_regions, randomized_connections = create_regions(create_region, self.options, self.content, getattr(self, "generation_is_fake", False))
 
         self.logic = StardewLogic(self.player, self.options, self.content, world_regions.keys())
         self.modified_bundles = get_all_bundles(self.random, self.logic, self.content, self.options, self.player_name)
@@ -523,9 +523,12 @@ class StardewValleyWorld(World):
 
                 target = entr.connected_region
                 assert target is not None, f"Entrance {entr} didn't have a connected region yet"
-                target.entrances.remove(entr)
+                if entr in target.entrances:
+                    target.entrances.remove(entr)
 
-                ex.connect(target)
+                    ex.connect(target)
+                else:
+                    logging.warning(f"{entr} was expected in {target.entrances} but not there")
 
     def generate_basic(self):
         pass
