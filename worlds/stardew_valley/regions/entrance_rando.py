@@ -46,8 +46,6 @@ def create_player_randomization_flag(
         flag |= RandomizationFlag.FARMHOUSE
     if content.features.skill_progression.are_masteries_shuffled:
         flag |= RandomizationFlag.MASTERY_CAVE
-    if include_endgame:
-        flag |= RandomizationFlag.ENDGAME
     return flag
 
 
