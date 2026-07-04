@@ -8,6 +8,7 @@ from NetUtils import JSONMessagePart
 from . import StardewValleyWorld
 from .logic.logic import StardewLogic
 from .regions.entrance_rando import reverse_connection_name
+from .stardew_rule import StardewRule
 from .stardew_rule.rule_explain import explain, ExplainMode, RuleExplanation
 
 
@@ -39,7 +40,10 @@ def cmd_explain(world: StardewValleyWorld, target_name: str, state: CollectionSt
             rule = logic.has(result)
         elif is_entrance_explain:
             entrance = world.get_entrance(result)
-            rule = logic.region.can_reach(entrance.parent_region.name) & entrance.access_rule
+            if isinstance(entrance.access_rule, StardewRule):
+                rule = logic.region.can_reach(entrance.parent_region.name) & entrance.access_rule
+            else:
+                rule = logic.region.can_reach(entrance.parent_region.name)
             print(f"searching for rule {rule}")
         else:
             rule = logic.region.can_reach_location(result)
