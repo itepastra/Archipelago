@@ -499,6 +499,22 @@ class Has(BaseStardewRule):
             return f"Has {self.item} ({self.group}) -> {MISSING_ITEM}"
         return f"Has {self.item} ({self.group}) -> {repr(self.other_rules[self.item])}"
 
+@dataclass(frozen=True)
+class ExplainedStardewRule(BaseStardewRule):
+    rule: StardewRule
+    explanation: str
+
+    def __call__(self, state: CollectionState) -> bool:
+        return self.evaluate_while_simplifying(state)[1]
+
+    def evaluate_while_simplifying(self, state: CollectionState) -> Tuple[StardewRule, bool]:
+        return self.rule.evaluate_while_simplifying(state)
+
+    def __str__(self):
+        return f"{self.explanation}: {str(self.rule)}"
+
+    def __repr__(self):
+        return f"{self.explanation}: {repr(self.rule)}"
 
 class RepeatableChain(Iterable, Sized):
     """
