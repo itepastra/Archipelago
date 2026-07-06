@@ -678,6 +678,9 @@ class StardewValleyWorld(World):
                 entr, exit = self.entrance_data_map[index]
                 target = exit.connected_region
                 entr.connect(target)
-                target.entrances.remove(exit)
+                if exit in target.entrances:
+                    target.entrances.remove(exit)
+                else:
+                    logging.error(f"exit {exit} was not in entrances of {target}")
 
             index += 1
